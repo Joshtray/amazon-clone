@@ -1,7 +1,8 @@
 header{
   display: flex;
   flex-direction: row;
-  color: #0F1111;
+  background-color: #0F1111;
+  color: #ffffff;
   font-size: 14px;
   line-height: 20px;
 }
