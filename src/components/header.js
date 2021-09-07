@@ -27,9 +27,11 @@ export default function Header () {
         </a>
       </section>
       <section class="search-bar">
+        <form>
           {/*option*/}
           <input/>
           {/*font-awesome search icon*/}
+        </form>
       </section>
       <section class="account-details">
         <a>
