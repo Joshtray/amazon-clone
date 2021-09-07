@@ -7,11 +7,9 @@ export default function Header () {
   return (
     <header>
       <section class="left-container">
-        <a>
-          <Link to="/" className="logo" >
-            <img></img>
-          </Link>
-        </a>
+        <Link to="/" className="logo" >
+          <span></span>
+        </Link>
         <a>
           <div>
             {/*font awesome navigation icon*/}

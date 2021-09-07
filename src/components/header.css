@@ -24,10 +24,19 @@ header .left-container a{
   margin: 1px;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
-header .left-container a img{
-  height: 49px;
+header .left-container a span{
+  margin-top: 12px;
+  background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/gno/sprites/nav-sprite-global-2x-hm-dsk-reorg._CB405937547_.png);
+  background-size: 350px;
+  background-position: -10px -51px;
+  min-width: 97px;
+  min-height: 30px;
+  background-repeat: repeat-x;
+  cursor: pointer;
+  outline: -1px;
 }
 
 header .search-bar{
