@@ -29,7 +29,7 @@ export default function Header () {
           /*option*/
           <input/>
           /*font-awesome search icon*/
-      </div>
+      </section>
       <section class="account-details">
         <a>
           /*option*/
