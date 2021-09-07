@@ -14,35 +14,36 @@ export default function Header () {
         </a>
         <a>
           <div>
-            /*font awesome navigation icon*/
+            {/*font awesome navigation icon*/}
           </div>
           <div>
-            <p></p>/*Deliver to [user.name]*/
+            <p></p> {/*Deliver to [user.name]*/}
             <span>
-              <p></p>/*Location: [State]*/
-              <p></p>/*Location: [Zip Code]*/
+              <p></p>
+              {/* Location: [State]*/}
+              <p></p> {/*Location: [Zip Code]*/}
             </span>
           </div>
         </a>
       </section>
       <section class="search-bar">
-          /*option*/
+          {/*option*/}
           <input/>
-          /*font-awesome search icon*/
+          {/*font-awesome search icon*/}
       </section>
       <section class="account-details">
         <a>
-          /*option*/
+          {/*option*/}
         </a>
         <a>
-          <p></p>/*Hello, [User.name]*/
+          <p></p> {/*Hello, [User.name]*/}
           <p>Account &#38; Lists </p>
         </a>
         <a>
           <p>Returns <span>&#38; Orders</span></p>
         </a>
         <a>
-          /*Font-awesome tag but depends on no of items*/
+          {/*Font-awesome tag but depends on no of items*/}
         </a>
       </section>
     </header>
