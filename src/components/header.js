@@ -10,19 +10,16 @@ export default function Header () {
         <Link to="/" className="logo" >
           <span></span>
         </Link>
-        <a>
+        <Link to="/" className="direction">
+          <span></span>
           <div>
-            {/*font awesome navigation icon*/}
-          </div>
-          <div>
-            <p></p> {/*Deliver to [user.name]*/}
+            <p>Deliver to Tomiwa</p> {/*Deliver to [user.name] capitalize first word*/}
             <span>
-              <p></p>
-              {/* Location: [State]*/}
-              <p></p> {/*Location: [Zip Code]*/}
+              <p>Chicago 60616</p>{/* Location: [State] [Zip Code]*/}
             </span>
           </div>
-        </a>
+        </Link>
+
       </section>
       <section class="search-bar">
         <form>

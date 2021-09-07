@@ -20,23 +20,57 @@ header .left-container{
 }
 
 header .left-container a{
-  padding: 1px 8px 0px 6px;
-  margin: 1px;
+  padding: 5px 8px 0px 6px;
+  margin: 1px 1px 1px 11px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
 }
 
-header .left-container a span{
+header .left-container .logo span{
   margin-top: 12px;
   background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/gno/sprites/nav-sprite-global-2x-hm-dsk-reorg._CB405937547_.png);
   background-size: 350px;
   background-position: -10px -51px;
-  min-width: 97px;
-  min-height: 30px;
+  width: 97px;
+  height: 30px;
   background-repeat: repeat-x;
   cursor: pointer;
   outline: -1px;
+}
+
+header .left-container .direction{
+  align-items: center;
+  flex-direction: row;
+  text-decoration: none;
+  color: #CCCCCC;
+}
+
+header .left-container .direction span{
+  margin-top: 8px;
+  background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/gno/sprites/nav-sprite-global-2x-hm-dsk-reorg._CB405937547_.png);
+  background-repeat: repeat-x;
+  color: #d6d6d6;
+  background-size: 350px;
+  background-position: -71px -378px;
+  width: 15px;
+  height: 18px;
+
+  cursor: pointer;
+  outline: -1px;
+}
+
+header .left-container .direction div{
+  display: flex;
+  flex-direction: column;
+}
+header .left-container .direction div span{
+  background: none;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0px;
+  width: auto;
+  height: auto;
 }
 
 header .search-bar{
