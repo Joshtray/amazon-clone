@@ -1,13 +1,15 @@
-.header {
-
+header{
+  display: flex;
+  flex-direction: row;
 }
 
-.logo {
-
+header .left-container a{
+  padding: 1px 8px 0px 6px;
+  margin: 1px;
+  display: flex;
+  flex-direction: column;
 }
-.search-bar {
 
-}
-.cart {
-    
+header .left-container a img{
+  height: 49px;
 }
