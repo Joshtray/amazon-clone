@@ -19,7 +19,6 @@ export default function Header () {
             </span>
           </div>
         </Link>
-
       </section>
       <section class="search-bar">
         <form>
@@ -39,9 +38,10 @@ export default function Header () {
         <a>
           <p>Returns <br/><span>&#38; Orders</span></p>
         </a>
-        <a>
-          {/*Font-awesome tag but depends on no of items*/}
-        </a>
+        <Link to="/" className="cart" >
+          <span>1</span>{/* [Item.no] */}
+          <p>Cart</p>
+        </Link>
       </section>
     </header>
 
