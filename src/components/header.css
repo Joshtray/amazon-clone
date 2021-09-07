@@ -1,6 +1,9 @@
 header{
   display: flex;
   flex-direction: row;
+  color: #0F1111;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 header .left-container a{
@@ -12,4 +15,13 @@ header .left-container a{
 
 header .left-container a img{
   height: 49px;
+}
+
+header .account-details{
+  display: flex;
+  flex-direction: row;
+}
+
+header .account-details .bold, header .account-details span{
+  font-weight: bold;
 }

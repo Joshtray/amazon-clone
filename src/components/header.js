@@ -37,10 +37,10 @@ export default function Header () {
         </a>
         <a>
           <p></p> {/*Hello, [User.name]*/}
-          <p>Account &#38; Lists </p>
+          <p class="bold">Account &#38; Lists </p>
         </a>
         <a>
-          <p>Returns <span>&#38; Orders</span></p>
+          <p>Returns <br/><span>&#38; Orders</span></p>
         </a>
         <a>
           {/*Font-awesome tag but depends on no of items*/}
