@@ -83,7 +83,7 @@ export default function Header () {
             <option value="search-alias=videogames">Video Games</option>
             <option value="search-alias=wholefoods">Whole Foods Market</option>
         </select>
-          <input id = "search-type"/>
+          <input id = "search-type tomzy"/>
           <input id="nav-search-submit-button" type="submit" value="Go"/>
         </form>
       </section>
