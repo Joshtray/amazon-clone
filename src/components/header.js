@@ -39,7 +39,9 @@ export default function Header () {
           <p>Returns <br/><span>&#38; Orders</span></p>
         </a>
         <Link to="/" className="cart" >
-          <span>1</span>{/* [Item.no] */}
+          <span>
+            <p>1</p>{/* [Item.no] */}
+          </span>
           <p>Cart</p>
         </Link>
       </section>
