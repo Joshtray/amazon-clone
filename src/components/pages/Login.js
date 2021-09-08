@@ -35,9 +35,9 @@ const Login = () => {
                 </section>
                 <section className="form">
                     <p>Username</p>
-                    <section className="input"><input type="text" onChange={(e) => (setUsername(e.target.value))} /></section>
+                    <section className="input"><input className="sign-in-input" type="text" onChange={(e) => (setUsername(e.target.value))} /></section>
                     <p>Password</p>
-                    <section className="input"><input type="password" onChange={(e) => (setPassword(e.target.value))} /></section>
+                    <section className="input"><input type="password" className="sign-in-input" onChange={(e) => (setPassword(e.target.value))} /></section>
                     <button onClick={handleSubmit}>Sign In</button>
                 </section>
             </section>

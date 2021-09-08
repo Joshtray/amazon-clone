@@ -13,7 +13,7 @@ p {
     font-size: 25px;
     margin-bottom: 10px;
 }
-input {
+.sign-in-input {
     flex: 1;
     width: 320px;
     height: 30px;
@@ -23,7 +23,7 @@ input {
     border-color: grey;
     outline: none;
 }
-input:focus {
+.sign-in-input:focus {
     border: orange;
     border-style: solid;
     border-width: 0.5px;

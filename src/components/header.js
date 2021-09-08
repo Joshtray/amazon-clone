@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './header.css';
 import { Link } from 'react-router-dom'
 
 export default function Header () {
+  const [dropdown, setDropdown] = useState('')
+  const [dropdown_class, setDropdown_class] = useState('')
 
+  const update = (event) => {
+    setDropdown(event.target.value)
+    console.log(event.target.value)
+  }
+  useEffect(() => {
+    if (dropdown === "1") {
+      setDropdown_class("width1")
+    }
+    else {
+      setDropdown_class("width2")
+    }
+  }, [dropdown])
   return (
     <header>
       <section class="left-container">
@@ -22,8 +36,8 @@ export default function Header () {
       </section>
       <section class="search-bar">
         <form>
-          <select id="searchDropdownBox">
-            <option selected="selected" value="search-alias=aps">All Departments</option>
+          <select id="searchDropdownBox" onChange={update} className={dropdown_class}>
+            <option selected="selected" value="1">All Departments</option>
             <option value="search-alias=audible">Audible Books &amp; Originals</option>
             <option value="search-alias=alexa-skills">Alexa Skills</option>
             <option value="search-alias=amazon-devices">Amazon Devices</option>

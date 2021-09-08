@@ -17,9 +17,9 @@ const Signup = () => {
                 </h1>
                 <form>
                     <p>Your username</p>
-                    <section className="input"><input /></section>
+                    <section className="input"><input className="sign-up-input"/></section>
                     <p>Your email</p>
-                    <section className="input"><input /></section>
+                    <section className="input"><input className="sign-up-input" /></section>
                     <p>Password</p>
                     <section className="input"><input /></section>
                     <button onClick={handleClick}>Create your Amazon account</button>

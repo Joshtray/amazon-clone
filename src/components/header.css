@@ -109,11 +109,9 @@ header .search-bar form #searchDropdownBox{
   border-right: 1px solid #cdcdcd;
   background-color: #f3f3f3;
   border-radius: 4px 0px 0px 4px;
-  width: 53px;
   padding-left: 5px;
   margin-left: 5px;
   padding-right: 10px;
-  overflow: hidden;
   font-size: 12px;
 }
 
@@ -129,6 +127,15 @@ header .search-bar form #nav-search-submit-button{
   background-color: #febd69;
   text-shadow: none;
   color: transparent;
+}
+
+header .search-bar form .width1 {
+  width: 53px;
+}
+
+header .search-bar form .width2 {
+  overflow: visible;
+  min-width: 1px;
 }
 
 header .account-details{
