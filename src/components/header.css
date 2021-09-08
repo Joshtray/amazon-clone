@@ -36,7 +36,6 @@ header .left-container .logo span{
   height: 30px;
   background-repeat: repeat-x;
   cursor: pointer;
-  outline: -1px;
 }
 
 header .left-container .direction{
@@ -63,6 +62,7 @@ header .left-container .direction span{
 header .left-container .direction div{
   display: flex;
   flex-direction: column;
+  line-height: 16px;
 }
 header .left-container .direction div span{
   background: none;
@@ -79,6 +79,19 @@ header .search-bar{
   flex-direction: row;
   max-height: 60px;
   box-sizing: border-box;
+  max-width: 1000px;
+  flex: 1 1 auto;
+  min-width: 0px;
+}
+
+header .search-bar form{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+header .search-bar #search-type{
+  flex: 1 1 auto;
 }
 
 header .search-bar form input{
@@ -87,13 +100,42 @@ header .search-bar form input{
   min-height: 40px;
   padding: 0px;
   border: 0px;
-  width: 700px;
-  border-radius: 5px;
+  border-radius: 0px;
+}
+
+header .search-bar form #searchDropdownBox{
+  height: 40px;
+  border: 0px;
+  border-right: 1px solid #cdcdcd;
+  background-color: #f3f3f3;
+  border-radius: 4px 0px 0px 4px;
+  width: 53px;
+  padding-left: 5px;
+  margin-left: 5px;
+  padding-right: 10px;
+  overflow: hidden;
+  font-size: 12px;
+}
+
+header .search-bar form #nav-search-submit-button{
+  border-radius: 0px 4px 4px 0px;
+  background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/gno/sprites/nav-sprite-global-2x-hm-dsk-reorg._CB405937547_.png);
+  background-size: 350px;
+  background-position: 0px -280px;
+  width: 45px;
+  height: 40px;
+  background-repeat: repeat-x;
+  cursor: pointer;
+  background-color: #febd69;
+  text-shadow: none;
+  color: transparent;
 }
 
 header .account-details{
   display: flex;
   flex-direction: row;
+  margin-top: 2px;
+  padding-top: 3px;
 }
 
 header .account-details .bold, header .account-details span{
@@ -103,20 +145,43 @@ header .account-details .bold, header .account-details span{
 header .account-details a{
   display: flex;
   text-decoration: none;
+  padding: 0px 8px 11px 8px;
+  line-height: 14px;
+  cursor: pointer;
 }
 
 header .account-details .cart{
-  display: flex;
+  align-items: flex-end;
+  margin-right: 3px;
+  margin-bottom: 10px;
 }
 
-.cart span{
-  margin-top: 12px;
+header .account-details .cart span{
   background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/gno/sprites/nav-sprite-global-2x-hm-dsk-reorg._CB405937547_.png);
   background-size: 350px;
   background-position: -218px -337px;
-  justify-items: center;
   width: 41px;
   height: 28px;
   background-repeat: repeat-x;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+header .account-details .cart p{
+  font-weight: 700;
+  font-size: 16px;
+  color: #F08804;
+  margin-bottom: 0px;
+  margin-top: auto;
+}
+header .account-details .cart span p{
+  position: absolute;
+  margin-top: 0px;
+  margin-bottom: auto;
+  font-size: 18px;
+  line-height: 16px;
+  top: -4px;
+  right: 10px;
 }
