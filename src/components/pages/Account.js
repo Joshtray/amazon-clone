@@ -4,7 +4,7 @@ import './Account.css'
 const Account = () => {
     return (
         <div>
-            
+            ACCOUNT
         </div>
     )
 }

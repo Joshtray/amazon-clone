@@ -31,14 +31,18 @@ export default function Header () {
         <a>
           {/*option*/}
         </a>
-        <a>
-          <p></p> {/*Hello, [User.name]*/}
-          <p class="bold">Account &#38; Lists </p>
-        </a>
-        <a>
-          <p>Returns <br/><span>&#38; Orders</span></p>
-        </a>
-        <Link to="/" className="cart" >
+        <Link to="/account" className="account" >
+          <a>
+            <p></p> {/*Hello, [User.name]*/}
+            <p class="bold">Account &#38; Lists </p>
+          </a>
+        </Link>
+        <Link to="/orders" className="orders" >
+          <a>
+            <p>Returns <br/><span>&#38; Orders</span></p>
+          </a>
+        </Link>
+        <Link to="/cart" className="cart" >
           <span>1</span>{/* [Item.no] */}
           <p>Cart</p>
         </Link>
