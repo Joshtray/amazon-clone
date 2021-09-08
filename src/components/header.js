@@ -1,15 +1,23 @@
 import React, { useEffect, useState } from "react";
 import './header.css';
 import { Link } from 'react-router-dom'
+import Auth from "@aws-amplify/auth";
 
 export default function Header () {
-  const [dropdown, setDropdown] = useState('')
+  const [dropdown, setDropdown] = useState('1')
   const [dropdown_class, setDropdown_class] = useState('')
-
+  const [userInfo, setUserInfo] = useState({username: "Sign In"})
+  
+  const getUserInfo = async () => {
+    const userData = await Auth.currentAuthenticatedUser()
+    setUserInfo(userData)
+  }
   const update = (event) => {
     setDropdown(event.target.value)
-    console.log(event.target.value)
   }
+  useEffect(() => {
+    getUserInfo()
+  }, [])
   useEffect(() => {
     if (dropdown === "1") {
       setDropdown_class("width1")
@@ -20,7 +28,7 @@ export default function Header () {
   }, [dropdown])
   return (
     <header>
-      <section class="left-container">
+      <section className="left-container">
         <Link to="/" className="logo" >
           <span></span>
         </Link>
@@ -34,7 +42,7 @@ export default function Header () {
           </div>
         </Link>
       </section>
-      <section class="search-bar">
+      <section className="search-bar">
         <form>
           <select id="searchDropdownBox" onChange={update} className={dropdown_class}>
             <option selected="selected" value="1">All Departments</option>
@@ -101,18 +109,22 @@ export default function Header () {
           <input id="nav-search-submit-button" type="submit" value="Go"/>
         </form>
       </section>
-      <section class="account-details">
+      <section className="account-details">
         <a>
           {/*option*/}
         </a>
-        <a>
-          <p></p> {/*Hello, [User.name]*/}
-          <p class="bold">Account &#38; Lists </p>
-        </a>
-        <a>
-          <p>Returns <br/><span>&#38; Orders</span></p>
-        </a>
-        <Link to="/" className="cart" >
+        <Link to="/account" className="account">
+          <a className="account">
+            <p>{"Hello, " + userInfo.username}</p>
+            <p className="bold">Account &#38; Lists </p>
+          </a>
+        </Link>
+        <Link to="/orders" className="returns">
+          <a className="returns">
+            <p>Returns <br/><span className="bold">&#38; Orders</span></p>
+          </a>
+        </Link>
+        <Link to="/cart" className="cart" >
           <span>
             <p>1</p>{/* [Item.no] */}
           </span>

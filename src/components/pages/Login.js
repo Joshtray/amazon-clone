@@ -7,14 +7,12 @@ import Auth from '@aws-amplify/auth'
 const Login = () => {
     const history = useHistory();
     const [error, setError] = useState('')
-    let [username, setUsername] = useState("")
+    const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const handleSubmit = async () => {
         try {
-            console.log('Submitted!')
-            let response = await Auth.signIn(username, password)
+            await Auth.signIn(username, password)
             history.push("/")
-            console.log(response)
         }
         catch (error) {
             console.log("error: ", error)

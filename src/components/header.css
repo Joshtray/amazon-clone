@@ -134,8 +134,7 @@ header .search-bar form .width1 {
 }
 
 header .search-bar form .width2 {
-  overflow: visible;
-  min-width: 1px;
+  width: auto;
 }
 
 header .account-details{
@@ -143,6 +142,49 @@ header .account-details{
   flex-direction: row;
   margin-top: 2px;
   padding-top: 3px;
+}
+header .account-details .bold, header .account-details .account, header .account-details .returns {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+header .account-details .bold, header .account-details .returns {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+header .account-details .account:visited, header .account-details .returns:visited {
+  color: inherit;
+}
+
+header .account-details .bold, header .account-details .account p {
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0;
+}
+
+header .account-details .bold, header .account-details .returns p {
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0;
+}
+
+header .account-details .bold, header .account-details .account .bold {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+header .account-details .bold, header .account-details .returns .bold {
+  font-size: 14px;
+  font-weight: 700;
 }
 
 header .account-details .bold, header .account-details span{
@@ -179,16 +221,17 @@ header .account-details .cart span{
 header .account-details .cart p{
   font-weight: 700;
   font-size: 16px;
-  color: #F08804;
+  color: white;
   margin-bottom: 0px;
   margin-top: auto;
 }
 header .account-details .cart span p{
   position: absolute;
+  color: #F08804;
   margin-top: 0px;
   margin-bottom: auto;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 16px;
   top: -4px;
-  right: 10px;
+  right: 13px;
 }

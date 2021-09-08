@@ -1,6 +1,6 @@
 import Header from './components/header';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, useHistory, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, useHistory, Link } from 'react-router-dom';
 import Home from './components/pages/Home';
 import Cart from './components/pages/Cart';
 import Account from './components/pages/Account';
@@ -12,8 +12,6 @@ import Login from './components/pages/Login';
 import Signup from './components/pages/Signup';
 import { useEffect, useState } from 'react';
 
-
-
 Amplify.configure(awsconfig)
 
 function App() {
@@ -21,13 +19,11 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const loggedIn = async () => {
     Hub.listen("auth", (event) => {
-      console.log(event)
       if (event.payload.event === "signIn" || event.payload.event === "tokenRefresh") {
         setCurrentUser(event.payload.data)
       }
     })
     const userInfo = await Auth.currentAuthenticatedUser({ bypassCache: true })
-    console.log(userInfo)
     if (userInfo) {
       setCurrentUser(userInfo)
     }
@@ -37,12 +33,10 @@ function App() {
   }
   useEffect(() => {
     loggedIn()
-    console.log(currentUser)
   }, [])
 
   const signOut = async () => {
     await Auth.signOut()
-    console.log(currentUser)
     setCurrentUser(null)
   }
   return (
