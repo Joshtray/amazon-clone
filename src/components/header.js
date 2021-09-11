@@ -36,8 +36,8 @@ export default function Header () {
           <span></span>
           <div>
             <p>Deliver to <span class="caps">{userInfo.username}</span></p> {/*Deliver to [user.name] capitalize first word*/}
-            <span>
-              <p>Chicago 60616</p>{/* Location: [State] [Zip Code]*/}
+            <span class="adress">
+              <p>16 Turk Street, San Francisco, CA, </p><span>94102</span>{/* Location: [State] [Zip Code]*/}
             </span>
           </div>
         </Link>
