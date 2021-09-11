@@ -2,15 +2,29 @@ import React, { useEffect, useState } from "react";
 import './header.css';
 import { Link } from 'react-router-dom'
 import Auth from "@aws-amplify/auth";
+import API from "@aws-amplify/api";
+import { getUser } from "../graphql/queries";
+import { graphqlOperation } from "aws-amplify";
 
 export default function Header () {
   const [dropdown, setDropdown] = useState('1')
   const [dropdown_class, setDropdown_class] = useState('')
   const [userInfo, setUserInfo] = useState({username: "Sign In"})
+  const [cart, setCart] = useState(0)
 
   const getUserInfo = async () => {
     const userData = await Auth.currentAuthenticatedUser()
     setUserInfo(userData)
+    if (userData) {
+      const usrData = await API.graphql(graphqlOperation(getUser, { id: userData.attributes.sub }))
+      if (usrData.data.getUser) {
+        if (usrData.data.getUser.cart) {
+          if (usrData.data.getUser.cart.cartProduct.items) {
+            setCart(usrData.data.getUser.cart.cartProduct.items.length)
+          }
+        }
+      }
+    }
   }
   const update = (event) => {
     setDropdown(event.target.value)
@@ -37,7 +51,7 @@ export default function Header () {
           <div>
             <p>Deliver to <span class="caps">{userInfo.username}</span></p> {/*Deliver to [user.name] capitalize first word*/}
             <span class="adress">
-              <p>16 Turk Street, San Francisco, CA, </p><span>94102</span>{/* Location: [State] [Zip Code]*/}
+              <p>San Francisco, CA, </p><span>94102</span>{/* Location: [State] [Zip Code]*/}
             </span>
           </div>
         </Link>
@@ -123,7 +137,7 @@ export default function Header () {
         </Link>
         <Link to="/cart" className="cart" >
           <span>
-            <p>1</p>{/* [Item.no] */}
+            <p>{cart}</p>{/* [Item.no] */}
           </span>
           <p>Cart</p>
         </Link>
