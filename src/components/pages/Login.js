@@ -1,4 +1,4 @@
-import React, { useState } from 'react' 
+import React, { useState } from 'react'
 import './Login.css'
 import logo from '../../images/Amazon_logo_PNG3.png'
 import { Link, useHistory } from 'react-router-dom'
@@ -20,7 +20,8 @@ const Login = () => {
         }
     }
     return (
-        <div className="login-page">
+        <div>
+          <div className="login-page">
             <Link to='/' className="home-dir">
               <span></span>
             </Link>
@@ -42,6 +43,13 @@ const Login = () => {
             <Link to='/sign-up' className="sign-up">
                 <button>Create your Amazon account</button>
             </Link>
+          </div>
+          <div className="login-footer"></div>
+          <div className="footer-documents">
+            <a>Conditions of Use</a>
+            <a>Privacy Notice</a>
+            <a>Help</a>
+          </div>
         </div>
     )
 }
