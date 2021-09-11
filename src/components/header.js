@@ -104,18 +104,19 @@ export default function Header () {
             <option value="search-alias=vehicles">Vehicles</option>
             <option value="search-alias=videogames">Video Games</option>
             <option value="search-alias=wholefoods">Whole Foods Market</option>
-        </select>
+          </select>
           <input id = "search-type"/>
           <input id="nav-search-submit-button" type="submit" value="Go"/>
         </form>
       </section>
       <section className="account-details">
-        <a>
-          {/*option*/}
-        </a>
+        <Link to="/languages" className="languages">
+          <span class="maps"></span>
+          <span class="drop-arrow"></span>
+        </Link>
         <Link to="/account" className="account">
             <p>Hello, <span class = "caps">{userInfo.username}</span></p>
-            <p className="bold">Account &#38; Lists </p>
+            <span className="bold span-flex">Account &#38; Lists <span></span></span>
         </Link>
         <Link to="/orders" className="returns">
             <p>Returns <br/><span className="bold">&#38; Orders</span></p>
@@ -128,6 +129,5 @@ export default function Header () {
         </Link>
       </section>
     </header>
-
     )
 }

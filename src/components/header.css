@@ -188,51 +188,72 @@ header .account-details{
   margin-top: 5px;
   margin-bottom: 3px;
 }
-header .account-details .bold, header .account-details .account, header .account-details .returns {
-  display: flex;
+
+header .account-details .languages{
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+header .account-details .maps{
+  background-image: url(https://m.media-amazon.com/images/S/sash/rzrQQdi0aRm6Dap.png);
+  width: 24px;
+  height: 18px;
+  margin: 0px 2px 1px 0px;
+  background-position: 0 -130px;
+  color: #fff;
+}
+
+header .account-details .drop-arrow{
+  background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405937547_.png);
+  background-position: 0 1000px;
+  background-repeat: repeat-x;
+  margin: 0px 0px 4px 2px;
+  border-width: 4px;
+  border-bottom-width: 0px;
+  border-color: transparent;
+  border-top: 4px solid #a7acb2;
+  border-style: solid;
+}
+
+header .account-details .account{
   flex-direction: column;
-  align-items: left;
   justify-content: center;
 }
 
-header .account-details .bold, header .account-details .returns {
+header .account-details .account .span-flex{
   display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: center;
-}
-header .account-details .account:visited, header .account-details .returns:visited {
-  color: inherit;
+  flex-direction: row;
 }
 
-header .account-details .bold, header .account-details .account p {
+header .account-details .account .span-flex span{
+  background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405937547_.png);
+  background-position: 0 1000px;
+  background-repeat: repeat-x;
+  margin: 6px 0px 0px 5px;
+  border-width: 4px;
+  border-bottom-width: 0px;
+  border-color: transparent;
+  border-top: 4px solid #a7acb2;
+  border-style: solid;
+}
+
+header .account-details .returns{
+  align-items: center;
+}
+
+header .account-details .account p, header .account-details .returns p {
   margin-bottom: 0;
   margin-top: 0;
+  margin-left: 0px;
   font-size: 12px;
   font-weight: 400;
-  margin: 0;
-}
-
-header .account-details .bold, header .account-details .returns p {
-  margin-bottom: 0;
-  margin-top: 0;
-  font-size: 12px;
-  font-weight: 400;
-  margin: 0;
-}
-
-header .account-details .bold, header .account-details .account .bold {
-  font-size: 14px;
-  font-weight: 700;
-}
-
-header .account-details .bold, header .account-details .returns .bold {
-  font-size: 14px;
-  font-weight: 700;
 }
 
 header .account-details .bold{
+  font-size: 14px;
   font-weight: bold;
+  flex-direction: column;
+  justify-content: center;
 }
 
 header .account-details a{
