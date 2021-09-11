@@ -7,7 +7,7 @@ export default function Header () {
   const [dropdown, setDropdown] = useState('1')
   const [dropdown_class, setDropdown_class] = useState('')
   const [userInfo, setUserInfo] = useState({username: "Sign In"})
-  
+
   const getUserInfo = async () => {
     const userData = await Auth.currentAuthenticatedUser()
     setUserInfo(userData)
@@ -35,7 +35,7 @@ export default function Header () {
         <Link to="/" className="direction">
           <span></span>
           <div>
-            <p>Deliver to Tomiwa</p> {/*Deliver to [user.name] capitalize first word*/}
+            <p>Deliver to <span class="caps">{userInfo.username}</span></p> {/*Deliver to [user.name] capitalize first word*/}
             <span>
               <p>Chicago 60616</p>{/* Location: [State] [Zip Code]*/}
             </span>
@@ -114,15 +114,11 @@ export default function Header () {
           {/*option*/}
         </a>
         <Link to="/account" className="account">
-          <a className="account">
-            <p>{"Hello, " + userInfo.username}</p>
+            <p>Hello, <span class = "caps">{userInfo.username}</span></p>
             <p className="bold">Account &#38; Lists </p>
-          </a>
         </Link>
         <Link to="/orders" className="returns">
-          <a className="returns">
             <p>Returns <br/><span className="bold">&#38; Orders</span></p>
-          </a>
         </Link>
         <Link to="/cart" className="cart" >
           <span>

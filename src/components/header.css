@@ -14,6 +14,9 @@ header{
 header p{
   margin: auto;
 }
+.caps{
+  text-transform: capitalize;
+}
 header .left-container{
   display: flex;
   flex-direction: row;
@@ -45,7 +48,7 @@ header .left-container .direction{
   color: #CCCCCC;
 }
 
-header .left-container .direction span{
+header .left-container .direction p span{
   margin-top: 8px;
   background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/gno/sprites/nav-sprite-global-2x-hm-dsk-reorg._CB405937547_.png);
   background-repeat: repeat-x;
@@ -57,6 +60,10 @@ header .left-container .direction span{
 
   cursor: pointer;
   outline: -1px;
+}
+
+header .left-container .direction  div p span{
+  color: #CCCCCC;
 }
 
 header .left-container .direction div{
@@ -197,6 +204,7 @@ header .account-details a{
   padding: 0px 8px 11px 8px;
   line-height: 14px;
   cursor: pointer;
+  color: #ffffff;
 }
 
 header .account-details .cart{
