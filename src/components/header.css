@@ -14,12 +14,24 @@ header{
 header p{
   margin: auto;
 }
+header a{
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 2px;
+  border-color: #0F1111;
+}
+header a:hover{
+  border-color: #ffffff;
+}
+
 .caps{
   text-transform: capitalize;
 }
 header .left-container{
   display: flex;
   flex-direction: row;
+  margin-top: 5px;
+  margin-bottom: 3px;
 }
 
 header .left-container a{
@@ -109,6 +121,11 @@ header .search-bar form{
   display: flex;
   width: 100%;
   justify-content: space-between;
+  border-radius: 4px;
+}
+
+header .search-bar form:focus-within{
+  box-shadow: 0 0 0 2px #f90, 0 0 0 3px rgb(255 153 0 / 50%);
 }
 
 header .search-bar #search-type{
@@ -131,7 +148,6 @@ header .search-bar form #searchDropdownBox{
   background-color: #f3f3f3;
   border-radius: 4px 0px 0px 4px;
   padding-left: 5px;
-  margin-left: 5px;
   padding-right: 10px;
   font-size: 12px;
 }
@@ -154,6 +170,14 @@ header .search-bar form .width1 {
   width: 53px;
 }
 
+header .search-bar form #search-type{
+  padding-left: 10px;
+}
+
+header .search-bar form input:focus-visible{
+  outline: none;
+}
+
 header .search-bar form .width2 {
   width: auto;
 }
@@ -161,15 +185,14 @@ header .search-bar form .width2 {
 header .account-details{
   display: flex;
   flex-direction: row;
-  margin-top: 2px;
-  padding-top: 3px;
+  margin-top: 5px;
+  margin-bottom: 3px;
 }
 header .account-details .bold, header .account-details .account, header .account-details .returns {
   display: flex;
   flex-direction: column;
   align-items: left;
   justify-content: center;
-  margin-top: 5px;
 }
 
 header .account-details .bold, header .account-details .returns {
@@ -215,7 +238,7 @@ header .account-details .bold{
 header .account-details a{
   display: flex;
   text-decoration: none;
-  padding: 0px 8px 11px 8px;
+  padding: 3px 8px 11px 8px;
   line-height: 14px;
   cursor: pointer;
   color: #ffffff;
@@ -224,7 +247,7 @@ header .account-details a{
 header .account-details .cart{
   align-items: flex-end;
   margin-right: 3px;
-  margin-bottom: 10px;
+  padding-bottom: 17px;
 }
 
 header .account-details .cart span{
