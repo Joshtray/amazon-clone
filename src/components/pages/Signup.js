@@ -34,13 +34,13 @@ const Signup = () => {
         }
     }
     return (
-        <div className="login-page">
-            <section className="header">
-                    {/* <img src={logo}></img> */}
+        <div className="sign-up-page">
+            <section className="home-dir">
+              <span></span>
             </section>
             {stage === "sign-up" ? (
             <section className="sign-up-form">
-                <h1 className="sign-up">
+                <h1>
                     Create account
                 </h1>
                 <section className="error-message" >
@@ -55,7 +55,7 @@ const Signup = () => {
                     <section className="input"><input className="sign-up-input" type="password" onChange={(e) => (setPassword(e.target.value))}/></section>
                     <button onClick={handleClick}>Create your Amazon account</button>
                 </section>
-            </section>) : 
+            </section>) :
             (<section className="sign-up-form">
                 <h1 className="sign-in">
                     Confirm email
@@ -72,8 +72,8 @@ const Signup = () => {
                 </section>
             </section>)
         }
-            
-            <p>Already have an account?</p> 
+
+            <p>Already have an account?</p>
             <Link to='/login' className="sign-up">
                 <p>Sign in</p>
             </Link>

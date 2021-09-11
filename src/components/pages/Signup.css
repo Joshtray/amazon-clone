@@ -1,36 +1,25 @@
-.login-page {
+.sign-up-page {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 14px 18px;
 }
-p {
-    font-size: 13px;
-    font-weight: 750;
-    margin-bottom: 0;
+
+.sign-up-page .home-dir{
+  margin-bottom: 18px;
 }
-.sign-up {
-    font-weight: 500;
-    font-size: 25px;
-    margin-bottom: 10px;
+
+.sign-up-page .home-dir span{
+  background-image: url(https://m.media-amazon.com/images/S/sash/mPGmT0r6IeTyIee.png);
+  background-size: 400px;
+  background-repeat: repeat-x;
+  background-position: -5px -130px;
+  width: 103px;
+  height: 31px;
+  display: inline-block;
 }
-.sign-up-input {
-    flex: 1;
-    width: 320px;
-    height: 30px;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 2px;
-    border-color: grey;
-    outline: none;
-}
-.sign-up-input:focus {
-    border: orange;
-    border-style: solid;
-    border-width: 0.5px;
-    border-radius: 2px;
-    box-shadow: 0px 0px 8px #f0c14b;
-}
-.sign-up-form {
+
+.sign-up-page .sign-up-form {
     border-radius: 3px;
     border-style: solid;
     border-color: lightgrey;
@@ -43,7 +32,43 @@ p {
     padding-right: 25px;
 }
 
-button {
+.sign-up-page .sign-up-form h1{
+    font-weight: 500;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.sign-up-page .error-message {
+    color: rgb(230, 16, 16);
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.sign-up-page p {
+    font-size: 13px;
+    font-weight: 750;
+    margin-bottom: 0;
+}
+
+.sign-up-page .sign-up-input {
+    flex: 1;
+    width: 320px;
+    height: 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    border-color: grey;
+    outline: none;
+}
+.sign-up-page .sign-up-input:focus {
+    border: orange;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 2px;
+    box-shadow: 0px 0px 8px #f0c14b;
+}
+
+.sign-up-page button {
     border-radius: 3px;
     border-style: solid;
     border-color: #a88734;
@@ -55,14 +80,10 @@ button {
     margin-top: 15px;
     margin-bottom: 15px;
 }
-button:hover {
+.sign-up-page button:hover {
     filter: saturate(140%);
     filter: brightness(96%);
 }
-button:active {
-    box-shadow: 0px 0px 10px #f0c14b;   
-}
-img {
-    transform: scale(50%, 50%);
-    margin: 0
+.sign-up-page button:active {
+    box-shadow: 0px 0px 10px #f0c14b;
 }

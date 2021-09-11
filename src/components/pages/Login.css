@@ -2,35 +2,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 14px 18px;
 }
-p {
-    font-size: 13px;
-    font-weight: 750;
-    margin-bottom: 0;
+
+.login-page .home-dir{
+  margin-bottom: 18px;
 }
-.sign-in {
-    font-weight: 500;
-    font-size: 25px;
-    margin-bottom: 10px;
+
+.login-page .home-dir span{
+  background-image: url(https://m.media-amazon.com/images/S/sash/mPGmT0r6IeTyIee.png);
+  background-size: 400px;
+  background-repeat: repeat-x;
+  background-position: -5px -130px;
+  width: 103px;
+  height: 31px;
+  display: inline-block;
 }
-.sign-in-input {
-    flex: 1;
-    width: 320px;
-    height: 30px;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 2px;
-    border-color: grey;
-    outline: none;
-}
-.sign-in-input:focus {
-    border: orange;
-    border-style: solid;
-    border-width: 0.5px;
-    border-radius: 2px;
-    box-shadow: 0px 0px 8px #f0c14b;
-}
-.login-form {
+
+.login-page .login-form {
     border-radius: 3px;
     border-style: solid;
     border-color: lightgrey;
@@ -43,7 +32,44 @@ p {
     padding-right: 25px;
 }
 
-.login-form .form button {
+.login-page h1 {
+    font-weight: 500;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.login-page .error-message {
+    color: rgb(230, 16, 16);
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.login-page p {
+    font-size: 13px;
+    font-weight: 750;
+    margin-bottom: 0;
+}
+
+.login-page .login-input {
+    flex: 1;
+    width: 320px;
+    height: 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    border-color: grey;
+    outline: none;
+}
+.login-page .login-input:focus {
+    border: orange;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 2px;
+    box-shadow: 0px 0px 8px #f0c14b;
+}
+
+
+.login-page .login-form .form button {
     border-radius: 3px;
     border-style: solid;
     border-color: #a88734;
@@ -55,19 +81,15 @@ p {
     margin-top: 15px;
     margin-bottom: 15px;
 }
-.login-form .form button:hover {
+.login-page .login-form .form button:hover {
     filter: saturate(140%);
     filter: brightness(96%);
 }
-.login-form .form button:active {
-    box-shadow: 0px 0px 10px #f0c14b;   
+.login-page .login-form .form button:active {
+    box-shadow: 0px 0px 10px #f0c14b;
 }
-.error-message {
-    color: rgb(230, 16, 16);
-    font-size: 10px;
-    font-weight: 400;
-}
-.sign-up button {
+
+.login-page .sign-up button {
     border-radius: 3px;
     border-style: solid;
     border-color: grey;
@@ -80,16 +102,11 @@ p {
     font-size: 13px;
     font-weight: 500;
 }
-.sign-up button:hover {
+.login-page .sign-up button:hover {
     filter: saturate(140%);
     filter: brightness(96%);
 }
 
-.sign-up button:active {
-    box-shadow: 0px 0px 10px #f0c14b;   
-}
-
-img {
-    transform: scale(50%, 50%);
-    margin: 0
+.login-page .sign-up button:active {
+    box-shadow: 0px 0px 10px #f0c14b;
 }
