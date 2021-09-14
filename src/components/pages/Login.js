@@ -40,6 +40,9 @@ const Login = () => {
                     <button onClick={handleSubmit}>Sign In</button>
                 </section>
             </section>
+            <div class="line-through">
+              <p>New to Amazon?</p>
+            </div>
             <Link to='/sign-up' className="sign-up">
                 <button>Create your Amazon account</button>
             </Link>
@@ -47,9 +50,12 @@ const Login = () => {
           <div className="login-footer"></div>
           <div className="footer-documents">
             <a>Conditions of Use</a>
+            <span></span>
             <a>Privacy Notice</a>
+            <span></span>
             <a>Help</a>
           </div>
+          <p id="copyright">© 1996-2021, Amazon.com, Inc. or its affiliates</p>
         </div>
     )
 }
