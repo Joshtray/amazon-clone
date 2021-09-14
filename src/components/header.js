@@ -49,8 +49,8 @@ export default function Header () {
         <Link to="/" className="direction">
           <span></span>
           <div>
-            <p>Deliver to <span class="caps">{userInfo.username}</span></p> {/*Deliver to [user.name] capitalize first word*/}
-            <span class="adress">
+            <p>Deliver to <span className="caps">{userInfo.username}</span></p> {/*Deliver to [user.name] capitalize first word*/}
+            <span className="adress">
               <p>San Francisco, CA, </p><span>94102</span>{/* Location: [State] [Zip Code]*/}
             </span>
           </div>
@@ -58,8 +58,8 @@ export default function Header () {
       </section>
       <section className="search-bar">
         <form>
-          <select id="searchDropdownBox" onChange={update} className={dropdown_class}>
-            <option selected="selected" value="1">All Departments</option>
+          <select defaultValue="1" id="searchDropdownBox" onChange={update} className={dropdown_class}>
+            <option value="1">All Departments</option>
             <option value="search-alias=audible">Audible Books &amp; Originals</option>
             <option value="search-alias=alexa-skills">Alexa Skills</option>
             <option value="search-alias=amazon-devices">Amazon Devices</option>
@@ -125,11 +125,11 @@ export default function Header () {
       </section>
       <section className="account-details">
         <Link to="/languages" className="languages">
-          <span class="maps"></span>
-          <span class="drop-arrow"></span>
+          <span className="maps"></span>
+          <span className="drop-arrow"></span>
         </Link>
         <Link to="/account" className="account">
-            <p>Hello, <span class = "caps">{userInfo.username}</span></p>
+            <p>Hello, <span className = "caps">{userInfo.username}</span></p>
             <span className="bold span-flex">Account &#38; Lists <span></span></span>
         </Link>
         <Link to="/orders" className="returns">

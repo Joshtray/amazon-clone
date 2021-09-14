@@ -73,10 +73,13 @@ const Signup = () => {
                 </section>
             </section>)
         }
-            <p>Already have an account?</p>
-            <Link to='/login' className="sign-up">
-                <p>Sign in</p>
-            </Link>
+        <div className="">
+          <p>Already have an account?</p>
+          <Link to='/login' className="sign-up">
+              <p>Sign in</p>
+          </Link>
+        </div>
+
         </div>
         <div className="login-footer"></div>
         <div className="footer-documents">

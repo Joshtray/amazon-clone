@@ -40,7 +40,7 @@ const Login = () => {
                     <button onClick={handleSubmit}>Sign In</button>
                 </section>
             </section>
-            <div class="line-through">
+            <div className="line-through">
               <p>New to Amazon?</p>
             </div>
             <Link to='/sign-up' className="sign-up">
