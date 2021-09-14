@@ -5,12 +5,15 @@ import Home from './components/pages/Home';
 import Cart from './components/pages/Cart';
 import Account from './components/pages/Account';
 import Orders from './components/pages/Orders';
-import Amplify, { Hub, Auth } from 'aws-amplify';
+import Amplify, { Hub, Auth, API, graphqlOperation } from 'aws-amplify';
 import awsconfig from './aws-exports';
 import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react'
 import Login from './components/pages/Login';
 import Signup from './components/pages/Signup';
 import { useEffect, useState } from 'react';
+import { getUser } from './graphql/queries';
+import { createCart, createUser } from './graphql/mutations';
+
 
 Amplify.configure(awsconfig)
 
@@ -26,11 +29,50 @@ function App() {
     const userInfo = await Auth.currentAuthenticatedUser({ bypassCache: true })
     if (userInfo) {
       setCurrentUser(userInfo)
+      const userData = await API.graphql(graphqlOperation(getUser, { id: userInfo.attributes.sub }))
+        //if there is no user in the db with the id, then create one
+      if (userData.data.getUser) {
+      }
+      else {
+        const newUser = {
+          id: userInfo.attributes.sub,
+          name: userInfo.username,
+          accountType: 'Basic'
+        }
+        await API.graphql(graphqlOperation(createUser, {input: newUser} ))
+        await API.graphql(graphqlOperation(createCart, {input: {userID: userInfo.attributes.sub}}))
+      }
     }
     else {
       setCurrentUser(null)
     }
   }
+
+  /* useEffect({
+    const fetchUser = async () => {
+      // Get authenticated user from auth
+      const userInfo = await Auth.currentAuthenticatedUser( { bypassCache: true })
+      if (userInfo) {
+        //Get the user from backend with the user id from auth
+        const userData = await API.graphql(graphqlOperation(getUser, { id: userInfo.attributes.sub }))
+        //if there is no user in the db with the id, then create one
+        if (userData.data.getUser) {
+          console.log('User is already registered in the database')
+        }
+        else {
+          const newUser = {
+            id: userInfo.attributes.sub,
+            name: userInfo.username,
+            imageUri: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png',
+            status: 'Hey there! I\'m using WhatsApp!'
+          }
+          await API.graphql(graphqlOperation(createUser, {input: newUser} ))
+        }
+      }
+    }
+    fetchUser()
+  }, [])
+*/
   useEffect(() => {
     loggedIn()
   }, [])
