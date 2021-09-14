@@ -1,0 +1,83 @@
+type User @model {  
+	id: ID!  
+	name: String!
+	location: Location
+	orders: [Product] 
+	ratings: [Rating] @connection(keyName: "byUser", fields: ["id"])
+	cart: Cart @connection(fields: ["id"]) 
+	accountType: String
+}
+
+type Location 
+@model {
+	id: ID!
+	apt: String
+	street: String
+	city: String
+	state: String
+	zipcode: Int
+}
+
+type Rating 
+@model 
+@key (name: "byUser" , fields: ["userID", "productID"])
+@key (name: "byProduct" , fields: ["productID", "userID"]) {
+	id: ID!
+	userID: ID!
+	productID: ID!
+	user: User @connection(fields: ["userID"])
+	product: Product @connection(fields: ["productID"])
+	rating: Float
+	description: String
+}
+
+type Product @model {
+	id: ID!
+	name: String
+	imageUrl: String
+	description: String
+	price: Float
+	category: Category
+	types: [Type] @connection(keyName: "byProduct", fields: ["id"])
+	ratings: [Rating] @connection(keyName: "byProduct", fields: ["id"])
+	deals: [String]
+	quantity: Int
+	cartProduct: [CartProduct] @connection(keyName: "byProduct", fields: ["id"])
+}
+
+type Type 
+@model 
+@key (name: "byProduct", fields: ["productID"]) {
+	id: ID!
+	productID: ID!
+	name: String
+	imageURL: String
+	price: Float
+	product: Product @connection(fields: ["productID"])
+}
+type Category @model {
+	id: ID!
+	name: String
+}
+
+type CartProduct
+@model
+@key (name: "byCart", fields: ["cartID", "productID"])
+@key (name: "byProduct", fields: ["productID", "cartID"]) {
+	id: ID!
+	cartID: ID!
+	productID: ID!
+	cart: Cart @connection(fields: ["cartID"])
+	product: Product @connection(fields: ["productID"])
+}
+
+type Cart 
+@model 
+@key (fields: ["userID"]) {
+	id: ID!
+	userID: ID!
+	cartProduct: [CartProduct] @connection(keyName: "byCart", fields: ["id"])
+	user: User @connection(fields: ["userID"])	
+}
+
+
