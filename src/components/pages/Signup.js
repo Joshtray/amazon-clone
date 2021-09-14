@@ -34,6 +34,7 @@ const Signup = () => {
         }
     }
     return (
+      <div>
         <div className="sign-up-page">
             <section className="home-dir">
               <span></span>
@@ -72,12 +73,21 @@ const Signup = () => {
                 </section>
             </section>)
         }
-
             <p>Already have an account?</p>
             <Link to='/login' className="sign-up">
                 <p>Sign in</p>
             </Link>
         </div>
+        <div className="login-footer"></div>
+        <div className="footer-documents">
+          <a>Conditions of Use</a>
+          <span></span>
+          <a>Privacy Notice</a>
+          <span></span>
+          <a>Help</a>
+        </div>
+        <p id="copyright">© 1996-2021, Amazon.com, Inc. or its affiliates</p>
+      </div>
     )
 }
 
