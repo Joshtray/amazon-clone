@@ -68,6 +68,9 @@
     box-shadow: 0px 0px 8px #f0c14b;
 }
 
+.login-page .login-form{
+  margin-bottom: 22px;
+}
 
 .login-page .login-form .form button {
     border-radius: 3px;
@@ -89,13 +92,43 @@
     box-shadow: 0px 0px 10px #f0c14b;
 }
 
+.login-page .line-through{
+  position: relative;
+  padding-top: 1px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.login-page .line-through::before{
+  content: "";
+  width: 380px;
+  background-color: transparent;
+  height: 1px;
+  border-top:1px solid #e7e7e7;
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+}
+
+.login-page .line-through p{
+  text-align: center;
+  position: relative;
+  padding-top: 1px;
+  margin-bottom: 14px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #767676;
+  background-color: #ffffff;
+  padding: 0px 8px 0px 7px;
+  line-height: 2px;
+}
+
 .login-page .sign-up button {
     border-radius: 3px;
     border-style: solid;
     border-color: grey;
     border-width: 1px;
     width: 380px;
-    border-radius: 3px;
     height: 30px;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -119,19 +152,44 @@
   background: linear-gradient(to bottom,rgba(0,0,0,.14),rgba(0,0,0,.03) 3px,transparent);
 }
 
-.footer-documents{
-  margin-bottom: -18px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
 .login-footer::after{
   display: block;
     width: 100%;
     height: 44px;
     background-color: transparent;
-    background: linear-gradient(to right,#fff,rgba(255,255,255,0),#fff);
+    background: linear-gradient(to right,#ffffff,rgba(255,255,255,0),#ffffff);
     z-index: 1;
     content: "";
+}
+
+.footer-documents{
+  margin-bottom: -18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.footer-documents a{
+  color: #0066c0;
+  font-size: 11px;
+}
+
+.footer-documents a:hover{
+  text-decoration: underline;
+  color: #c45500;
+  cursor: pointer;
+}
+
+.footer-documents span{
+  width: 20px;
+  font-size: 11px;
+}
+
+#copyright{
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.46;
+  color: #555555;
+
 }
