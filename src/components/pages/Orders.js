@@ -1,10 +1,13 @@
 import React from 'react'
 import './Orders.css'
+import Product from './Product'
+import Item from '../../data/Item'
 
 const Orders = () => {
     return (
         <div>
-            ORDERS
+            {Item.map((item) => (<Product product={item} />))}
+            
         </div>
     )
 }
