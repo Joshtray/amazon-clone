@@ -1,6 +1,6 @@
 {
     "identityPoolName": "amazoncloneee9e7a14_identitypool_ee9e7a14",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "amazonee9e7a14",
     "userPoolName": "amazoncloneee9e7a14_userpool_ee9e7a14",
     "autoVerifiedAttributes": [

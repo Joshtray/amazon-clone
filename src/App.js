@@ -13,6 +13,7 @@ import Signup from './components/pages/Signup';
 import { useEffect, useState } from 'react';
 import { getUser } from './graphql/queries';
 import { createCart, createUser } from './graphql/mutations';
+import AddProduct from './components/pages/AddProduct';
 
 
 Amplify.configure(awsconfig)
@@ -92,6 +93,7 @@ function App() {
           <Route path="/orders" exact component={Orders} />
           <Route path="/login" exact component={Login} />
           <Route path="/sign-up" exact component={Signup} />
+          <Route path="/add-product" exact component={AddProduct} />
         </Switch>
         {currentUser ? <button onClick={signOut} >SIGN OUT</button> : <Link to="/login"><button>SIGN IN</button></Link> }
       </Router>
