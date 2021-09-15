@@ -3,8 +3,10 @@ import './Item.css'
 
 const Item = () => {
     return (
-        <div>
-            ITEM
+        <div className="item">
+          <img></img>
+          <p></p>
+          
         </div>
     )
 }
