@@ -136,3 +136,20 @@
   line-height: 1.46;
   color: #555555;
 }
+
+.login-dir{
+  display: flex;
+  flex-direction: row;
+}
+
+.login-dir a{
+  margin-left: 5px;
+  color: #0066c0;
+  text-decoration: none;
+}
+
+.login-dir a:hover{
+  text-decoration: underline;
+  color: #c45500;
+  cursor: pointer;
+}

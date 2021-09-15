@@ -73,7 +73,7 @@ const Signup = () => {
                 </section>
             </section>)
         }
-        <div className="">
+        <div className="login-dir">
           <p>Already have an account?</p>
           <Link to='/login' className="sign-up">
               <p>Sign in</p>
