@@ -15,9 +15,9 @@ const Orders = () => {
         fetchItems()
     }, [])
     return (
-        <div>
-            {product.map((item) => (<Product product={item} />))} 
-        </div>
+        <ul className = "product_list">
+            {product.map((item) => (<Product product={item} />))}
+        </ul>
     )
 }
 

@@ -15,11 +15,13 @@ const Product = ({ product }) => {
     // await API.graphql(graphqlOperation(updateProduct, {input: {id: product.id, imageUrl: signedUrl}}))
     // console.log(signedUrl)
     return (
-        <div>
+        <li className ="product_block">
+            <a className="badges">Best Seller</a>
             <img src={product.imageUrl} />
             <p>{product.name}</p>
             <p>${product.price}</p>
-        </div>
+            <button>Add to Cart</button>
+        </li>
     )
 }
 
