@@ -38,6 +38,8 @@ type Product @model {
 	description: String
 	price: Float
 	category: Category
+	sellerID: ID!
+	seller: User @connection(fields: ["sellerID"])
 	types: [Type] @connection(keyName: "byProduct", fields: ["id"])
 	ratings: [Rating] @connection(keyName: "byProduct", fields: ["id"])
 	deals: [String]

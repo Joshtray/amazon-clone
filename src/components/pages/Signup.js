@@ -26,7 +26,7 @@ const Signup = () => {
         try {
             await Auth.confirmSignUp(username, code)
             await Auth.signIn(username, password)
-            history.push("/")
+            history.goBack()
         }
         catch (error) {
             console.log("error: ", error)

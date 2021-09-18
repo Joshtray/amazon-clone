@@ -12,7 +12,7 @@ const Login = () => {
     const handleSubmit = async () => {
         try {
             await Auth.signIn(username, password)
-            history.push("/")
+            history.goBack()
         }
         catch (error) {
             console.log("error: ", error)

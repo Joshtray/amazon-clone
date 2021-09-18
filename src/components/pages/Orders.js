@@ -4,12 +4,20 @@ import Product from './Product'
 import Item from '../../data/Item'
 import { API, graphqlOperation }from 'aws-amplify'
 import { listProducts } from '../../graphql/queries'
+import { useHistory } from 'react-router'
 
 const Orders = () => {
+    const history = useHistory()
     const [product, setProduct] = useState([])
     const fetchItems = async () => {
-        const itemList = await API.graphql(graphqlOperation(listProducts))
-        setProduct(itemList.data.listProducts.items)
+        try {
+            const itemList = await API.graphql(graphqlOperation(listProducts))
+            setProduct(itemList.data.listProducts.items)
+        }
+        catch (e) {
+            console.log(e)
+            history.push('/login')
+        }
     }
     useEffect(() => {
         fetchItems()

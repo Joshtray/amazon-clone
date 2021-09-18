@@ -4,13 +4,25 @@ import { Link } from 'react-router-dom'
 import Auth from "@aws-amplify/auth";
 import API from "@aws-amplify/api";
 import { getUser } from "../graphql/queries";
-import { graphqlOperation } from "aws-amplify";
+import { graphqlOperation, Hub } from "aws-amplify";
 
 export default function Header () {
   const [dropdown, setDropdown] = useState('1')
   const [dropdown_class, setDropdown_class] = useState('')
   const [userInfo, setUserInfo] = useState({username: "Sign In"})
   const [cart, setCart] = useState(0)
+
+  const loggedIn = async () => {
+    Hub.listen("auth", (event) => {
+      if (event.payload.event === "signOut") {
+        setUserInfo({username: "Sign In"})
+        setCart(0)
+      }
+      else if (event.payload.event === "signIn") {
+        getUserInfo()
+      }
+    })
+  }
 
   const getUserInfo = async () => {
     const userData = await Auth.currentAuthenticatedUser()
@@ -31,6 +43,7 @@ export default function Header () {
   }
   useEffect(() => {
     getUserInfo()
+    loggedIn()
   }, [])
   useEffect(() => {
     if (dropdown === "1") {

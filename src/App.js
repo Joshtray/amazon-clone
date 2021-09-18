@@ -85,7 +85,8 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {currentUser && <Header />}
+        {/* currentUser && <Header /> */}
+        <Header />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/cart" exact component={Cart} />
