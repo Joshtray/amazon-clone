@@ -1,4 +1,5 @@
 .product_block{
+  position: relative;
   width: 20%;
   box-sizing: border-box;
   padding: 5px;
@@ -17,19 +18,8 @@
   color: #ffffff;
   width: max-content;
   font-size: 13px;
-  padding: 6.5px 6px 6.5px 10px;
-}
-
-.product_block .badges::after{
-  content: " ";
-  position: absolute;
-  top: 0;
-  right: -7.8px;
-  width: 7.8px;
-  height: 26px;
-  border-right: 7.8px solid transparent;
-  border-top: 26px solid #E67A00;
-  box-sizing: border-box;
+  padding: 6.5px 14px 6.5px 10px;
+  background: linear-gradient(110deg, #E67A00 88%, #ffffff 20%);
 }
 
 .product_block img{
@@ -41,6 +31,7 @@ background-color: transparent;
 .product_block p{
   margin-top: 0px;
   margin-bottom: 0px;
+  text-transform: capitalize;
 }
 
 .product_block:hover img{
@@ -49,7 +40,6 @@ background-color: transparent;
 }
 
 .product_block button {
-    border-radius: 3px;
     border-style: solid;
     border-color: #a88734;
     border-width: 1px;

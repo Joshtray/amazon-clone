@@ -12,7 +12,7 @@ const AddProduct = () => {
     const [quantity, setQuantity] = useState(0)
     const [error, setError] = useState('')
     var imageFormat = ''
-    
+
 
     const onChange = (e) => {
         setImage(e.target.files[0])
@@ -38,10 +38,10 @@ const AddProduct = () => {
     }
 
     return (
-        <div style={{display: 'flex', flexDirection: 'column'}}>
+        <div className="addproduct">
             {error && <p>{error}</p>}
             <input placeholder="Product Name" onChange={(e) => (setName(e.target.value))} />
-            <input placeholder="Product Description" onChange={(e) => (setDescription(e.target.value))} />
+            <textarea placeholder="Product Description" onChange={(e) => (setDescription(e.target.value))} ></textarea>
             <input type='file' onChange={onChange} />
             <input type="number" placeholder="Price" onChange={(e) => (setPrice(e.target.value))} />
             <input type="number" placeholder="Quantity" onChange={(e) => (setQuantity(e.target.value))} />
