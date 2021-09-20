@@ -30,6 +30,10 @@
   width: inherit;
 }
 
+.cart_sec .product_list .product_block .content_block:hover .hide{
+  display: flex;
+}
+
 .cart_sec .product_list .product_block .img_block{
   max-width: 200px;
   height: 180px;
@@ -58,7 +62,7 @@
 }
 
 .cart_sec .product_block .hide{
-  display: flex;
+  display: none;
   align-items: center;
 }
 
