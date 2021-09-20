@@ -152,6 +152,10 @@ header .search-bar form #searchDropdownBox{
   font-size: 12px;
 }
 
+header .search-bar form #searchDropdownBox:focus-visible{
+  outline: 0px;
+}
+
 header .search-bar form #nav-search-submit-button{
   border-radius: 0px 4px 4px 0px;
   background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/gno/sprites/nav-sprite-global-2x-hm-dsk-reorg._CB405937547_.png);

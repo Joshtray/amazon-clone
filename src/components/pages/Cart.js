@@ -26,9 +26,17 @@ const Cart = () => {
         fetchCart()
     }, [])
     return (
-        <ul className = "product_list">
-            {cart.map((item) => (<Product product={item.product} />))}
-        </ul>
+      <div>
+        <div className="cart_sec">
+          <ul className = "product_list">
+              {cart.map((item) => (<Product product={item.product} />))}
+          </ul>
+        </div>
+        <div className="total_sec">
+
+        </div>
+      </div>
+
     )
 }
 
