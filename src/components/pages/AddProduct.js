@@ -4,7 +4,8 @@ import { Storage, API, graphqlOperation, Auth } from 'aws-amplify'
 import { findByLabelText } from '@testing-library/dom'
 import { createProduct, updateProduct } from '../../graphql/mutations'
 import { useHistory } from 'react-router'
-import { getUser } from '../../graphql/queries'
+import { getUser, listCategories} from '../../graphql/queries'
+import { createCategory } from '../../graphql/mutations'
 
 const AddProduct = () => {
     const [image, setImage] = useState()
@@ -15,14 +16,67 @@ const AddProduct = () => {
     const [error, setError] = useState('')
     const [user, setUser] = useState(null)
     const [page, setPage] = useState(<div></div>)
+    const [categories, setCategories] = useState([])
     const history = useHistory()
+    const [dropdown, setDropdown] = useState('')
+    const [newCat, setNewCat] = useState('')
     var imageFormat = ''
     
 
     const onChange = (e) => {
         setImage(e.target.files[0])
     }
+    const updateCat = (e) => {
+        setDropdown(e.target.value)
+    }
     
+    const getCategories = async () => {
+        const list = await API.graphql(graphqlOperation(listCategories))
+        setCategories(list.data.listCategories.items)
+        setPage( 
+            <div className="addproduct">
+                {error && <p>{error}</p>}
+                <input placeholder="Product Name" onChange={(e) => (setName(e.target.value))} />
+                <textarea placeholder="Product Description" onChange={(e) => (setDescription(e.target.value))} ></textarea>
+                <input type='file' onChange={onChange} />
+                <select defaultValue={dropdown} value={dropdown} style={{height: '70px'}} onChange={updateCat}>
+                    <option value="">Select a category...</option>
+                    {categories.map((category)=>(<option value={category.id}>{category.name}</option>))}
+                    <option value="new-cat">Create a new category</option>
+                </select>
+                {dropdown==="new-cat" && <div><input type="text" placeholder="Category name" onChange={(e) => (setNewCat(e.target.value))} />
+                <button onClick={createNewCategory}>Create Category</button></div>}
+                <input type="number" placeholder="Price" onChange={(e) => (setPrice(e.target.value))} />
+                <input type="number" placeholder="Quantity" onChange={(e) => (setQuantity(e.target.value))} />
+                <button onClick={onSubmit}>Create Product</button>
+            </div>
+        )
+    }
+
+    const createNewCategory = async () => {
+        const newCatInfo = await API.graphql(graphqlOperation(createCategory, {input: {name: newCat}}))
+        console.log(newCatInfo)
+        setDropdown(newCatInfo.data.createCategory.id)
+        setPage( 
+            <div className="addproduct">
+                {error && <p>{error}</p>}
+                <input placeholder="Product Name" onChange={(e) => (setName(e.target.value))} />
+                <textarea placeholder="Product Description" onChange={(e) => (setDescription(e.target.value))} ></textarea>
+                <input type='file' onChange={onChange} />
+                <select defaultValue={newCatInfo.data.createCategory.id} value={dropdown} style={{height: '70px'}} onChange={updateCat}>
+                    <option value="">Select a category...</option>
+                    {categories.map((category)=>(<option value={category.id}>{category.name}</option>))}
+                    <option value="new-cat">Create a new category</option>
+                </select>
+                {dropdown==="new-cat" && <div><input type="text" placeholder="Category name" onChange={(e) => (setNewCat(e.target.value))} />
+                <button onClick={createNewCategory}>Create Category</button></div>}
+                <input type="number" placeholder="Price" onChange={(e) => (setPrice(e.target.value))} />
+                <input type="number" placeholder="Quantity" onChange={(e) => (setQuantity(e.target.value))} />
+                <button onClick={onSubmit}>Create Product</button>
+            </div>
+        )
+    }
+
     const getUserInfo = async () => {
         try {
             const userInfo = await Auth.currentAuthenticatedUser();
@@ -39,6 +93,13 @@ const AddProduct = () => {
                         <input placeholder="Product Name" onChange={(e) => (setName(e.target.value))} />
                         <textarea placeholder="Product Description" onChange={(e) => (setDescription(e.target.value))} ></textarea>
                         <input type='file' onChange={onChange} />
+                        <select style={{height: '70px'}} onChange={updateCat}>
+                            <option value="">Select a category...</option>
+                            {categories.map((category)=>(<option value={category.id}>{category.name}</option>))}
+                            <option value="new-cat">Create a new category</option>
+                        </select>
+                        {dropdown==="new-cat" && <div><input type="text" placeholder="Category name" onChange={(e) => (setNewCat(e.target.value))} />
+                        <button onClick={createNewCategory}>Create Category</button></div>}
                         <input type="number" placeholder="Price" onChange={(e) => (setPrice(e.target.value))} />
                         <input type="number" placeholder="Quantity" onChange={(e) => (setQuantity(e.target.value))} />
                         <button onClick={onSubmit}>Create Product</button>
@@ -53,10 +114,17 @@ const AddProduct = () => {
         }
     useEffect(() => {
         getUserInfo()
+        getCategories()
     }, [])
+    useEffect(() => {
+        getCategories()
+    }, [categories])
     const onSubmit = async () => {
         if (!name) {
             setError('Product name required')
+        }
+        else if (!dropdown || dropdown==="new-cat") {
+            setError('Please select a category')
         }
         else if (!price) {
             setError('Product price required')
@@ -78,7 +146,8 @@ const AddProduct = () => {
                 description: description,
                 price: price,
                 quantity: quantity,
-                sellerID: user.data.getUser.id
+                sellerID: user.data.getUser.id, 
+                categoryID: dropdown
             }} ))
             const id = newProduct.data.createProduct.id
             const imageId = id + '.' + imageFormat

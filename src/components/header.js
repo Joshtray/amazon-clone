@@ -3,7 +3,7 @@ import './header.css';
 import { Link } from 'react-router-dom'
 import Auth from "@aws-amplify/auth";
 import API from "@aws-amplify/api";
-import { getUser } from "../graphql/queries";
+import { getUser, listCategories } from "../graphql/queries";
 import { graphqlOperation, Hub } from "aws-amplify";
 
 export default function Header () {
@@ -11,6 +11,7 @@ export default function Header () {
   const [dropdown_class, setDropdown_class] = useState('')
   const [userInfo, setUserInfo] = useState({username: "Sign In"})
   const [cart, setCart] = useState(0)
+  const [categories, setCategories] = useState([])
 
   const loggedIn = async () => {
     Hub.listen("auth", (event) => {
@@ -22,6 +23,11 @@ export default function Header () {
         getUserInfo()
       }
     })
+  }
+  const getCategories = async () => {
+    const list = await API.graphql(graphqlOperation(listCategories))
+    setCategories(list.data.listCategories.items)
+    console.log(list.data.listCategories.items)
   }
 
   const getUserInfo = async () => {
@@ -44,6 +50,7 @@ export default function Header () {
   useEffect(() => {
     getUserInfo()
     loggedIn()
+    getCategories()
   }, [])
   useEffect(() => {
     if (dropdown === "1") {
@@ -72,7 +79,9 @@ export default function Header () {
       <section className="search-bar">
         <form>
           <select defaultValue="1" id="searchDropdownBox" onChange={update} className={dropdown_class}>
-            <option value="1">All Departments</option>
+            <option value='1'>All Departments</option>
+            {categories.map((category)=>(<option value={category.id}>{category.name}</option>))}
+            {/* <option value="1">All Departments</option>
             <option value="search-alias=audible">Audible Books &amp; Originals</option>
             <option value="search-alias=alexa-skills">Alexa Skills</option>
             <option value="search-alias=amazon-devices">Amazon Devices</option>
@@ -131,6 +140,7 @@ export default function Header () {
             <option value="search-alias=vehicles">Vehicles</option>
             <option value="search-alias=videogames">Video Games</option>
             <option value="search-alias=wholefoods">Whole Foods Market</option>
+  */}
           </select>
           <input id = "search-type"/>
           <input id="nav-search-submit-button" type="submit" value="Go"/>

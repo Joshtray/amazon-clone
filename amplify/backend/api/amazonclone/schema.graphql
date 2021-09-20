@@ -37,7 +37,8 @@ type Product @model {
 	imageUrl: String
 	description: String
 	price: Float
-	category: Category
+	categoryID: ID!
+	category: Category @connection(fields: ["categoryID"])
 	sellerID: ID!
 	seller: User @connection(fields: ["sellerID"])
 	types: [Type] @connection(keyName: "byProduct", fields: ["id"])

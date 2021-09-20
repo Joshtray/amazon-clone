@@ -29,7 +29,7 @@ const Product = ({ product }) => {
     }, [])
     return (
         <li className ="product_block">
-            <a className="badges">Best Seller</a>
+            <a className="badges">{product.category.name}</a>
             <div className="img_block">
               <img src={product.imageUrl} />
             </div>
