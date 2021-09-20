@@ -21,7 +21,7 @@ const AddProduct = () => {
     const [dropdown, setDropdown] = useState('')
     const [newCat, setNewCat] = useState('')
     var imageFormat = ''
-    
+
 
     const onChange = (e) => {
         setImage(e.target.files[0])
@@ -29,17 +29,19 @@ const AddProduct = () => {
     const updateCat = (e) => {
         setDropdown(e.target.value)
     }
-    
+
     const getCategories = async () => {
         const list = await API.graphql(graphqlOperation(listCategories))
         setCategories(list.data.listCategories.items)
-        setPage( 
+        setPage(
             <div className="addproduct">
+              <section className="error-message" >
                 {error && <p>{error}</p>}
+              </section>
                 <input placeholder="Product Name" onChange={(e) => (setName(e.target.value))} />
                 <textarea placeholder="Product Description" onChange={(e) => (setDescription(e.target.value))} ></textarea>
                 <input type='file' onChange={onChange} />
-                <select defaultValue={dropdown} value={dropdown} style={{height: '70px'}} onChange={updateCat}>
+                <select defaultValue={dropdown} value={dropdown} onChange={updateCat}>
                     <option value="">Select a category...</option>
                     {categories.map((category)=>(<option value={category.id}>{category.name}</option>))}
                     <option value="new-cat">Create a new category</option>
@@ -57,13 +59,13 @@ const AddProduct = () => {
         const newCatInfo = await API.graphql(graphqlOperation(createCategory, {input: {name: newCat}}))
         console.log(newCatInfo)
         setDropdown(newCatInfo.data.createCategory.id)
-        setPage( 
+        setPage(
             <div className="addproduct">
                 {error && <p>{error}</p>}
                 <input placeholder="Product Name" onChange={(e) => (setName(e.target.value))} />
                 <textarea placeholder="Product Description" onChange={(e) => (setDescription(e.target.value))} ></textarea>
                 <input type='file' onChange={onChange} />
-                <select defaultValue={newCatInfo.data.createCategory.id} value={dropdown} style={{height: '70px'}} onChange={updateCat}>
+                <select defaultValue={newCatInfo.data.createCategory.id} value={dropdown} onChange={updateCat}>
                     <option value="">Select a category...</option>
                     {categories.map((category)=>(<option value={category.id}>{category.name}</option>))}
                     <option value="new-cat">Create a new category</option>
@@ -87,13 +89,13 @@ const AddProduct = () => {
                 history.push('/')
             }
             else {
-                setPage( 
+                setPage(
                     <div className="addproduct">
                         {error && <p>{error}</p>}
                         <input placeholder="Product Name" onChange={(e) => (setName(e.target.value))} />
                         <textarea placeholder="Product Description" onChange={(e) => (setDescription(e.target.value))} ></textarea>
                         <input type='file' onChange={onChange} />
-                        <select style={{height: '70px'}} onChange={updateCat}>
+                        <select onChange={updateCat}>
                             <option value="">Select a category...</option>
                             {categories.map((category)=>(<option value={category.id}>{category.name}</option>))}
                             <option value="new-cat">Create a new category</option>
@@ -146,7 +148,7 @@ const AddProduct = () => {
                 description: description,
                 price: price,
                 quantity: quantity,
-                sellerID: user.data.getUser.id, 
+                sellerID: user.data.getUser.id,
                 categoryID: dropdown
             }} ))
             const id = newProduct.data.createProduct.id
