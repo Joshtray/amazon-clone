@@ -225,10 +225,15 @@ header .account-details .account{
   flex-direction: column;
   justify-content: center;
   cursor: auto;
+  position: relative;
 }
 
 header .account-details .account:hover ul{
   opacity: 1;
+}
+
+header .account-details .account:hover .overlay{
+  display: block;
 }
 
 header .account-details .account:hover ul li{
@@ -250,6 +255,20 @@ header .account-details .account .span-flex span{
   border-color: transparent;
   border-top: 4px solid #a7acb2;
   border-style: solid;
+}
+
+header .account-details .account .overlay{
+  display: none;
+  padding: 0px;
+  margin: 0px;
+  height: calc(100vh - 60px);
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.458);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: 0.7s
 }
 
 header .account-details .account div{

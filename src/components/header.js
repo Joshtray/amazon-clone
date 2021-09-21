@@ -118,7 +118,13 @@ export default function Header () {
           <span className="maps"></span>
           <span className="drop-arrow"></span>
         </Link>
+<<<<<<< HEAD
         <a className="account">
+=======
+        <Link to="/account" className="account">
+          <div className="overlay">
+          </div>
+>>>>>>> d308f8a6a0e69e333b7c2d15d70d0b2612462bf9
           <div>
             <Link to="/account" className="account_link">
               <p>Hello, <span className = "caps">{userInfo.username}</span></p>
