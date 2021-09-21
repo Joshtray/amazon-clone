@@ -19,6 +19,7 @@ header a{
   border-width: 1px;
   border-radius: 2px;
   border-color: #0F1111;
+  transition: 1s;
 }
 header a:hover{
   border-color: #ffffff;
@@ -220,8 +221,18 @@ header .account-details .drop-arrow{
 }
 
 header .account-details .account{
+  display: grid;
   flex-direction: column;
   justify-content: center;
+  cursor: auto;
+}
+
+header .account-details .account:hover ul{
+  opacity: 1;
+}
+
+header .account-details .account:hover ul li{
+  display: list-item;
 }
 
 header .account-details .account .span-flex{
@@ -239,6 +250,44 @@ header .account-details .account .span-flex span{
   border-color: transparent;
   border-top: 4px solid #a7acb2;
   border-style: solid;
+}
+
+header .account-details .account div{
+  margin-top: 5px;
+  cursor: pointer;
+  padding-bottom: 20px;
+}
+
+header .account-details .account ul{
+  opacity: 0;
+  list-style: none;
+  background-color: #ffffff;
+  color: #555555;
+  z-index: 1;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 15px 15px 15px;
+  cursor: pointer;
+  transition: opacity 0.7s;
+}
+
+header .account-details .account ul li{
+  display: none;
+}
+
+header .account-details .account ul h4{
+  margin: 10px 0px 17px 0px;
+}
+
+header .account-details .account ul a{
+  border:0px;
+  padding: 0px 0px 15px 0px;
+  color: #555555;
+  transition: 0s;
+}
+
+header .account-details .account ul a:hover{
+  text-decoration: underline;
+  color: #df7f35;
 }
 
 header .account-details .returns{

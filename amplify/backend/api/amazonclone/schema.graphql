@@ -31,7 +31,8 @@ type Rating
 	description: String
 }
 
-type Product @model {
+type Product @model 
+@key (name: "byCategory", fields: ["categoryID"], queryField: "productByCategory") {
 	id: ID!
 	name: String
 	imageUrl: String
