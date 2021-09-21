@@ -269,6 +269,7 @@ header .account-details .account .overlay{
   left: 0;
   right: 0;
   transition: 0.7s;
+  z-index: 1;
 }
 
 header .account-details .account div a{
