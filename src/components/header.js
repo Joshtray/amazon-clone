@@ -8,6 +8,7 @@ import { graphqlOperation, Hub } from "aws-amplify";
 
 export default function Header () {
   const [dropdown, setDropdown] = useState('1')
+  const [currentUser, setCurrentUser] = useState(null)
   const [dropdown_class, setDropdown_class] = useState('')
   const [userInfo, setUserInfo] = useState({username: "Sign In"})
   const [cart, setCart] = useState(0)
@@ -22,9 +23,23 @@ export default function Header () {
       }
       else if (event.payload.event === "signIn") {
         getUserInfo()
+        console.log(event.payload.data)
+      }
+      else if (event.payload.event === "tokenRefresh") {
+        console.log(event.payload)
       }
     })
+    const userInfo = await Auth.currentAuthenticatedUser({ bypassCache: true })
+    if (userInfo) {
+      setCurrentUser(userInfo)
+    }
   }
+
+  const signOut = async () => {
+    await Auth.signOut()
+    setCurrentUser(null)
+  }
+
   const getCategories = async () => {
     const list = await API.graphql(graphqlOperation(listCategories))
     setCategories(list.data.listCategories.items)
@@ -37,6 +52,7 @@ export default function Header () {
     if (userData) {
       const usrData = await API.graphql(graphqlOperation(getUser, { id: userData.attributes.sub }))
       if (usrData.data.getUser) {
+        setCurrentUser(usrData.data.getUser)
         if (usrData.data.getUser.cart) {
           if (usrData.data.getUser.cart.cartProduct.items) {
             setCart(usrData.data.getUser.cart.cartProduct.items.length)
@@ -102,20 +118,22 @@ export default function Header () {
           <span className="maps"></span>
           <span className="drop-arrow"></span>
         </Link>
-        <Link to="/account" className="account">
+        <a className="account">
           <div>
-            <p>Hello, <span className = "caps">{userInfo.username}</span></p>
-            <span className="bold span-flex">Account &#38; Lists <span></span></span>
+            <Link to="/account" className="account_link">
+              <p>Hello, <span className = "caps">{userInfo.username}</span></p>
+              <span className="bold span-flex">Account &#38; Lists <span></span></span>
+            </Link>
           </div>
           <ul>
             <li>
               <h4>Your Account</h4>
-              <a>Account</a>
+              <Link to="/account">Account</Link>
               <a>Orders</a>
-              <a>Sign Out</a>
+              {currentUser ? <a onClick={signOut}>Sign Out</a> : <Link to="/login"><a>Sign In</a></Link> }
             </li>
           </ul>
-        </Link>
+        </a>
         <Link to="/orders" className="returns">
             <p>Returns <br/><span className="bold">&#38; Orders</span></p>
         </Link>

@@ -7,26 +7,7 @@ import { listProducts } from '../../graphql/queries'
 import { useHistory } from 'react-router'
 
 const Orders = () => {
-    const history = useHistory()
-    const [product, setProduct] = useState([])
-    const fetchItems = async () => {
-        try {
-            const itemList = await API.graphql(graphqlOperation(listProducts))
-            setProduct(itemList.data.listProducts.items)
-        }
-        catch (e) {
-            console.log(e)
-            history.push('/login')
-        }
-    }
-    useEffect(() => {
-        fetchItems()
-    }, [])
-    return (
-        <ul className = "product_list">
-            {product.map((item) => (<Product product={item} />))}
-        </ul>
-    )
+    return (<div></div>)
 }
 
 export default Orders

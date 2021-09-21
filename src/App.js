@@ -80,7 +80,6 @@ function App() {
           <Route path="/add-product" exact component={AddProduct} />
           {categories.map((category) => (<Route path={"/categories/" + category.name}><Category category={category} /></Route> ))}
         </Switch>
-        {currentUser ? <button onClick={signOut} >SIGN OUT</button> : <Link to="/login"><button>SIGN IN</button></Link> }
       </Router>
     </div>
   );
