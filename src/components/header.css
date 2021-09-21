@@ -268,7 +268,7 @@ header .account-details .account .overlay{
   bottom: 0;
   left: 0;
   right: 0;
-  transition: 0.7s
+  transition: 0.7s;
 }
 
 header .account-details .account div{
