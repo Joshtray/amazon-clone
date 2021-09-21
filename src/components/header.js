@@ -103,6 +103,8 @@ export default function Header () {
           <span className="drop-arrow"></span>
         </Link>
         <Link to="/account" className="account">
+          <div className="overlay">
+          </div>
           <div>
             <p>Hello, <span className = "caps">{userInfo.username}</span></p>
             <span className="bold span-flex">Account &#38; Lists <span></span></span>
