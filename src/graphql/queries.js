@@ -4482,6 +4482,354 @@ export const getCategory = /* GraphQL */ `
     }
   }
 `;
+export const productByCategory = /* GraphQL */ `
+  query ProductByCategory(
+    $categoryID: ID
+    $sortDirection: ModelSortDirection
+    $filter: ModelProductFilterInput
+    $limit: Int
+    $nextToken: String
+) {
+    productByCategory(
+      categoryID: $categoryID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      ) {
+      items {
+        id
+        name
+        imageUrl
+        description
+        price
+        category {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        types {
+          items {
+            id
+            productID
+            name
+            imageURL
+            price
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        ratings {
+          items {
+            id
+            userID
+            productID
+            user {
+              id
+              name
+              location {
+                id
+                apt
+                street
+                city
+                state
+                zipcode
+                createdAt
+                updatedAt
+              }
+              orders {
+                id
+                name
+                imageUrl
+                description
+                price
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            rating
+            description
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        deals
+        quantity
+        cartProduct {
+          items {
+            id
+            cartID
+            productID
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+
 export const listCategories = /* GraphQL */ `
   query ListCategories(
     $filter: ModelCategoryFilterInput

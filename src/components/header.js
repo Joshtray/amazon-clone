@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './header.css';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Auth from "@aws-amplify/auth";
 import API from "@aws-amplify/api";
 import { getUser, listCategories } from "../graphql/queries";
@@ -13,6 +13,7 @@ export default function Header () {
   const [cart, setCart] = useState(0)
   const [categories, setCategories] = useState([])
 
+  const history = useHistory()
   const loggedIn = async () => {
     Hub.listen("auth", (event) => {
       if (event.payload.event === "signOut") {
@@ -44,8 +45,18 @@ export default function Header () {
       }
     }
   }
-  const update = (event) => {
+  const update = async (event) => {
     setDropdown(event.target.value)
+    if (event.target.value === "1"){
+      history.push('/')
+    }
+    else {
+      for (let i = 0; i < categories.length; i++) {
+        if (categories[i].id === event.target.value) {
+          history.push('/categories/' + categories[i].name)
+        }
+      }
+    }
   }
   useEffect(() => {
     getUserInfo()

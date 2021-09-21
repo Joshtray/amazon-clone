@@ -11,15 +11,17 @@ import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react'
 import Login from './components/pages/Login';
 import Signup from './components/pages/Signup';
 import { useEffect, useState } from 'react';
-import { getUser } from './graphql/queries';
+import { getUser, listCategories } from './graphql/queries';
 import { createCart, createUser } from './graphql/mutations';
 import AddProduct from './components/pages/AddProduct';
+import Category from './components/pages/Category';
 
 
 Amplify.configure(awsconfig)
 
 function App() {
   const history = useHistory();
+  const [categories, setCategories] = useState([])
   const [currentUser, setCurrentUser] = useState(null)
   const loggedIn = async () => {
     Hub.listen("auth", (event) => {
@@ -48,34 +50,15 @@ function App() {
       setCurrentUser(null)
     }
   }
+  const getCategories = async () => {
+    const list = await API.graphql(graphqlOperation(listCategories))
+    setCategories(list.data.listCategories.items)
+    console.log(list.data.listCategories.items)
+  }
 
-  /* useEffect({
-    const fetchUser = async () => {
-      // Get authenticated user from auth
-      const userInfo = await Auth.currentAuthenticatedUser( { bypassCache: true })
-      if (userInfo) {
-        //Get the user from backend with the user id from auth
-        const userData = await API.graphql(graphqlOperation(getUser, { id: userInfo.attributes.sub }))
-        //if there is no user in the db with the id, then create one
-        if (userData.data.getUser) {
-          console.log('User is already registered in the database')
-        }
-        else {
-          const newUser = {
-            id: userInfo.attributes.sub,
-            name: userInfo.username,
-            imageUri: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png',
-            status: 'Hey there! I\'m using WhatsApp!'
-          }
-          await API.graphql(graphqlOperation(createUser, {input: newUser} ))
-        }
-      }
-    }
-    fetchUser()
-  }, [])
-*/
   useEffect(() => {
     loggedIn()
+    getCategories()
   }, [])
 
   const signOut = async () => {
@@ -95,6 +78,7 @@ function App() {
           <Route path="/login" exact component={Login} />
           <Route path="/sign-up" exact component={Signup} />
           <Route path="/add-product" exact component={AddProduct} />
+          {categories.map((category) => (<Route path={"/categories/" + category.name}><Category category={category} /></Route> ))}
         </Switch>
         {currentUser ? <button onClick={signOut} >SIGN OUT</button> : <Link to="/login"><button>SIGN IN</button></Link> }
       </Router>
