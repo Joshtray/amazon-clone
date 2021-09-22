@@ -279,7 +279,7 @@ header .account-details .account .overlay{
 }
 
 header .account-details .account .overlay:hover{
-  opacity: 0;
+  display: none;
 }
 
 header .account-details .account div a{
