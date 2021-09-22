@@ -1,6 +1,6 @@
 import Header from './components/header';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, useHistory, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, useHistory, Link, useLocation } from 'react-router-dom';
 import Home from './components/pages/Home';
 import Cart from './components/pages/Cart';
 import Account from './components/pages/Account';
@@ -69,6 +69,7 @@ function App() {
   useEffect(() => {
     loggedIn()
     getCategories()
+    console.log(location)
   }, [])
 
   const signOut = async () => {
@@ -78,8 +79,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {/* currentUser && <Header /> */}
-        <Header />
+        {location.pathname !== "/login" && <Header />}
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/cart" exact component={Cart} />

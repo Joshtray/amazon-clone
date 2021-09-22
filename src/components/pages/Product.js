@@ -17,16 +17,16 @@ const Product = (props) => {
         const userInfo = await Auth.currentAuthenticatedUser();
         const userData = await API.graphql(graphqlOperation(getUser, { id: userInfo.attributes.sub }))
         setUser(userData)
-        console.log(userData)
     }
     const delProduct = async () => {
       await API.graphql(graphqlOperation(deleteCartProduct, {input: {id: cartProduct.id}}))
+      history.go(0)
     }
 
     const onClick = async () => {
         const newCartProduct = await API.graphql(graphqlOperation(createCartProduct, {input: {cartID: user.data.getUser.cart.id, productID: product.id}}))
-        console.log(newCartProduct)
         history.push('/cart')
+        history.go(0)
     }
     useEffect(() => {
         fetchImage()

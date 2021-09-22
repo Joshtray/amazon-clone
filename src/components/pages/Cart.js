@@ -11,11 +11,6 @@ const Cart = () => {
 
     const [cart, setCart] = useState([])
     const fetchCart = async () => {
-        Hub.listen("auth", (event) => {
-            if (event.payload.event === "signOut") {
-              history.push("/login")
-            }
-        })
         try {
             const userData = await Auth.currentAuthenticatedUser()
             if (userData) {
@@ -26,6 +21,7 @@ const Cart = () => {
         catch (e) {
             console.log(e)
             history.push('/login')
+            history.go(0)
         }
     }
     useEffect(() => {

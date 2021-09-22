@@ -16,6 +16,9 @@ export default function Header () {
 
   const history = useHistory()
   const loggedIn = async () => {
+    Hub.listen("api", (event) => {
+      console.log(event)
+    })
     Hub.listen("auth", (event) => {
       if (event.payload.event === "signOut") {
         setUserInfo({username: "Sign In"})
@@ -42,6 +45,7 @@ export default function Header () {
 
   const signOut = async () => {
     await Auth.signOut()
+    history.go(0)
     setCurrentUser(null)
   }
 
@@ -76,6 +80,11 @@ export default function Header () {
       console.log(e)
     }
   }
+  const signInLink = () => {
+    history.push('/login')
+    history.go(0)
+  }
+
   const update = async (event) => {
     setDropdown(event.target.value)
     if (event.target.value === "1"){
@@ -147,7 +156,7 @@ export default function Header () {
               <h4>Your Account</h4>
               <Link to="/account">Account</Link>
               <a>Orders</a>
-              {currentUser ? <a onClick={signOut}>Sign Out</a> : <Link to="/login">Sign In</Link> }
+              {currentUser ? <a onClick={signOut}>Sign Out</a> : <a onClick={signInLink}>Sign In</a> }
             </li>
           </ul>
         </a>

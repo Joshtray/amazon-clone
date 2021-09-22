@@ -25,6 +25,7 @@ const Login = () => {
         try {
             await Auth.signIn(username, password)
             history.goBack()
+            history.go(0)
         }
         catch (error) {
             console.log("error: ", error)
