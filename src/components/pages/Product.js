@@ -1,7 +1,7 @@
 import { Storage, API, graphqlOperation, Auth } from 'aws-amplify'
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
-import { createCartProduct, deleteCartProduct, updateProduct } from '../../graphql/mutations'
+import { createCartProduct, deleteCartProduct, updateCartProduct, updateProduct } from '../../graphql/mutations'
 import { getUser } from '../../graphql/queries'
 import './Product.css'
 
@@ -9,6 +9,11 @@ const Product = (props) => {
   const { product, cartProduct } = props
     const [user, setUser] = useState(null)
     const history = useHistory()
+    const updateQuantity = async (event) => {
+      console.log(event.target.value)
+      console.log(cartProduct)
+      await API.graphql(graphqlOperation(updateCartProduct, {input: {id: cartProduct.id, quantity: event.target.value}}))
+    }
     const fetchImage = async () => {
         const signedUrl = await Storage.get(product.id + '.jpeg')
         await API.graphql(graphqlOperation(updateProduct, {input: {id: product.id, imageUrl: signedUrl}}))
@@ -24,7 +29,7 @@ const Product = (props) => {
     }
 
     const onClick = async () => {
-        const newCartProduct = await API.graphql(graphqlOperation(createCartProduct, {input: {cartID: user.data.getUser.cart.id, productID: product.id}}))
+        const newCartProduct = await API.graphql(graphqlOperation(createCartProduct, {input: {cartID: user.data.getUser.cart.id, productID: product.id, quantity: 1}}))
         history.push('/cart')
         history.go(0)
     }
@@ -43,7 +48,7 @@ const Product = (props) => {
               <p className="price">${product.price}</p>
               <button onClick={onClick}>Add to Cart</button>
               <div className = "hide">
-                <select defaultValue="1" id="searchDropdownBox" className="dropdown_class">
+                <select defaultValue={cartProduct ? cartProduct.quantity : "0"} id="searchDropdownBox" className="dropdown_class" onChange={updateQuantity}>
                   <option value="1">Qty: 1</option>
                   <option value="2">Qty: 2</option>
                   <option value="3">Qty: 3</option>

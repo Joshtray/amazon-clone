@@ -73,6 +73,7 @@ type CartProduct
 	productID: ID!
 	cart: Cart @connection(fields: ["cartID"])
 	product: Product @connection(fields: ["productID"])
+	quantity: Int
 }
 
 type Cart 

@@ -6018,6 +6018,7 @@ export const getCart = /* GraphQL */ `
           id
           cartID
           productID
+          quantity
           cart {
             id
             userID
