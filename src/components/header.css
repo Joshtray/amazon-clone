@@ -226,6 +226,11 @@ header .account-details .account{
   justify-content: center;
   cursor: auto;
   position: relative;
+  max-width: max-content;
+}
+
+header .account-details .account:hover{
+  max-width: fit-content;
 }
 
 header .account-details .account:hover ul{
@@ -243,6 +248,7 @@ header .account-details .account:hover ul li{
 header .account-details .account .span-flex{
   display: flex;
   flex-direction: row;
+  min-width: max-content;
 }
 
 header .account-details .account .span-flex span{
@@ -320,6 +326,7 @@ header .account-details .account ul a:hover{
 
 header .account-details .returns{
   align-items: center;
+  min-width: max-content;
 }
 
 header .account-details .account p, header .account-details .returns p {

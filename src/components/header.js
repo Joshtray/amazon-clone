@@ -40,7 +40,7 @@ export default function Header () {
         const userData = await API.graphql(graphqlOperation(getUser, {id: usrInfo.attributes.sub}))
         console.log(userData.data.getUser)
         if (userData.data.getUser) {
-          setCurrentUser(userData.data.getUser) 
+          setCurrentUser(userData.data.getUser)
         }
       }
     }
@@ -89,7 +89,7 @@ export default function Header () {
     history.push('/login')
     history.go(0)
   }
-  
+
   const upgradeAccount = async () => {
     await API.graphql(graphqlOperation(updateUser, {input: {id: userInfo.attributes.sub, accountType: "Seller" }}))
     history.go(0)
