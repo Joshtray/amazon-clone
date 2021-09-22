@@ -1,4 +1,4 @@
-import { Auth, API, graphqlOperation } from 'aws-amplify'
+import { Auth, API, graphqlOperation, Hub } from 'aws-amplify'
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
 import { getCart } from '../../graphql/queries'
@@ -8,8 +8,14 @@ import Product from './Product'
 
 const Cart = () => {
     const history = useHistory()
+
     const [cart, setCart] = useState([])
     const fetchCart = async () => {
+        Hub.listen("auth", (event) => {
+            if (event.payload.event === "signOut") {
+              history.push("/login")
+            }
+        })
         try {
             const userData = await Auth.currentAuthenticatedUser()
             if (userData) {
@@ -29,7 +35,7 @@ const Cart = () => {
       <div>
         <div className="cart_sec">
           <ul className = "product_list">
-              {cart.map((item) => (<Product product={item.product} />))}
+              {cart.map((item) => (<Product product={item.product} cartProduct={item} />))}
           </ul>
         </div>
         <div className="total_sec">

@@ -29,9 +29,14 @@ export default function Header () {
         console.log(event.payload)
       }
     })
-    const userInfo = await Auth.currentAuthenticatedUser({ bypassCache: true })
-    if (userInfo) {
-      setCurrentUser(userInfo)
+    try {
+      const userInfo = await Auth.currentAuthenticatedUser({ bypassCache: true })
+      if (userInfo) {
+        setCurrentUser(userInfo)
+      }
+    }
+    catch (e) {
+      console.log(e)
     }
   }
 
@@ -41,24 +46,34 @@ export default function Header () {
   }
 
   const getCategories = async () => {
-    const list = await API.graphql(graphqlOperation(listCategories))
-    setCategories(list.data.listCategories.items)
-    console.log(list.data.listCategories.items)
+    try {
+      const list = await API.graphql(graphqlOperation(listCategories))
+      setCategories(list.data.listCategories.items)
+      console.log(list.data.listCategories.items)
+    }
+    catch (e) {
+      console.log(e)
+    }
   }
 
   const getUserInfo = async () => {
-    const userData = await Auth.currentAuthenticatedUser()
-    setUserInfo(userData)
-    if (userData) {
-      const usrData = await API.graphql(graphqlOperation(getUser, { id: userData.attributes.sub }))
-      if (usrData.data.getUser) {
-        setCurrentUser(usrData.data.getUser)
-        if (usrData.data.getUser.cart) {
-          if (usrData.data.getUser.cart.cartProduct.items) {
-            setCart(usrData.data.getUser.cart.cartProduct.items.length)
+    try {
+      const userData = await Auth.currentAuthenticatedUser()
+      setUserInfo(userData)
+      if (userData) {
+        const usrData = await API.graphql(graphqlOperation(getUser, { id: userData.attributes.sub }))
+        if (usrData.data.getUser) {
+          setCurrentUser(usrData.data.getUser)
+          if (usrData.data.getUser.cart) {
+            if (usrData.data.getUser.cart.cartProduct.items) {
+              setCart(usrData.data.getUser.cart.cartProduct.items.length)
+            }
           }
         }
       }
+    }
+    catch (e) {
+      console.log(e)
     }
   }
   const update = async (event) => {

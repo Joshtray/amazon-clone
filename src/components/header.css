@@ -232,7 +232,7 @@ header .account-details .account:hover ul{
   opacity: 1;
 }
 
-header .account-details .account:hover .overlay{
+header .account-details .account:hover > .overlay{
   display: block;
 }
 

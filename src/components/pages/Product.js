@@ -1,11 +1,12 @@
 import { Storage, API, graphqlOperation, Auth } from 'aws-amplify'
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
-import { createCartProduct, updateProduct } from '../../graphql/mutations'
+import { createCartProduct, deleteCartProduct, updateProduct } from '../../graphql/mutations'
 import { getUser } from '../../graphql/queries'
 import './Product.css'
 
-const Product = ({ product }) => {
+const Product = (props) => {
+  const { product, cartProduct } = props
     const [user, setUser] = useState(null)
     const history = useHistory()
     const fetchImage = async () => {
@@ -18,6 +19,10 @@ const Product = ({ product }) => {
         setUser(userData)
         console.log(userData)
     }
+    const delProduct = async () => {
+      await API.graphql(graphqlOperation(deleteCartProduct, {input: {id: cartProduct.id}}))
+    }
+
     const onClick = async () => {
         const newCartProduct = await API.graphql(graphqlOperation(createCartProduct, {input: {cartID: user.data.getUser.cart.id, productID: product.id}}))
         console.log(newCartProduct)
@@ -51,7 +56,7 @@ const Product = ({ product }) => {
                   <option value="10">Qty: 10+</option>
                 </select>
                 <i></i>
-                <a>Delete</a>
+                <a onClick={delProduct}>Delete</a>
                 <i></i>
                 <a>Save for later</a>
                 <i></i>

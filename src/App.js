@@ -29,31 +29,41 @@ function App() {
         setCurrentUser(event.payload.data)
       }
     })
-    const userInfo = await Auth.currentAuthenticatedUser({ bypassCache: true })
-    if (userInfo) {
-      setCurrentUser(userInfo)
-      const userData = await API.graphql(graphqlOperation(getUser, { id: userInfo.attributes.sub }))
-        //if there is no user in the db with the id, then create one
-      if (userData.data.getUser) {
+    try {
+      const userInfo = await Auth.currentAuthenticatedUser({ bypassCache: true })
+      if (userInfo) {
+        setCurrentUser(userInfo)
+        const userData = await API.graphql(graphqlOperation(getUser, { id: userInfo.attributes.sub }))
+          //if there is no user in the db with the id, then create one
+        if (userData.data.getUser) {
+        }
+        else {
+          const newUser = {
+            id: userInfo.attributes.sub,
+            name: userInfo.username,
+            accountType: 'Basic'
+          }
+          await API.graphql(graphqlOperation(createUser, {input: newUser} ))
+          await API.graphql(graphqlOperation(createCart, {input: {userID: userInfo.attributes.sub}}))
+        }
       }
       else {
-        const newUser = {
-          id: userInfo.attributes.sub,
-          name: userInfo.username,
-          accountType: 'Basic'
-        }
-        await API.graphql(graphqlOperation(createUser, {input: newUser} ))
-        await API.graphql(graphqlOperation(createCart, {input: {userID: userInfo.attributes.sub}}))
+        setCurrentUser(null)
       }
     }
-    else {
-      setCurrentUser(null)
+    catch (e) {
+      console.log(e)
     }
   }
   const getCategories = async () => {
-    const list = await API.graphql(graphqlOperation(listCategories))
-    setCategories(list.data.listCategories.items)
-    console.log(list.data.listCategories.items)
+    try {
+      const list = await API.graphql(graphqlOperation(listCategories))
+      setCategories(list.data.listCategories.items)
+      console.log(list.data.listCategories.items)
+    }
+    catch (e) {
+      console.log(e)
+    }
   }
 
   useEffect(() => {

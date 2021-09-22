@@ -1,5 +1,5 @@
 import Auth from '@aws-amplify/auth';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import './Signup.css'
 
@@ -11,6 +11,21 @@ const Signup = () => {
     const [code, setCode] = useState("")
     const [password, setPassword] = useState("")
     const [stage, setStage] = useState('sign-up')
+
+    const getUserInfo = async () => {
+        try {
+          await Auth.currentAuthenticatedUser();
+          history.push('/')
+        }
+        catch (e) {
+          console.log(e)
+        }
+    }
+    
+    useEffect(() => {
+        getUserInfo()
+    }, [])
+    
     const handleClick = async () => {
         try {
             console.log('Submitted!')
