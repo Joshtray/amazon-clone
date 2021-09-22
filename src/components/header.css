@@ -278,6 +278,10 @@ header .account-details .account .overlay{
   z-index: 1;
 }
 
+header .account-details .account .overlay:hover{
+  opacity: 0;
+}
+
 header .account-details .account div a{
   padding: 0px;
   margin: 0px;
