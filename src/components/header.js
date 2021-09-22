@@ -173,6 +173,7 @@ export default function Header () {
               <h4>Your Account</h4>
               <Link to="/account">Account</Link>
               <Link to="/orders">Orders</Link>
+              {currentUser && (currentUser.accountType !== "Basic" && <Link to="/add-product">Add a Product</Link>)}
               {currentUser && (currentUser.accountType === "Basic" ? <a onClick={upgradeAccount}>Upgrade to Seller account</a> : <a onClick={downgradeAccount}>Downgrade to Basic account</a>)
               }
               {currentUser ? <a onClick={signOut}>Sign Out</a> : <a onClick={signInLink}>Sign In</a> }
