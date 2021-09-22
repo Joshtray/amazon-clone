@@ -4,6 +4,7 @@ import { Link, useHistory } from 'react-router-dom'
 import Auth from "@aws-amplify/auth";
 import API from "@aws-amplify/api";
 import { getUser, listCategories } from "../graphql/queries";
+import { updateUser } from "../graphql/mutations"
 import { graphqlOperation, Hub } from "aws-amplify";
 
 export default function Header () {
@@ -33,9 +34,14 @@ export default function Header () {
       }
     })
     try {
-      const userInfo = await Auth.currentAuthenticatedUser({ bypassCache: true })
-      if (userInfo) {
-        setCurrentUser(userInfo)
+      const usrInfo = await Auth.currentAuthenticatedUser({ bypassCache: true })
+      if (usrInfo) {
+        // setCurrentUser(userInfo)
+        const userData = await API.graphql(graphqlOperation(getUser, {id: usrInfo.attributes.sub}))
+        console.log(userData.data.getUser)
+        if (userData.data.getUser) {
+          setCurrentUser(userData.data.getUser) 
+        }
       }
     }
     catch (e) {
@@ -67,7 +73,6 @@ export default function Header () {
       if (userData) {
         const usrData = await API.graphql(graphqlOperation(getUser, { id: userData.attributes.sub }))
         if (usrData.data.getUser) {
-          setCurrentUser(usrData.data.getUser)
           if (usrData.data.getUser.cart) {
             if (usrData.data.getUser.cart.cartProduct.items) {
               setCart(usrData.data.getUser.cart.cartProduct.items.length)
@@ -84,6 +89,16 @@ export default function Header () {
     history.push('/login')
     history.go(0)
   }
+  
+  const upgradeAccount = async () => {
+    await API.graphql(graphqlOperation(updateUser, {input: {id: userInfo.attributes.sub, accountType: "Seller" }}))
+    history.go(0)
+  }
+
+  const downgradeAccount = async () => {
+    await API.graphql(graphqlOperation(updateUser, {input: {id: userInfo.attributes.sub, accountType: "Basic" }}))
+    history.go(0)
+  }
 
   const update = async (event) => {
     setDropdown(event.target.value)
@@ -98,10 +113,12 @@ export default function Header () {
       }
     }
   }
+
   useEffect(() => {
     getUserInfo()
     loggedIn()
     getCategories()
+    console.log(currentUser)
   }, [])
   useEffect(() => {
     if (dropdown === "1") {
@@ -155,7 +172,9 @@ export default function Header () {
             <li>
               <h4>Your Account</h4>
               <Link to="/account">Account</Link>
-              <a>Orders</a>
+              <Link to="/orders">Orders</Link>
+              {currentUser && (currentUser.accountType === "Basic" ? <a onClick={upgradeAccount}>Upgrade to Seller account</a> : <a onClick={downgradeAccount}>Downgrade to Basic account</a>)
+              }
               {currentUser ? <a onClick={signOut}>Sign Out</a> : <a onClick={signInLink}>Sign In</a> }
             </li>
           </ul>
