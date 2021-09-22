@@ -147,7 +147,7 @@ export default function Header () {
               <h4>Your Account</h4>
               <Link to="/account">Account</Link>
               <a>Orders</a>
-              {currentUser ? <a onClick={signOut}>Sign Out</a> : <Link to="/login"><a>Sign In</a></Link> }
+              {currentUser ? <a onClick={signOut}>Sign Out</a> : <Link to="/login">Sign In</Link> }
             </li>
           </ul>
         </a>
