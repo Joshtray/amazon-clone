@@ -4,6 +4,7 @@ import { useHistory } from 'react-router'
 import { createCartProduct, deleteCartProduct, updateCartProduct, updateProduct } from '../../graphql/mutations'
 import { getUser } from '../../graphql/queries'
 import './Product.css'
+import styled from 'styled-components'
 
 const Product = (props) => {
   const { product, cartProduct } = props
@@ -38,7 +39,7 @@ const Product = (props) => {
         getUserInfo()
     }, [])
     return (
-        <li className ="product_block">
+        <Product_block className ="product_block">
             <a className="badges">{product.category.name}</a>
             <div className="img_block">
               <img src={product.imageUrl} />
@@ -71,8 +72,12 @@ const Product = (props) => {
             <div className="price_sec">
               <p>${product.price}</p>
             </div>
-        </li>
+        </Product_block>
     )
 }
 
 export default Product
+
+const Product_block = styled.div`
+  position: relative;
+`
