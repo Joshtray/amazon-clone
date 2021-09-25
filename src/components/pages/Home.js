@@ -5,6 +5,7 @@ import Item from '../../data/Item'
 import { API, graphqlOperation }from 'aws-amplify'
 import { listProducts } from '../../graphql/queries'
 import { useHistory } from 'react-router'
+import styled from 'styled-components'
 
 const Home = () => {
     const history = useHistory()
@@ -23,10 +24,14 @@ const Home = () => {
         fetchItems()
     }, [])
     return (
-        <ul className = "product_list">
+        <Product_list className = "product_list">
             {product.map((item) => (<Product product={item} />))}
-        </ul>
+        </Product_list>
     )
 }
 
 export default Home
+
+const Product_list = styled.div`
+  display: grid;
+`

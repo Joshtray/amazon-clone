@@ -5,6 +5,7 @@ import { useHistory } from 'react-router'
 import { API, graphqlOperation } from 'aws-amplify'
 import Product from './Product'
 import { useLocation } from 'react-router-dom'
+import styled from 'styled-components'
 
 const Category = ({ category }) => {
     const history = useHistory()
@@ -28,11 +29,16 @@ const Category = ({ category }) => {
         <h1>
          Category: {category.name}
         </h1>
-        <ul className = "product_list">
+        <Product_list className = "product_list">
             {product.map((item) => (<Product product={item} />))}
-        </ul>
+        </Product_list>
       </div>
     )
 }
 
 export default Category
+
+
+const Product_list = styled.div`
+  display: grid;
+`

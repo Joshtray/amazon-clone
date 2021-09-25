@@ -1,9 +1,9 @@
 .product_list{
-  list-style: none;
-  display: grid;
   grid-gap: 25px;
   grid-template-columns: repeat(5, minmax(0,1fr));
   width: 100%;
   box-sizing: border-box;
-  padding-left: 0px;
+  margin: 20px 20px 0px 15px;
+  margin-left: 15px;
+  margin-top: 20px;
 }
