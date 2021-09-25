@@ -1,6 +1,7 @@
 .cart_sec{
   background-color: #EAEDED;
-  margin-top: 30px;
+  margin-top: 20px;
+  flex: 1;
 }
 
 .cart_sec .product_list{
@@ -9,6 +10,7 @@
   margin: 0px;
   height: 100%;
   display: flex;
+  padding-top: 10px;
 }
 
 .cart_sec .product_list .product_block{
@@ -107,4 +109,5 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  padding-right: 10px;
 }
