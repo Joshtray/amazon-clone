@@ -31,6 +31,7 @@
   box-sizing: border-box;
   margin-left: 5px;
   width: inherit;
+  padding-top: 10px;
 }
 
 .cart_sec .product_list .product_block .content_block:hover .hide{
