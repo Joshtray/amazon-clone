@@ -1,11 +1,14 @@
 .cart_sec{
   background-color: #EAEDED;
+  margin-top: 30px;
 }
 
 .cart_sec .product_list{
   background-color: #ffffff;
   flex-direction: column;
   margin: 0px;
+  height: 100%;
+  display: flex;
 }
 
 .cart_sec .product_list .product_block{
@@ -24,7 +27,7 @@
 }
 
 .cart_sec .product_list .product_block .content_block{
-  height: 180px;
+  height: 100%;
   box-sizing: border-box;
   margin-left: 5px;
   width: inherit;
@@ -36,21 +39,16 @@
 
 .cart_sec .product_list .product_block .img_block{
   max-width: 200px;
-  height: 180px;
+  height: 100%;
   box-sizing: border-box;
   margin-left: 5px;
+  overflow: hidden;
 }
-
-.cart_sec .product_list .product_block:hover img{
-  max-height: 180px;
-  max-width: 180px;
-}
-
-
 
 .cart_sec .product_list .product_block .img_block img{
-  max-width: 180px;
-  max-height: 180px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .cart_sec .product_block .price{
@@ -107,5 +105,5 @@
 .cart_sec .product_list .product_block .price_sec{
   display: flex;
   flex-direction: column;
-  height: 180px;
+  height: 100%;
 }
