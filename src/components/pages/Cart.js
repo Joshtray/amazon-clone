@@ -10,7 +10,7 @@ import {Link} from 'react-router-dom'
 
 const Cart = () => {
     const history = useHistory()
-
+    var cartSum = 0
     const [cart, setCart] = useState([])
     const fetchCart = async () => {
         try {
@@ -29,6 +29,10 @@ const Cart = () => {
     useEffect(() => {
         fetchCart()
     }, [])
+
+    for (let i=0; i<cart.length; i++) {
+      cartSum = cartSum + (cart[i].product.price)*(cart[i].quantity)
+    }
     return (
       <Cartcontainer>
         <div className="cart_sec">
@@ -37,7 +41,7 @@ const Cart = () => {
           </ul>
         </div>
         <Total_sec>
-          <p>Subtotal ({cart.length} items): $123000</p>
+          <p>Subtotal ({cart.length} items): ${cartSum}</p>
           <Link to='/'>Proceed to checkout</Link>
         </Total_sec>
       </Cartcontainer>
