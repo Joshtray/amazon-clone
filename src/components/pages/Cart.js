@@ -37,7 +37,7 @@ const Cart = () => {
           </ul>
         </div>
         <Total_sec>
-          <p>Subtotal (2 items): $123000</p>
+          <p>Subtotal ({cart.length} items): ${cart.product.price.plus}</p>
           <Link to='/'>Proceed to checkout</Link>
         </Total_sec>
       </Cartcontainer>
