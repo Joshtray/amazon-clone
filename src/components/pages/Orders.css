@@ -5,4 +5,5 @@
   grid-template-columns: repeat(5, minmax(0,1fr));
   width: 100%;
   box-sizing: border-box;
+  padding-left: 0px;
 }
