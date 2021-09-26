@@ -25,6 +25,9 @@ const Product = (props) => {
         const userData = await API.graphql(graphqlOperation(getUser, { id: userInfo.attributes.sub }))
         setUser(userData)
     }
+    const goToItem = async () => {
+      history.push('/item/' + product.id)
+    }
     const delProduct = async () => {
       await API.graphql(graphqlOperation(deleteCartProduct, {input: {id: cartProduct.id}}))
       history.go(0)
@@ -42,7 +45,7 @@ const Product = (props) => {
     return (
         <Product_block className ="product_block">
             <a className="badges">{product.category.name}</a>
-            <div className="img_block">
+            <div className="img_block"  onClick={goToItem}>
               <img src={product.imageUrl} />
             </div>
             <div className="content_block">
