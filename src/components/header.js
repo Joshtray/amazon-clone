@@ -18,9 +18,6 @@ export default function Header () {
 
   const history = useHistory()
   const loggedIn = async () => {
-    Hub.listen("api", (event) => {
-      console.log(event)
-    })
     Hub.listen("auth", (event) => {
       if (event.payload.event === "signOut") {
         setUserInfo({username: "Sign In"})
@@ -28,10 +25,8 @@ export default function Header () {
       }
       else if (event.payload.event === "signIn") {
         getUserInfo()
-        console.log(event.payload.data)
       }
       else if (event.payload.event === "tokenRefresh") {
-        console.log(event.payload)
       }
     })
     try {

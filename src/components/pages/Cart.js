@@ -33,20 +33,14 @@ const Cart = () => {
             history.go(0)
         }
     }
-    const cartSumCalc = () => {
-      
-    }
-
     useEffect(() => {
         fetchCart()
-        // cartSumCalc()
     }, [])
 
     useEffect(() => {
       const subscription = API.graphql(graphqlOperation(onDeleteCartProduct)).subscribe({
           next: async (data) => {
               fetchCart()
-              // cartSumCalc()
           }
       })
       return () => subscription.unsubscribe()
@@ -56,7 +50,6 @@ const Cart = () => {
       const subscription = API.graphql(graphqlOperation(onUpdateCartProduct)).subscribe({
           next: async (data) => {
               fetchCart()
-              // cartSumCalc()
           }
       })
       return () => subscription.unsubscribe()
@@ -70,7 +63,7 @@ const Cart = () => {
           </ul>
         </div>
         <Total_sec>
-          <p>Subtotal ({cart.length} items): ${cartSum}</p>
+          <p>Subtotal ({cart.length} item{cart.length > 1 && 's'}): ${cartSum}</p>
           <Link to='/'>Proceed to checkout</Link>
         </Total_sec>
       </Cartcontainer>
