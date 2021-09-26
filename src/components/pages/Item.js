@@ -3,10 +3,13 @@ import './Item.css'
 import styled from 'styled-components'
 import Product from './Product'
 
-const Item = () => {
+const Item = ({ product }) => {
     return (
         <Productd>
-          <p>Hey it's tom</p>
+          <p>{product.id}</p>
+          <p>{product.name}</p>
+          <p>{product.description}</p>
+          <p>{product.price}</p>
         </Productd>
     )
 }

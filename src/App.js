@@ -11,7 +11,7 @@ import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react'
 import Login from './components/pages/Login';
 import Signup from './components/pages/Signup';
 import { useEffect, useState } from 'react';
-import { getUser, listCategories } from './graphql/queries';
+import { getUser, listCategories, listProducts } from './graphql/queries';
 import { createCart, createUser } from './graphql/mutations';
 import AddProduct from './components/pages/AddProduct';
 import Category from './components/pages/Category';
@@ -25,6 +25,17 @@ function App() {
   const history = useHistory();
   const [categories, setCategories] = useState([])
   const [currentUser, setCurrentUser] = useState(null)
+  const [product, setProduct] = useState([])
+  const fetchItems = async () => {
+      try {
+          const itemList = await API.graphql(graphqlOperation(listProducts))
+          setProduct(itemList.data.listProducts.items)
+      }
+      catch (e) {
+          console.log(e)
+          // history.push('/login')
+      }
+  }
   const loggedIn = async () => {
     Hub.listen("auth", (event) => {
       if (event.payload.event === "signIn" || event.payload.event === "tokenRefresh") {
@@ -61,7 +72,6 @@ function App() {
     try {
       const list = await API.graphql(graphqlOperation(listCategories))
       setCategories(list.data.listCategories.items)
-      console.log(list.data.listCategories.items)
     }
     catch (e) {
       console.log(e)
@@ -71,7 +81,7 @@ function App() {
   useEffect(() => {
     loggedIn()
     getCategories()
-    console.log(location)
+    fetchItems()
   }, [])
 
   const signOut = async () => {
@@ -90,8 +100,8 @@ function App() {
           <Route path="/login" exact component={Login} />
           <Route path="/sign-up" exact component={Signup} />
           <Route path="/add-product" exact component={AddProduct} />
-          <Route path="/item" exact component={Item} />
           {categories.map((category) => (<Route path={"/categories/" + category.name}><Category category={category} /></Route> ))}
+          {product.map((item) => (<Route path={"/item/" + item.id}><Item product={item} /></Route>))}
           <Route path='*' exact component={NotFound} />
         </Switch>
       </Router>

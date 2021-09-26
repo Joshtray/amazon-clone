@@ -22,6 +22,7 @@
 
 .product_block .img_block{
   overflow: hidden;
+  cursor: pointer;
 }
 
 .product_block img{

@@ -11,10 +11,7 @@ const Product = (props) => {
     const [user, setUser] = useState(null)
     const history = useHistory()
     const updateQuantity = async (event) => {
-      console.log(event.target.value)
-      console.log(cartProduct)
       await API.graphql(graphqlOperation(updateCartProduct, {input: {id: cartProduct.id, quantity: event.target.value}}))
-      history.go(0)
     }
     const fetchImage = async () => {
         const signedUrl = await Storage.get(product.id + '.jpeg')
@@ -25,15 +22,16 @@ const Product = (props) => {
         const userData = await API.graphql(graphqlOperation(getUser, { id: userInfo.attributes.sub }))
         setUser(userData)
     }
+    const goToItem = async () => {
+      history.push('/item/' + product.id)
+    }
     const delProduct = async () => {
       await API.graphql(graphqlOperation(deleteCartProduct, {input: {id: cartProduct.id}}))
-      history.go(0)
     }
 
     const onClick = async () => {
         const newCartProduct = await API.graphql(graphqlOperation(createCartProduct, {input: {cartID: user.data.getUser.cart.id, productID: product.id, quantity: 1}}))
         history.push('/cart')
-        history.go(0)
     }
     useEffect(() => {
         fetchImage()
@@ -42,7 +40,7 @@ const Product = (props) => {
     return (
         <Product_block className ="product_block">
             <a className="badges">{product.category.name}</a>
-            <div className="img_block">
+            <div className="img_block"  onClick={goToItem}>
               <img src={product.imageUrl} />
             </div>
             <div className="content_block">
