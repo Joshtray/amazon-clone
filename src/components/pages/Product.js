@@ -11,10 +11,7 @@ const Product = (props) => {
     const [user, setUser] = useState(null)
     const history = useHistory()
     const updateQuantity = async (event) => {
-      console.log(event.target.value)
-      console.log(cartProduct)
       await API.graphql(graphqlOperation(updateCartProduct, {input: {id: cartProduct.id, quantity: event.target.value}}))
-      history.go(0)
     }
     const fetchImage = async () => {
         const signedUrl = await Storage.get(product.id + '.jpeg')
@@ -30,13 +27,11 @@ const Product = (props) => {
     }
     const delProduct = async () => {
       await API.graphql(graphqlOperation(deleteCartProduct, {input: {id: cartProduct.id}}))
-      history.go(0)
     }
 
     const onClick = async () => {
         const newCartProduct = await API.graphql(graphqlOperation(createCartProduct, {input: {cartID: user.data.getUser.cart.id, productID: product.id, quantity: 1}}))
         history.push('/cart')
-        history.go(0)
     }
     useEffect(() => {
         fetchImage()

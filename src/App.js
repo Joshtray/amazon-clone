@@ -72,7 +72,6 @@ function App() {
     try {
       const list = await API.graphql(graphqlOperation(listCategories))
       setCategories(list.data.listCategories.items)
-      console.log(list.data.listCategories.items)
     }
     catch (e) {
       console.log(e)

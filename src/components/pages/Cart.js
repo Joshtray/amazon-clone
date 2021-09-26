@@ -7,10 +7,11 @@ import Item from './Item.js'
 import Product from './Product'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
+import { onDeleteCartProduct, onUpdateCartProduct } from '../../graphql/subscriptions'
 
 const Cart = () => {
     const history = useHistory()
-    var cartSum = 0
+    const [cartSum, setCartSum] = useState(0)
     const [cart, setCart] = useState([])
     const fetchCart = async () => {
         try {
@@ -18,6 +19,12 @@ const Cart = () => {
             if (userData) {
                 const cartList = await API.graphql(graphqlOperation(getCart, {userID: userData.attributes.sub}))
                 setCart(cartList.data.getCart.cartProduct.items)
+                var cartItems = cartList.data.getCart.cartProduct.items
+                var sum = 0
+                for (let i=0; i<cartItems.length; i++) {
+                  sum = sum + (cartItems[i].product.price)*(cartItems[i].quantity)
+                }
+                setCartSum(sum)
             }
         }
         catch (e) {
@@ -26,13 +33,35 @@ const Cart = () => {
             history.go(0)
         }
     }
+    const cartSumCalc = () => {
+      
+    }
+
     useEffect(() => {
         fetchCart()
+        // cartSumCalc()
     }, [])
 
-    for (let i=0; i<cart.length; i++) {
-      cartSum = cartSum + (cart[i].product.price)*(cart[i].quantity)
-    }
+    useEffect(() => {
+      const subscription = API.graphql(graphqlOperation(onDeleteCartProduct)).subscribe({
+          next: async (data) => {
+              fetchCart()
+              // cartSumCalc()
+          }
+      })
+      return () => subscription.unsubscribe()
+    }, [])
+
+    useEffect(() => {
+      const subscription = API.graphql(graphqlOperation(onUpdateCartProduct)).subscribe({
+          next: async (data) => {
+              fetchCart()
+              // cartSumCalc()
+          }
+      })
+      return () => subscription.unsubscribe()
+    }, [])
+
     return (
       <Cartcontainer>
         <div className="cart_sec">

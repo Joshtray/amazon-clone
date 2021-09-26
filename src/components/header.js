@@ -5,6 +5,7 @@ import Auth from "@aws-amplify/auth";
 import API from "@aws-amplify/api";
 import { getUser, listCategories } from "../graphql/queries";
 import { updateUser } from "../graphql/mutations"
+import { onCreateCartProduct, onDeleteCartProduct, onUpdateUser } from "../graphql/subscriptions"
 import { graphqlOperation, Hub } from "aws-amplify";
 
 export default function Header () {
@@ -38,7 +39,6 @@ export default function Header () {
       if (usrInfo) {
         // setCurrentUser(userInfo)
         const userData = await API.graphql(graphqlOperation(getUser, {id: usrInfo.attributes.sub}))
-        console.log(userData.data.getUser)
         if (userData.data.getUser) {
           setCurrentUser(userData.data.getUser)
         }
@@ -59,7 +59,6 @@ export default function Header () {
     try {
       const list = await API.graphql(graphqlOperation(listCategories))
       setCategories(list.data.listCategories.items)
-      console.log(list.data.listCategories.items)
     }
     catch (e) {
       console.log(e)
@@ -115,10 +114,36 @@ export default function Header () {
   }
 
   useEffect(() => {
+    const subscription = API.graphql(graphqlOperation(onCreateCartProduct)).subscribe({
+        next: async (data) => {
+            getUserInfo()
+        }
+    })
+    return () => subscription.unsubscribe()
+}, [])
+
+  useEffect(() => {
+    const subscription = API.graphql(graphqlOperation(onDeleteCartProduct)).subscribe({
+        next: async (data) => {
+            getUserInfo()
+        }
+    })
+    return () => subscription.unsubscribe()
+  }, [])
+
+  useEffect(() => {
+    const subscription = API.graphql(graphqlOperation(onUpdateUser)).subscribe({
+        next: async (data) => {
+            getUserInfo()
+        }
+    })
+    return () => subscription.unsubscribe()
+  }, [])
+
+  useEffect(() => {
     getUserInfo()
     loggedIn()
     getCategories()
-    console.log(currentUser)
   }, [])
   useEffect(() => {
     if (dropdown === "1") {
