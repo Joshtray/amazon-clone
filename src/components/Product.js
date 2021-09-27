@@ -1,8 +1,8 @@
 import { Storage, API, graphqlOperation, Auth } from 'aws-amplify'
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
-import { createCartProduct, deleteCartProduct, updateCartProduct, updateProduct } from '../../graphql/mutations'
-import { getUser } from '../../graphql/queries'
+import { createCartProduct, deleteCartProduct, updateCartProduct, updateProduct } from '../graphql/mutations'
+import { getUser } from '../graphql/queries'
 import './Product.css'
 import styled from 'styled-components'
 

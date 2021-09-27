@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Home.css'
-import Product from './Product'
+import Product from '../Product'
 import Item from '../../data/Item'
 import { API, graphqlOperation }from 'aws-amplify'
 import { listProducts } from '../../graphql/queries'
@@ -25,7 +25,7 @@ const Home = () => {
     }, [])
     return (
         <Product_list className = "product_list">
-            {product.map((item) => (<Product product={item} />))}
+            {product.map((item) => (<Product key={item.id} product={item} />))}
         </Product_list>
     )
 }

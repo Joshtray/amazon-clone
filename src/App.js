@@ -17,6 +17,7 @@ import AddProduct from './components/pages/AddProduct';
 import Category from './components/pages/Category';
 import NotFound from './components/pages/NotFound';
 import Item from './components/pages/Item';
+import Checkout from './components/pages/Checkout';
 
 
 Amplify.configure(awsconfig)
@@ -100,8 +101,9 @@ function App() {
           <Route path="/login" exact component={Login} />
           <Route path="/sign-up" exact component={Signup} />
           <Route path="/add-product" exact component={AddProduct} />
-          {categories.map((category) => (<Route path={"/categories/" + category.name}><Category category={category} /></Route> ))}
-          {product.map((item) => (<Route path={"/item/" + item.id}><Item product={item} /></Route>))}
+          {categories.map((category) => (<Route key={category.id} path={"/categories/" + category.name}><Category category={category} /></Route> ))}
+          {product.map((item) => (<Route key={item.id} path={"/item/" + item.id}><Item product={item} /></Route>))}
+          <Route path='/checkout' exact component={Checkout} />
           <Route path='*' exact component={NotFound} />
         </Switch>
       </Router>

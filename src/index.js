@@ -2,10 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 
+
+const stripePromise = loadStripe("pk_test_51JeGHzGKYva4OAEfCVMVQ3IP0pEO9qn4UYdeP1oKygfBi0TzelJvdN7rX7DuM0ENBPaCMx0TSfzJievsK7WlOcVx00VawlxdBO");
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Elements stripe={stripePromise}>
+      <App />
+    </Elements>
   </React.StrictMode>,
   document.getElementById('root')
 );

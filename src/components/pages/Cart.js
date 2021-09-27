@@ -4,7 +4,7 @@ import { useHistory } from 'react-router'
 import { getCart } from '../../graphql/queries'
 import './Cart.css'
 import Item from './Item.js'
-import Product from './Product'
+import Product from '../Product'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 import { onDeleteCartProduct, onUpdateCartProduct } from '../../graphql/subscriptions'
@@ -14,24 +14,24 @@ const Cart = () => {
     const [cartSum, setCartSum] = useState(0)
     const [cart, setCart] = useState([])
     const fetchCart = async () => {
-        try {
-            const userData = await Auth.currentAuthenticatedUser()
-            if (userData) {
-                const cartList = await API.graphql(graphqlOperation(getCart, {userID: userData.attributes.sub}))
-                setCart(cartList.data.getCart.cartProduct.items)
-                var cartItems = cartList.data.getCart.cartProduct.items
-                var sum = 0
-                for (let i=0; i<cartItems.length; i++) {
-                  sum = sum + (cartItems[i].product.price)*(cartItems[i].quantity)
-                }
-                setCartSum(sum)
-            }
-        }
-        catch (e) {
-            console.log(e)
-            history.push('/login')
-            history.go(0)
-        }
+      try {
+          const userData = await Auth.currentAuthenticatedUser()
+          if (userData) {
+              const cartList = await API.graphql(graphqlOperation(getCart, {userID: userData.attributes.sub}))
+              setCart(cartList.data.getCart.cartProduct.items)
+              var cartItems = cartList.data.getCart.cartProduct.items
+              var sum = 0
+              for (let i=0; i<cartItems.length; i++) {
+                sum = sum + (cartItems[i].product.price)*(cartItems[i].quantity)
+              }
+              setCartSum(sum)
+          }
+      }
+      catch (e) {
+          console.log(e)
+          history.push('/login')
+          history.go(0)
+      }
     }
     useEffect(() => {
         fetchCart()
@@ -59,12 +59,12 @@ const Cart = () => {
       <Cartcontainer>
         <div className="cart_sec">
           <ul className = "product_list">
-              {cart.map((item) => (<Product product={item.product} cartProduct={item} />))}
+              {cart.map((item) => (<Product key={item.id} product={item.product} cartProduct={item} />))}
           </ul>
         </div>
         <Total_sec>
           <p>Subtotal ({cart.length} item{cart.length > 1 && 's'}): ${cartSum}</p>
-          <Link to='/'>Proceed to checkout</Link>
+          <Link to='/checkout'>Proceed to checkout</Link>
         </Total_sec>
       </Cartcontainer>
 

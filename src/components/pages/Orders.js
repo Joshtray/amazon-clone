@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Orders.css'
-import Product from './Product'
+import Product from '../Product'
 import Item from '../../data/Item'
 import { Auth, API, graphqlOperation, Hub }from 'aws-amplify'
 import { getCart, listProducts } from '../../graphql/queries'

@@ -3,7 +3,7 @@ import './Category.css'
 import { listProducts, productByCategory } from '../../graphql/queries'
 import { useHistory } from 'react-router'
 import { API, graphqlOperation } from 'aws-amplify'
-import Product from './Product'
+import Product from '../Product'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 

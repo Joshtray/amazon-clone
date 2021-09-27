@@ -166,9 +166,11 @@ export default function Header () {
       </section>
       <section className="search-bar">
         <form>
+          <div className="overlay">
+          </div>
           <select defaultValue="1" id="searchDropdownBox" onChange={update} className={dropdown_class}>
             <option value='1'>All Departments</option>
-            {categories.map((category)=>(<option value={category.id}>{category.name}</option>))}
+            {categories.map((category)=>(<option key={category.id} value={category.id}>{category.name}</option>))}
           </select>
           <input id = "search-type"/>
           <input id="nav-search-submit-button" type="submit" value="Go"/>
@@ -179,7 +181,7 @@ export default function Header () {
           <span className="maps"></span>
           <span className="drop-arrow"></span>
         </Link>
-        <a className = "account">
+        <div className = "account">
           <div className="overlay">
           </div>
           <div>
@@ -199,7 +201,7 @@ export default function Header () {
               {currentUser ? <a onClick={signOut}>Sign Out</a> : <a onClick={signInLink}>Sign In</a> }
             </li>
           </ul>
-        </a>
+        </div>
         <Link to="/orders" className="returns">
             <p>Returns <br/><span className="bold">&#38; Orders</span></p>
         </Link>

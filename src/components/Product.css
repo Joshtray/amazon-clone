@@ -1,0 +1,66 @@
+.product_block{
+  box-sizing: border-box;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.product_block:hover img{
+  transform: scale(1.05);
+}
+
+.product_block .badges{
+  color: #ffffff;
+  width: max-content;
+  font-size: 13px;
+  padding: 6.5px 14px 6.5px 10px;
+  background: linear-gradient(110deg, #E67A00 88%, #ffffff 20%);
+}
+
+.product_block .img_block{
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.product_block img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product_block p{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-transform: capitalize;
+}
+
+.product_block button {
+    border-style: solid;
+    border-color: #a88734;
+    border-width: 1px;
+    background: linear-gradient(white, 10%, #f0c14b);
+    width: 95%;
+    border-radius: 3px;
+    height: 30px;
+    margin: 15px auto 15px auto;
+}
+
+.product_block button:hover {
+    filter: saturate(140%);
+    filter: brightness(96%);
+}
+
+.product_block button:active {
+    box-shadow: 0px 0px 10px #f0c14b;
+}
+
+.product_block .hide, .product_block .price_sec{
+  display: none;
+}
+
+.product_block .hide a{
+  cursor: pointer;
+}
