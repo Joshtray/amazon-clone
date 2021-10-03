@@ -109,12 +109,12 @@ const Checkout = () => {
 
   return (
     <section>
-      <p>{error}</p>
-      <form onSubmit={handleSubmit}>
+    {error && <p>{error}</p>}
+      <form class="margin-top" onSubmit={handleSubmit}>
         <CardSection />
         <button disabled={!stripe}>Confirm order</button>
       </form>
     </section>
   );
 }
-export default Checkout 
+export default Checkout
