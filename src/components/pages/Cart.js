@@ -78,6 +78,7 @@ const Cartcontainer = styled.div`
   flex-direction: row;
   background-color: #eaeded;
   min-height: calc(100vh - 60px);
+  padding-left: 20px;
 `
 
 const Total_sec = styled.div`
