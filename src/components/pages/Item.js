@@ -12,8 +12,8 @@ const Item = ({ product }) => {
          <Details>
            <p>{product.name}</p>
            <p>{product.category.name}</p>
-           <p>{product.description}</p>
-           <p>{product.price}</p>
+           <p>{product.description? product.description: "You're in for a suprise! ;)"}</p>
+           <p>${product.price}</p>
            <p>{product.quantity}</p>
          </Details>
         </Productd>
