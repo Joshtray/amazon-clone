@@ -45,7 +45,7 @@ const Checkout = () => {
       orders.push(cart[i])
       console.log(orders)
     }
-    await API.graphql(graphqlOperation(updateUser, {input: {id: userInfo.id, orders: orders}}))
+    // await API.graphql(graphqlOperation(updateUser, {input: {id: userInfo.id, orders: orders}}))
   }
   const handleSubmit = async (event) => {
     // We don't want to let default form submission happen here,
