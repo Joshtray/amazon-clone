@@ -258,7 +258,7 @@ const Directionform = styled.div`
   left: calc(50vw - 175px);
   right: calc(50vw - 175px);
   z-index: 4;
-  padding: 10px;
+  padding: 20px 15px 10px 15px;
   background-color: #ffffff;
   input{
     font-size: 14px;
