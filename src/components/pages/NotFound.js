@@ -5,7 +5,8 @@ import styled from 'styled-components'
 const NotFound = () => {
     return (
         <Wrap>
-            <h1>404 Not Found</h1>
+            <h1>Sorry</h1>
+            <p>We couldn't find that page<br/>Try searching or go to <span>Amazon's home page</span></p>
             <Cutehold>
               <img src="https://www.pixelstalk.net/wp-content/uploads/2016/03/Cute-animal-wallpapers-hd-desktop.jpg" alt="Missed cute picture" />
             </Cutehold>
@@ -18,12 +19,13 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  height: calc(100vh - 110px);
-  width: calc(100vh - 160px);
+  height: calc(450px - 110px);
+  width: calc(450px - 160px);
   h1{
     margin: 0px;
     font-size: 25px;
+    color: #717171;
+    font-weight: 500;
   }
 
 `
