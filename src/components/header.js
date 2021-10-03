@@ -7,6 +7,7 @@ import { getUser, listCategories } from "../graphql/queries";
 import { updateUser } from "../graphql/mutations"
 import { onCreateCartProduct, onDeleteCartProduct, onUpdateUser } from "../graphql/subscriptions"
 import { graphqlOperation, Hub } from "aws-amplify";
+import styled from 'styled-components'
 
 export default function Header () {
   const [dropdown, setDropdown] = useState('1')
@@ -155,13 +156,22 @@ export default function Header () {
           <span></span>
         </Link>
         <Link to="/" className="direction">
-          <span></span>
-          <div>
-            <p>Deliver to <span className="caps">{userInfo.username}</span></p> {/*Deliver to [user.name] capitalize first word*/}
-            <span className="adress">
-              <p>San Francisco, CA, </p><span>94102</span>{/* Location: [State] [Zip Code]*/}
-            </span>
-          </div>
+          <div className="overlay"></div>
+          <Headertext>
+            <div>
+              <p>Deliver to <span className="caps">{userInfo.username}</span></p> {/*Deliver to [user.name] capitalize first word*/}
+              <span className="adress">
+                <p>San Francisco, CA, </p><span>94102</span>{/* Location: [State] [Zip Code]*/}
+              </span>
+            </div>
+          </Headertext>
+          <Directionform className="show">
+            <input placeholder="Street" />
+            <input placeholder="City" />
+            <input placeholder="State" />
+            <input placeholder="Zip Code" />
+            <textarea placeholder="Apt, Room No. , etc" ></textarea>
+          </Directionform>
         </Link>
       </section>
       <section className="search-bar">
@@ -215,3 +225,77 @@ export default function Header () {
     </header>
     )
 }
+
+const Headertext = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 5px 8px 0px 0px;
+  margin: auto 1px auto 1px;
+  color: #CCCCCC;
+  :before {
+    content:"";
+    margin-top: 8px;
+    background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/gno/sprites/nav-sprite-global-2x-hm-dsk-reorg._CB405937547_.png);
+    background-repeat: repeat-x;
+    color: #d6d6d6;
+    background-size: 350px;
+    background-position: -71px -378px;
+    width: 15px;
+    height: 18px;
+    cursor: pointer;
+    outline: -1px;
+    padding-right: 3px;
+  }
+`
+const Directionform = styled.div`
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  width: 350px;
+  top: 150px;
+  bottom: auto;
+  left: calc(50vw - 175px);
+  right: calc(50vw - 175px);
+  z-index: 4;
+  padding: 10px;
+  background-color: #ffffff;
+  input{
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid transparent;
+    border-color: #dbdbdb;
+    border-radius: 3px;
+    line-height: 1.5;
+    color: #363636;
+    box-shadow: inset 0 1px 2px rgb(10 10 10 / 10%);
+    margin-bottom: 20px;
+  }
+  input:focus-visible{
+    outline: 0px;
+  }
+  input:focus{
+    border-color: #f0c14b;
+  }
+  textarea{
+    font-size: 14px;
+    max-height: 600px;
+    min-height: 120px;
+    width: 95%;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-color: #dbdbdb;
+    border-radius: 3px;
+    line-height: 1.5;
+    color: #363636;
+    box-shadow: inset 0 1px 2px rgb(10 10 10 / 10%);
+    margin-bottom: 20px;
+  }
+  textarea:focus{
+    border-color: #f0c14b;
+  }
+  textarea:focus-visible{
+    outline: 0px;
+  }
+`

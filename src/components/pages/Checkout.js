@@ -72,6 +72,7 @@ const Checkout = () => {
     if (backendError) {
       console.log(backendError.message)
       setError(backendError.message)
+      alert(backendError.message)
       return
     }
     console.log('Payment Intent Created')
@@ -88,6 +89,7 @@ const Checkout = () => {
       // Show error to your customer (e.g., insufficient funds)
       console.log(result.error.message);
       setError(result.error.message)
+      alert(result.error.message)
     } else {
       // The payment has been processed!
       if (result.paymentIntent.status === 'succeeded') {
@@ -109,10 +111,10 @@ const Checkout = () => {
 
   return (
     <section>
-    {error && <p>{error}</p>}
       <form class="margin-top" onSubmit={handleSubmit}>
+        {/* {error && <p className="error-message">{error}</p>} */}
         <CardSection />
-        <button disabled={!stripe}>Confirm order</button>
+        <button class="button-des" disabled={!stripe}>Confirm order</button>
       </form>
     </section>
   );
