@@ -110,7 +110,7 @@ const Checkout = () => {
   return (
     <section>
     {error && <p>{error}</p>}
-      <form class="margin-top" onSubmit={handleSubmit}>
+      <form className="margin-top" onSubmit={handleSubmit}>
         <CardSection />
         <button disabled={!stripe}>Confirm order</button>
       </form>

@@ -1,7 +1,7 @@
 type User @model {  
 	id: ID!  
 	name: String!
-	location: Location
+	location: Location @connection(fields: ["id"])
 	orders: [Product] 
 	ratings: [Rating] @connection(keyName: "byUser", fields: ["id"])
 	cart: Cart @connection(fields: ["id"]) 
@@ -9,13 +9,16 @@ type User @model {
 }
 
 type Location 
-@model {
+@model
+@key (name: "byUserLocation", fields: ["userID"]) {
 	id: ID!
+	userID: ID!
 	apt: String
 	street: String
 	city: String
 	state: String
-	zipcode: Int
+	zipcode: Int!
+	user: User @connection(fields: ["userID"])
 }
 
 type Rating 
