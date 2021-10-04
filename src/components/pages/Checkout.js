@@ -45,7 +45,7 @@ const Checkout = () => {
       orders.push(cart[i])
       console.log(orders)
     }
-    await API.graphql(graphqlOperation(updateUser, {input: {id: userInfo.id, orders: orders}}))
+    // await API.graphql(graphqlOperation(updateUser, {input: {id: userInfo.id, orders: orders}}))
   }
   const handleSubmit = async (event) => {
     // We don't want to let default form submission happen here,
@@ -111,10 +111,10 @@ const Checkout = () => {
 
   return (
     <section>
-      <form class="margin-top" onSubmit={handleSubmit}>
+      <form className="margin-top" onSubmit={handleSubmit}>
         {/* {error && <p className="error-message">{error}</p>} */}
         <CardSection />
-        <button class="button-des" disabled={!stripe}>Confirm order</button>
+        <button className="button-des" disabled={!stripe}>Confirm order</button>
       </form>
     </section>
   );

@@ -18,7 +18,6 @@ const getCartTotal = cart => {
 
 app.post('/checkout', async (req, res) => {
   const { items } = req.body
-  console.log(items)
   const paymentIntent = await stripe.paymentIntents.create({
     amount: getCartTotal(items),
     currency: 'usd',
@@ -27,7 +26,6 @@ app.post('/checkout', async (req, res) => {
   })
    // ... Fetch or create the PaymentIntent
   res.json({ client_secret: paymentIntent.client_secret });
-  console.log(paymentIntent.client_secret)
 });
 
 app.get('/', (req, res) => {
@@ -37,7 +35,6 @@ app.get('/', (req, res) => {
 
 app.get('/config', async (req, res) => {
   res.json({publishableKey: process.env.STRIPE_PUBLISHABLE_KEY})
-  console.log(process.env.STRIPE_PUBLISHABLE_KEY)
 })
 
 app.listen(port, () => {
