@@ -4,6 +4,7 @@ import { useHistory } from 'react-router'
 import { createLocation, updateUser } from '../../graphql/mutations'
 import { getUser } from '../../graphql/queries'
 import './Account.css'
+import styled from 'styled-components'
 
 const Account = () => {
     const history = useHistory()
@@ -62,7 +63,7 @@ const Account = () => {
                 setError(e.message)
                 console.log(e)
             }
-            
+
         }
         else {
             setError('Passwords do not match!')
@@ -113,45 +114,141 @@ const Account = () => {
         fetchData()
     }, [])
     return (
-        <div>
+        <div className = "accountp">
             <section>
                 {error && <p>{error}</p>}
             </section>
-            <p>Username: {name}</p>
-            <p>Email: {email}</p><button onClick={() => (setChangeEmail(true))}>Change Email</button>
-                {changeEmail && 
-                    <section>
-                        {!confirmEmail && <section>
-                            <input value={email} onChange={(e) => (setEmail(e.target.value))} />
-                            <button onClick={newEmail}>Change Email</button>
-                            </section>}
-                        {confirmEmail && <section>
-                            <input placeholder="Enter the confirmation code sent to the new email address" onChange={(e) => (setEmailConfirm(e.target.value))} />
-                            <button onClick={checkEmail}>Confirm email</button>
-                        </section>}
-                    </section>
-                }
-                <p>Pasword: ********</p><button onClick={() => (setChangePassword(true))}>Change Password</button>
-                {changePassword && 
-                <section>
+            <section>
+              <p>Hey, {name} ;)</p>
+              <Top1>
+                <p>Email: {email}</p>
+                <button onClick={() => (setChangeEmail(true))}>{changeEmail?"v":">"}</button>
+              </Top1>
+              <Hide1>
+                {changeEmail && <section>
+                  {!confirmEmail && <section>
+                    <input value={email} onChange={(e) => (setEmail(e.target.value))} />
+                    <button onClick={newEmail}>Change Email</button>
+                    </section>}
+                  {confirmEmail && <section>
+                    <input placeholder="Enter the confirmation code sent to the new email address" onChange={(e) => (setEmailConfirm(e.target.value))} />
+                    <button onClick={checkEmail}>Confirm email</button>
+                  </section>}
+                </section>}
+              </Hide1>
+              <Top2>
+                <p>Pasword: ********</p>
+                <button onClick={() => (setChangePassword(true))}>{changePassword?"v":">"}</button>
+              </Top2>
+              <Hide2>
+                {changePassword &&
+                  <section>
                     <input type='password' placeholder="Enter current password" onChange={(e) => (setCurrentPassword(e.target.value))} />
                     <input type='password' placeholder="Enter new password" onChange={(e) => (setNewPassword(e.target.value))} />
                     <input type='password' placeholder="Confirm new password" onChange={(e) => (setNewPasswordConfirm(e.target.value))} />
                     <button onClick={changePass}>Change Password</button>
-                </section>}
-                <p>Location: {location}</p><button onClick={() => (setChangeLocation(true))}>Change Location</button>
-                {changeLocation && 
-                <section>
-                    <input placeholder="Apt, Room No., Building, etc" onChange={(e) => (setApt(e.target.value))} />
-                    <input placeholder="Street" onChange={(e) => (setStreet(e.target.value))} />
-                    <input placeholder="City" onChange={(e) => (setCity(e.target.value))} />
-                    <input placeholder="State" onChange={(e) => (setState(e.target.value))} />
-                    <input placeholder="Zip Code" type="number" onChange={(e) => (setZip(e.target.value))} />
-                    <button onClick={newLocation}>Change Location</button>
-                </section>
-                }
+                  </section>}
+               </Hide2>
+               <Top3>
+                 <p>Location: {location}</p>
+                 <button onClick={() => (setChangeLocation(true))}>{changeLocation?"v":">"}</button>
+               </Top3>
+               <Hide3>
+                 {changeLocation && <section>
+                   <input placeholder="Apt, Room No., Building, etc" onChange={(e) => (setApt(e.target.value))} />
+                   <input placeholder="Street" onChange={(e) => (setStreet(e.target.value))} />
+                   <input placeholder="City" onChange={(e) => (setCity(e.target.value))} />
+                   <input placeholder="State" onChange={(e) => (setState(e.target.value))} />
+                   <input placeholder="Zip Code" type="number" onChange={(e) => (setZip(e.target.value))} />
+                   <button onClick={newLocation}>Change Location</button>
+                 </section>}
+               </Hide3>
+          </section>
         </div>
     )
 }
 
 export default Account
+
+const Top1 = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  align-items: baseline;
+  width: calc(100% - 2px);
+  border: 1px solid;
+  border-color: beige;
+  outline: 0;
+  margin-top: 5px;
+  background-color: #fffbf4;
+  button{
+    height: inherit;
+    background-color: inherit;
+    border: 0;
+    cursor: pointer;
+    width: 40px;
+    padding: 0px;
+  }
+  p{
+    text-transform: none;
+    margin: 0 0 0 5px;
+    flex: 1;
+  }
+`
+
+const Hide1 = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  section{
+    display: flex;
+    flex-direction: column;
+    input{
+      font-size: 14px;
+      min-height: 25px;
+      padding: 10px;
+      width: 96%;
+      border: 1px solid transparent;
+      border-color: #dbdbdb;
+      border-radius: 3px;
+      line-height: 1.5;
+      color: #363636;
+      box-shadow: inset 0 1px 2px rgb(10 10 10 / 10%);
+      margin-top: 5px;
+      margin-bottom: 5px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    button{
+      width: max-content;
+      border: 0;
+      cursor: pointer;
+      padding: 0px;
+      background-color: #ffdfa8;
+      height: 32px;
+      padding-left: 5px;
+      padding-right: 5px;
+      margin-left: calc(2% - 10px);
+      margin-bottom: 10px;
+      :hover{
+        box-shadow: inset 0px 8px 20px 3px rgb(10 10 10 / 10%);
+      }
+    }
+  }
+`
+
+const Top2 = styled(Top1)`
+  margin: 0;
+`
+
+const Hide2 = styled(Hide1)`
+  margin: 0;
+`
+
+const Top3 = styled(Top1)`
+  margin: 0;
+`
+
+const Hide3 = styled(Hide1)`
+  margin: 0;
+`
