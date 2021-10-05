@@ -140,7 +140,7 @@ const Account = () => {
                 {error && <p>{error}</p>}
             </section>
             <section>
-              <p>Hey, {name} ;)</p>
+              <h1>Hey, {name} ;)</h1>
               <Top1 onClick={() => {setChangeEmail(!changeEmail);setChangePassword(false);setChangeLocation(false)}}>
                 <p>Email: <span>{email}</span></p>
                 <button onClick={() => {setChangeEmail(!changeEmail);setChangePassword(false);setChangeLocation(false)}}>
