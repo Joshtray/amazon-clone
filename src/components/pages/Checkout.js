@@ -5,7 +5,7 @@ import axios from '../../axios';
 import { useHistory } from 'react-router';
 import { API, Auth, graphqlOperation } from 'aws-amplify'
 import { getUser, getCart } from '../../graphql/queries';
-import { deleteCart, deleteCartProduct, updateUser } from '../../graphql/mutations';
+import { createOrder, createOrderProduct, deleteCart, deleteCartProduct, updateUser } from '../../graphql/mutations';
 
 const Checkout = () => {
   const stripe = useStripe();
@@ -33,19 +33,16 @@ const Checkout = () => {
   }
   const updateOrders = async () => {
     const usr = await API.graphql(graphqlOperation(getUser, {id: userInfo.id}))
-    var orders = []
     /* orders = usr.data.getUser.orders
     if (!orders) {
       await API.graphql(graphqlOperation(updateUser, {input: {id: userInfo.id, orders: []}}))
       orders = []
     } */
-    console.log(orders)
+    const order = await API.graphql(graphqlOperation(createOrder, {input: {userID: userInfo.id}}))
     for (let i=0; i<cart.length; i++) {
+      await API.graphql(graphqlOperation(createOrderProduct, {input: {orderID: order.data.createOrder.id, productID: cart[i].product.id, quantity: cart[i].quantity}}))
       await API.graphql(graphqlOperation(deleteCartProduct, {input: {id: cart[i].id}}))
-      orders.push(cart[i])
-      console.log(orders)
     }
-    // await API.graphql(graphqlOperation(updateUser, {input: {id: userInfo.id, orders: orders}}))
   }
   const handleSubmit = async (event) => {
     // We don't want to let default form submission happen here,
