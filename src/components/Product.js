@@ -65,7 +65,7 @@ const Product = (props) => {
             </div>
           </div>
           <div className="price_sec">
-            <p>${product.price}</p>
+            <p>${product.price*cartProduct.quantity}</p>
           </div>
       </Product_block>
   )

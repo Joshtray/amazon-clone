@@ -62,6 +62,7 @@ const Product = (props) => {
               <i></i>
               <a>Compare with similar products</a>
             </div>
+            </div>
             <div className="content_block">
               <p>{product.name}</p>
               <p className="price">${product.price}</p>
