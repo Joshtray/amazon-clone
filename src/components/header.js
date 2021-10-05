@@ -82,6 +82,9 @@ export default function Header () {
           setLocation((loc.data.getLocation.city && loc.data.getLocation.city + ", ") + (loc.data.getLocation.state && loc.data.getLocation.state + ", "))
           setZip(loc.data.getLocation.zipcode)
         }
+        else {
+          setLocation("Add a location")
+        }
       }
     }
     catch (e) {
