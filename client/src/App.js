@@ -6,7 +6,7 @@ import Cart from './components/pages/Cart';
 import Account from './components/pages/Account';
 import Orders from './components/pages/Orders';
 import Amplify, { Hub, Auth, API, graphqlOperation } from 'aws-amplify';
-import awsconfig from './aws-exports';
+import awsconfig from './aws-exports.js';
 import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react'
 import Login from './components/pages/Login';
 import Signup from './components/pages/Signup';
