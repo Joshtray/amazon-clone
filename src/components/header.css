@@ -61,13 +61,13 @@ header .left-container .direction{
   position: relative;
 }
 
-header .left-container .direction:focus-within > .overlay{
+/* header .left-container .direction:focus-within > .overlay{
   display: block;
 }
 
 header .left-container .direction:focus-within > .show{
   display: flex;
-}
+} */
 
 header .left-container .direction .overlay{
   display: none;

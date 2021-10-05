@@ -155,7 +155,7 @@ export default function Header () {
         <Link to="/" className="logo" >
           <span></span>
         </Link>
-        <Link to="/" className="direction">
+        <Link to="/account" className="direction">
           <div className="overlay"></div>
           <Headertext>
             <div>
@@ -232,6 +232,7 @@ const Headertext = styled.div`
   flex-direction: row;
   padding: 5px 8px 0px 0px;
   margin: auto 1px auto 1px;
+  cursor: pointer;
   color: #CCCCCC;
   :before {
     content:"";
