@@ -2,7 +2,7 @@ type User @model {
 	id: ID!  
 	name: String!
 	location: Location @connection(fields: ["id"])
-	orders: [Product] 
+	orders: [Order] @connection(keyName: "byUser", fields: ["id"])
 	ratings: [Rating] @connection(keyName: "byUser", fields: ["id"])
 	cart: Cart @connection(fields: ["id"]) 
 	accountType: String
@@ -19,6 +19,16 @@ type Location
 	state: String
 	zipcode: Int!
 	user: User @connection(fields: ["id"])
+}
+
+type Order 
+@model
+@key (name: "byUser", fields: ["userID", "createdAt"]) {
+	id: ID!
+	userID: ID!
+	orderProduct: [OrderProduct] @connection(keyName: "byOrder", fields: ["id"])
+	user: User @connection(fields: ["userID"])
+	createdAt: String!	
 }
 
 type Rating 
@@ -43,13 +53,14 @@ type Product @model
 	price: Float
 	categoryID: ID!
 	category: Category @connection(fields: ["categoryID"])
-	sellerID: ID!
+	sellerID: ID
 	seller: User @connection(fields: ["sellerID"])
 	types: [Type] @connection(keyName: "byProduct", fields: ["id"])
 	ratings: [Rating] @connection(keyName: "byProduct", fields: ["id"])
 	deals: [String]
 	quantity: Int
 	cartProduct: [CartProduct] @connection(keyName: "byProduct", fields: ["id"])
+	orderProduct: [OrderProduct] @connection(keyName: "byProduct", fields: ["id"])
 }
 
 type Type 
@@ -75,6 +86,17 @@ type CartProduct
 	cartID: ID!
 	productID: ID!
 	cart: Cart @connection(fields: ["cartID"])
+	product: Product @connection(fields: ["productID"])
+	quantity: Int
+}
+type OrderProduct
+@model
+@key (name: "byOrder", fields: ["orderID", "productID"])
+@key (name: "byProduct", fields: ["productID", "orderID"]) {
+	id: ID!
+ 	orderID: ID!
+	productID: ID!
+	order: Order @connection(fields: ["orderID"])
 	product: Product @connection(fields: ["productID"])
 	quantity: Int
 }
