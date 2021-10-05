@@ -18,7 +18,7 @@ type Location
 	city: String
 	state: String
 	zipcode: Int!
-	user: User @connection(fields: ["userID"])
+	user: User @connection(fields: ["id"])
 }
 
 type Rating 

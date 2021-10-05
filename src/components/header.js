@@ -3,9 +3,9 @@ import './header.css';
 import { Link, useHistory } from 'react-router-dom'
 import Auth from "@aws-amplify/auth";
 import API from "@aws-amplify/api";
-import { getUser, listCategories } from "../graphql/queries";
+import { getLocation, getUser, listCategories } from "../graphql/queries";
 import { updateUser } from "../graphql/mutations"
-import { onCreateCartProduct, onDeleteCartProduct, onUpdateUser } from "../graphql/subscriptions"
+import { onCreateCartProduct, onCreateLocation, onDeleteCartProduct, onUpdateUser } from "../graphql/subscriptions"
 import { graphqlOperation, Hub } from "aws-amplify";
 import styled from 'styled-components'
 
@@ -16,6 +16,8 @@ export default function Header () {
   const [userInfo, setUserInfo] = useState({username: "Sign In"})
   const [cart, setCart] = useState(0)
   const [categories, setCategories] = useState([])
+  const [location, setLocation] = useState('')
+  const [zip, setZip] = useState(null)
 
   const history = useHistory()
   const loggedIn = async () => {
@@ -38,6 +40,7 @@ export default function Header () {
         if (userData.data.getUser) {
           setCurrentUser(userData.data.getUser)
         }
+        
       }
     }
     catch (e) {
@@ -74,6 +77,11 @@ export default function Header () {
             }
           }
         }
+        const loc = await API.graphql(graphqlOperation(getLocation, {id: userData.attributes.sub}))
+        if (loc.data.getLocation) {
+          setLocation((loc.data.getLocation.city && loc.data.getLocation.city + ", ") + (loc.data.getLocation.state && loc.data.getLocation.state + ", "))
+          setZip(loc.data.getLocation.zipcode)
+        }
       }
     }
     catch (e) {
@@ -84,6 +92,7 @@ export default function Header () {
     history.push('/login')
     history.go(0)
   }
+
 
   const upgradeAccount = async () => {
     await API.graphql(graphqlOperation(updateUser, {input: {id: userInfo.attributes.sub, accountType: "Seller" }}))
@@ -135,6 +144,14 @@ export default function Header () {
     })
     return () => subscription.unsubscribe()
   }, [])
+  useEffect(() => {
+    const subscription = API.graphql(graphqlOperation(onCreateLocation)).subscribe({
+        next: async (data) => {
+            getUserInfo()
+        }
+    })
+    return () => subscription.unsubscribe()
+  }, [])
 
   useEffect(() => {
     getUserInfo()
@@ -161,7 +178,7 @@ export default function Header () {
             <div>
               <p>Deliver to <span className="caps">{userInfo.username}</span></p> {/*Deliver to [user.name] capitalize first word*/}
               <span className="adress">
-                <p>San Francisco, CA, </p><span>94102</span>{/* Location: [State] [Zip Code]*/}
+                <p>{location}</p><span>{zip}</span>{/* Location: [State] [Zip Code]*/}
               </span>
             </div>
           </Headertext>
