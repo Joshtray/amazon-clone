@@ -1,10 +1,11 @@
 import { Auth, API, graphqlOperation } from 'aws-amplify'
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
-import { createLocation, updateUser } from '../../graphql/mutations'
-import { getUser } from '../../graphql/queries'
+import { createLocation, deleteLocation, updateUser } from '../../graphql/mutations'
+import { getLocation, getUser } from '../../graphql/queries'
 import './Account.css'
 import styled from 'styled-components'
+import { AmplifyToast } from '@aws-amplify/ui-react'
 
 const Account = () => {
     const history = useHistory()
@@ -14,7 +15,7 @@ const Account = () => {
     const [email, setEmail] = useState('')
     const [changeEmail, setChangeEmail] = useState(false)
     const [emailConfirm, setEmailConfirm] = useState('')
-    const [location, setLocation] = useState('Dummy Location')
+    const [location, setLocation] = useState('')
     const [changeLocation, setChangeLocation] = useState(false)
     const [apt, setApt] = useState('')
     const [error, setError] = useState('')
@@ -36,8 +37,16 @@ const Account = () => {
                 setUserInfo(usrData.data.getUser)
                 console.log(userData)
                 console.log(usrData)
-                if (usrData.data.getUser.location) {
-                    setLocation(usrData.data.getUser.location)
+                const usrLocation = await API.graphql(graphqlOperation(getLocation, {id: userData.attributes.sub }))
+                console.log(usrLocation)
+                if (usrLocation.data.getLocation) {
+                  console.log(usrLocation.data.getLocation.zipcode)
+                  const loc = usrLocation.data.getLocation.apt + ", " + usrLocation.data.getLocation.street + ", " + usrLocation.data.getLocation.city + ", " + usrLocation.data.getLocation.state + ", " + usrLocation.data.getLocation.zipcode 
+                  setLocation(loc)
+                  console.log(loc)
+                }
+                else {
+                  setLocation("Add a location")
                 }
             }
             setName(userData.username)
@@ -45,8 +54,8 @@ const Account = () => {
         }
         catch (e) {
             console.log(e)
-            history.push('/login')
-            history.go(0)
+            // history.push('/login')
+            // history.go(0)
         }
     }
     const changePass = async () => {
@@ -82,20 +91,32 @@ const Account = () => {
         }
     }
     const newLocation = async () => {
+      if (zip==0) {
+        setError('Please enter a zipcode') 
+      }
+      else {
         try {
-            const location = await API.graphql(graphqlOperation(createLocation, {input: {userID: user.attributes.sub, apt: apt, street: street, city: city, state: state, zipcode: zip}}))
+            const checkLoc = await API.graphql(graphqlOperation(getLocation, {id: user.attributes.sub}))
+            console.log(checkLoc)
+            if (checkLoc.data.getLocation) {
+              await API.graphql(graphqlOperation(deleteLocation, {input: {id: user.attributes.sub}}))
+            }
+            const location = await API.graphql(graphqlOperation(createLocation, {input: {id: user.attributes.sub, userID: user.attributes.sub, apt: apt, street: street, city: city, state: state, zipcode: zip}}))
             console.log(location)
+            const loc = (location.data.createLocation.apt && location.data.createLocation.apt + ", ") + (location.data.createLocation.street && location.data.createLocation.street + ", ") + (location.data.createLocation.city && location.data.createLocation.city + ", ") + (location.data.createLocation.state && location.data.createLocation.state + ", ") + (location.data.createLocation.zipcode && location.data.createLocation.zipcode)
+            setLocation(loc)
             setApt('')
-            setState('')
             setStreet('')
+            setState('')
             setCity('')
-            setZip('')
-            setChangeLocation('')
+            setZip(0)
+            setChangeLocation(false)
         }
         catch (e) {
             setError(e.message)
             console.log(e)
         }
+      }
     }
     const checkEmail = async () => {
         try {
