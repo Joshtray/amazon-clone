@@ -53,7 +53,7 @@ const Orders = () => {
         <Orderscontainer>
             <div className="cart_sec">
             {orders.map((item) =>
-                <section key={item.id}> 
+                <section key={item.id}>
                     <p id = "date"><span>{item.createdAt.slice(0, 10)+ "  " + item.createdAt.slice(12, 16)+" GMT"}</span></p>
                     <ul className = "product_list">
                         {item.orderProduct.items.map((prod) => (<Product key={prod.id} product={prod.product} cartProduct={prod} />))}
@@ -75,6 +75,7 @@ const Orderscontainer = styled.div`
   background-color: #eaeded;
   min-height: calc(100vh - 60px);
   padding-left: 20px;
+  padding-right: 20px;
   p{
     margin: 0;
   }
@@ -87,7 +88,7 @@ const Orderscontainer = styled.div`
         width: 100%;
         text-align: center;
         align-items: center;
-        margin: 15px 0px 15px 0px; 
+        margin: 15px 0px 15px 0px;
         span{
           width: 350px;
         }
