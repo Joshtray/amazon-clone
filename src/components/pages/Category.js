@@ -13,7 +13,6 @@ const Category = ({ category }) => {
     const fetchItems = async () => {
         try {
             const itemList = await API.graphql(graphqlOperation(productByCategory, {categoryID: category.id}))
-            console.log(itemList)
             setProduct(itemList.data.productByCategory.items)
         }
         catch (e) {
@@ -30,7 +29,7 @@ const Category = ({ category }) => {
          Category: {category.name}
         </h1>
         <Product_list className = "product_list">
-            {product.map((item) => (<Product product={item} />))}
+            {product.map((item) => (<Product key={item.id} product={item} />))}
         </Product_list>
       </div>
     )
