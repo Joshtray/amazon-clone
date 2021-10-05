@@ -47,6 +47,7 @@ const Product = (props) => {
               <p>{product.name}</p>
               <p className="price">${product.price}</p>
               <button onClick={onClick}>Add to Cart</button>
+              <p id="hide1">Quantity: {cartProduct.quantity}</p>
               <div className = "hide">
                 <select defaultValue={cartProduct ? cartProduct.quantity : "0"} id="searchDropdownBox" className="dropdown_class" onChange={updateQuantity}>
                   <option value="1">Qty: 1</option>

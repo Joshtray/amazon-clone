@@ -24,7 +24,7 @@ const Home = () => {
         fetchItems()
     }, [])
     return (
-        <Product_list className = "product_list">
+        <Product_list className = "product_list home">
             {product.map((item) => (<Product key={item.id} product={item} />))}
         </Product_list>
     )

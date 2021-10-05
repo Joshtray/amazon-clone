@@ -1,6 +1,10 @@
 .product_list{
-  grid-gap: 25px;
+  grid-gap: 15px;
   grid-template-columns: repeat(5, minmax(0,1fr));
   box-sizing: border-box;
   margin: 20px 20px 0px 15px;
+}
+
+.home .product_block{
+  box-shadow: 7px 8px 9px 5px rgb(10 10 10 / 10%);
 }

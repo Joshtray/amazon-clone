@@ -47,6 +47,7 @@ const Product = (props) => {
               <p>{product.name}</p>
               <p className="price">${product.price}</p>
               <button onClick={onClick}>Add to Cart</button>
+              {cartProduct && <p id="hide">Quantity: {cartProduct.quantity}</p>}
               <div className = "hide">
                 <select defaultValue={cartProduct ? cartProduct.quantity : "0"} id="searchDropdownBox" className="dropdown_class" onChange={updateQuantity}>
                   <option value="1">Qty: 1</option>
@@ -79,4 +80,7 @@ export default Product
 
 const Product_block = styled.div`
   position: relative;
+  #hide{
+    display: none;
+  }
 `
