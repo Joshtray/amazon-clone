@@ -11,132 +11,52 @@ export const createUser = /* GraphQL */ `
       name
       location {
         id
+        userID
         apt
         street
         city
         state
         zipcode
-        createdAt
-        updatedAt
-      }
-      orders {
-        id
-        name
-        imageUrl
-        description
-        price
-        category {
+        user {
           id
           name
-          createdAt
-          updatedAt
-        }
-        types {
-          items {
-            id
-            productID
-            name
-            imageURL
-            price
-            product {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
-                id
-                name
-                createdAt
-                updatedAt
-              }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
-            }
-            createdAt
-            updatedAt
-          }
-          nextToken
-        }
-        ratings {
-          items {
+          location {
             id
             userID
-            productID
+            apt
+            street
+            city
+            state
+            zipcode
             user {
               id
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -170,669 +90,58 @@ export const createUser = /* GraphQL */ `
               createdAt
               updatedAt
             }
-            product {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
-                id
-                name
-                createdAt
-                updatedAt
-              }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
-            }
-            rating
-            description
-            createdAt
-            updatedAt
-          }
-          nextToken
-        }
-        deals
-        quantity
-        cartProduct {
-          items {
-            id
-            cartID
-            productID
-            cart {
-              id
-              userID
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              user {
-                id
-                name
-                location {
-                  id
-                  apt
-                  street
-                  city
-                  state
-                  zipcode
-                  createdAt
-                  updatedAt
-                }
-                orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                ratings {
-                  nextToken
-                }
-                cart {
-                  id
-                  userID
-                  createdAt
-                  updatedAt
-                }
-                accountType
-                createdAt
-                updatedAt
-              }
-              createdAt
-              updatedAt
-            }
-            product {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
-                id
-                name
-                createdAt
-                updatedAt
-              }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
-            }
-            createdAt
-            updatedAt
-          }
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      ratings {
-        items {
-          id
-          userID
-          productID
-          user {
-            id
-            name
-            location {
-              id
-              apt
-              street
-              city
-              state
-              zipcode
-              createdAt
-              updatedAt
-            }
-            orders {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
-                id
-                name
-                createdAt
-                updatedAt
-              }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
-            }
-            ratings {
-              items {
-                id
-                userID
-                productID
-                user {
-                  id
-                  name
-                  accountType
-                  createdAt
-                  updatedAt
-                }
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                rating
-                description
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            cart {
-              id
-              userID
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              user {
-                id
-                name
-                location {
-                  id
-                  apt
-                  street
-                  city
-                  state
-                  zipcode
-                  createdAt
-                  updatedAt
-                }
-                orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                ratings {
-                  nextToken
-                }
-                cart {
-                  id
-                  userID
-                  createdAt
-                  updatedAt
-                }
-                accountType
-                createdAt
-                updatedAt
-              }
-              createdAt
-              updatedAt
-            }
-            accountType
-            createdAt
-            updatedAt
-          }
-          product {
-            id
-            name
-            imageUrl
-            description
-            price
-            category {
-              id
-              name
-              createdAt
-              updatedAt
-            }
-            types {
-              items {
-                id
-                productID
-                name
-                imageURL
-                price
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            ratings {
-              items {
-                id
-                userID
-                productID
-                user {
-                  id
-                  name
-                  accountType
-                  createdAt
-                  updatedAt
-                }
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                rating
-                description
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            deals
-            quantity
-            cartProduct {
-              items {
-                id
-                cartID
-                productID
-                cart {
-                  id
-                  userID
-                  createdAt
-                  updatedAt
-                }
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            createdAt
-            updatedAt
-          }
-          rating
-          description
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      cart {
-        id
-        userID
-        cartProduct {
-          items {
-            id
-            cartID
-            productID
-            cart {
-              id
-              userID
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              user {
-                id
-                name
-                location {
-                  id
-                  apt
-                  street
-                  city
-                  state
-                  zipcode
-                  createdAt
-                  updatedAt
-                }
-                orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                ratings {
-                  nextToken
-                }
-                cart {
-                  id
-                  userID
-                  createdAt
-                  updatedAt
-                }
-                accountType
-                createdAt
-                updatedAt
-              }
-              createdAt
-              updatedAt
-            }
-            product {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
-                id
-                name
-                createdAt
-                updatedAt
-              }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
-            }
-            createdAt
-            updatedAt
-          }
-          nextToken
-        }
-        user {
-          id
-          name
-          location {
-            id
-            apt
-            street
-            city
-            state
-            zipcode
             createdAt
             updatedAt
           }
           orders {
-            id
-            name
-            imageUrl
-            description
-            price
-            category {
+            items {
               id
-              name
-              createdAt
-              updatedAt
-            }
-            types {
-              items {
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
                 id
-                productID
                 name
-                imageURL
-                price
-                product {
+                location {
                   id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
                   createdAt
                   updatedAt
                 }
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            ratings {
-              items {
-                id
-                userID
-                productID
-                user {
-                  id
-                  name
-                  accountType
-                  createdAt
-                  updatedAt
+                orders {
+                  nextToken
                 }
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                ratings {
+                  nextToken
                 }
-                rating
-                description
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            deals
-            quantity
-            cartProduct {
-              items {
-                id
-                cartID
-                productID
                 cart {
                   id
                   userID
                   createdAt
                   updatedAt
                 }
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
+                accountType
                 createdAt
                 updatedAt
               }
-              nextToken
+              createdAt
+              updatedAt
             }
-            createdAt
-            updatedAt
+            nextToken
           }
           ratings {
             items {
@@ -844,6 +153,7 @@ export const createUser = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -853,15 +163,7 @@ export const createUser = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -882,9 +184,18 @@ export const createUser = /* GraphQL */ `
                 imageUrl
                 description
                 price
+                categoryID
                 category {
                   id
                   name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
                   createdAt
                   updatedAt
                 }
@@ -897,6 +208,9 @@ export const createUser = /* GraphQL */ `
                 deals
                 quantity
                 cartProduct {
+                  nextToken
+                }
+                orderProduct {
                   nextToken
                 }
                 createdAt
@@ -929,11 +243,14 @@ export const createUser = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
                   updatedAt
                 }
+                quantity
                 createdAt
                 updatedAt
               }
@@ -944,23 +261,116 @@ export const createUser = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          accountType
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      orders {
+        items {
+          id
+          userID
+          orderProduct {
+            items {
+              id
+              orderID
+              productID
+              order {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              product {
                 id
                 name
                 imageUrl
                 description
                 price
+                categoryID
                 category {
                   id
                   name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
                   createdAt
                   updatedAt
                 }
@@ -975,8 +385,949 @@ export const createUser = /* GraphQL */ `
                 cartProduct {
                   nextToken
                 }
+                orderProduct {
+                  nextToken
+                }
                 createdAt
                 updatedAt
+              }
+              quantity
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      ratings {
+        items {
+          id
+          userID
+          productID
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          product {
+            id
+            name
+            imageUrl
+            description
+            price
+            categoryID
+            category {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            types {
+              items {
+                id
+                productID
+                name
+                imageURL
+                price
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            deals
+            quantity
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          rating
+          description
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      cart {
+        id
+        userID
+        cartProduct {
+          items {
+            id
+            cartID
+            productID
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        user {
+          id
+          name
+          location {
+            id
+            userID
+            apt
+            street
+            city
+            state
+            zipcode
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          ratings {
+            items {
+              id
+              userID
+              productID
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              rating
+              description
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          cart {
+            id
+            userID
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
               }
               ratings {
                 items {
@@ -1036,132 +1387,52 @@ export const updateUser = /* GraphQL */ `
       name
       location {
         id
+        userID
         apt
         street
         city
         state
         zipcode
-        createdAt
-        updatedAt
-      }
-      orders {
-        id
-        name
-        imageUrl
-        description
-        price
-        category {
+        user {
           id
           name
-          createdAt
-          updatedAt
-        }
-        types {
-          items {
-            id
-            productID
-            name
-            imageURL
-            price
-            product {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
-                id
-                name
-                createdAt
-                updatedAt
-              }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
-            }
-            createdAt
-            updatedAt
-          }
-          nextToken
-        }
-        ratings {
-          items {
+          location {
             id
             userID
-            productID
+            apt
+            street
+            city
+            state
+            zipcode
             user {
               id
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -1195,669 +1466,58 @@ export const updateUser = /* GraphQL */ `
               createdAt
               updatedAt
             }
-            product {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
-                id
-                name
-                createdAt
-                updatedAt
-              }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
-            }
-            rating
-            description
-            createdAt
-            updatedAt
-          }
-          nextToken
-        }
-        deals
-        quantity
-        cartProduct {
-          items {
-            id
-            cartID
-            productID
-            cart {
-              id
-              userID
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              user {
-                id
-                name
-                location {
-                  id
-                  apt
-                  street
-                  city
-                  state
-                  zipcode
-                  createdAt
-                  updatedAt
-                }
-                orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                ratings {
-                  nextToken
-                }
-                cart {
-                  id
-                  userID
-                  createdAt
-                  updatedAt
-                }
-                accountType
-                createdAt
-                updatedAt
-              }
-              createdAt
-              updatedAt
-            }
-            product {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
-                id
-                name
-                createdAt
-                updatedAt
-              }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
-            }
-            createdAt
-            updatedAt
-          }
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      ratings {
-        items {
-          id
-          userID
-          productID
-          user {
-            id
-            name
-            location {
-              id
-              apt
-              street
-              city
-              state
-              zipcode
-              createdAt
-              updatedAt
-            }
-            orders {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
-                id
-                name
-                createdAt
-                updatedAt
-              }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
-            }
-            ratings {
-              items {
-                id
-                userID
-                productID
-                user {
-                  id
-                  name
-                  accountType
-                  createdAt
-                  updatedAt
-                }
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                rating
-                description
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            cart {
-              id
-              userID
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              user {
-                id
-                name
-                location {
-                  id
-                  apt
-                  street
-                  city
-                  state
-                  zipcode
-                  createdAt
-                  updatedAt
-                }
-                orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                ratings {
-                  nextToken
-                }
-                cart {
-                  id
-                  userID
-                  createdAt
-                  updatedAt
-                }
-                accountType
-                createdAt
-                updatedAt
-              }
-              createdAt
-              updatedAt
-            }
-            accountType
-            createdAt
-            updatedAt
-          }
-          product {
-            id
-            name
-            imageUrl
-            description
-            price
-            category {
-              id
-              name
-              createdAt
-              updatedAt
-            }
-            types {
-              items {
-                id
-                productID
-                name
-                imageURL
-                price
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            ratings {
-              items {
-                id
-                userID
-                productID
-                user {
-                  id
-                  name
-                  accountType
-                  createdAt
-                  updatedAt
-                }
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                rating
-                description
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            deals
-            quantity
-            cartProduct {
-              items {
-                id
-                cartID
-                productID
-                cart {
-                  id
-                  userID
-                  createdAt
-                  updatedAt
-                }
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            createdAt
-            updatedAt
-          }
-          rating
-          description
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      cart {
-        id
-        userID
-        cartProduct {
-          items {
-            id
-            cartID
-            productID
-            cart {
-              id
-              userID
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              user {
-                id
-                name
-                location {
-                  id
-                  apt
-                  street
-                  city
-                  state
-                  zipcode
-                  createdAt
-                  updatedAt
-                }
-                orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                ratings {
-                  nextToken
-                }
-                cart {
-                  id
-                  userID
-                  createdAt
-                  updatedAt
-                }
-                accountType
-                createdAt
-                updatedAt
-              }
-              createdAt
-              updatedAt
-            }
-            product {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
-                id
-                name
-                createdAt
-                updatedAt
-              }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
-            }
-            createdAt
-            updatedAt
-          }
-          nextToken
-        }
-        user {
-          id
-          name
-          location {
-            id
-            apt
-            street
-            city
-            state
-            zipcode
             createdAt
             updatedAt
           }
           orders {
-            id
-            name
-            imageUrl
-            description
-            price
-            category {
+            items {
               id
-              name
-              createdAt
-              updatedAt
-            }
-            types {
-              items {
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
                 id
-                productID
                 name
-                imageURL
-                price
-                product {
+                location {
                   id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
                   createdAt
                   updatedAt
                 }
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            ratings {
-              items {
-                id
-                userID
-                productID
-                user {
-                  id
-                  name
-                  accountType
-                  createdAt
-                  updatedAt
+                orders {
+                  nextToken
                 }
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                ratings {
+                  nextToken
                 }
-                rating
-                description
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            deals
-            quantity
-            cartProduct {
-              items {
-                id
-                cartID
-                productID
                 cart {
                   id
                   userID
                   createdAt
                   updatedAt
                 }
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
+                accountType
                 createdAt
                 updatedAt
               }
-              nextToken
+              createdAt
+              updatedAt
             }
-            createdAt
-            updatedAt
+            nextToken
           }
           ratings {
             items {
@@ -1869,6 +1529,7 @@ export const updateUser = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -1878,15 +1539,7 @@ export const updateUser = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -1907,9 +1560,18 @@ export const updateUser = /* GraphQL */ `
                 imageUrl
                 description
                 price
+                categoryID
                 category {
                   id
                   name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
                   createdAt
                   updatedAt
                 }
@@ -1922,6 +1584,9 @@ export const updateUser = /* GraphQL */ `
                 deals
                 quantity
                 cartProduct {
+                  nextToken
+                }
+                orderProduct {
                   nextToken
                 }
                 createdAt
@@ -1954,11 +1619,14 @@ export const updateUser = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
                   updatedAt
                 }
+                quantity
                 createdAt
                 updatedAt
               }
@@ -1969,23 +1637,116 @@ export const updateUser = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          accountType
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      orders {
+        items {
+          id
+          userID
+          orderProduct {
+            items {
+              id
+              orderID
+              productID
+              order {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              product {
                 id
                 name
                 imageUrl
                 description
                 price
+                categoryID
                 category {
                   id
                   name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
                   createdAt
                   updatedAt
                 }
@@ -2000,8 +1761,949 @@ export const updateUser = /* GraphQL */ `
                 cartProduct {
                   nextToken
                 }
+                orderProduct {
+                  nextToken
+                }
                 createdAt
                 updatedAt
+              }
+              quantity
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      ratings {
+        items {
+          id
+          userID
+          productID
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          product {
+            id
+            name
+            imageUrl
+            description
+            price
+            categoryID
+            category {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            types {
+              items {
+                id
+                productID
+                name
+                imageURL
+                price
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            deals
+            quantity
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          rating
+          description
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      cart {
+        id
+        userID
+        cartProduct {
+          items {
+            id
+            cartID
+            productID
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        user {
+          id
+          name
+          location {
+            id
+            userID
+            apt
+            street
+            city
+            state
+            zipcode
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          ratings {
+            items {
+              id
+              userID
+              productID
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              rating
+              description
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          cart {
+            id
+            userID
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
               }
               ratings {
                 items {
@@ -2061,132 +2763,52 @@ export const deleteUser = /* GraphQL */ `
       name
       location {
         id
+        userID
         apt
         street
         city
         state
         zipcode
-        createdAt
-        updatedAt
-      }
-      orders {
-        id
-        name
-        imageUrl
-        description
-        price
-        category {
+        user {
           id
           name
-          createdAt
-          updatedAt
-        }
-        types {
-          items {
-            id
-            productID
-            name
-            imageURL
-            price
-            product {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
-                id
-                name
-                createdAt
-                updatedAt
-              }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
-            }
-            createdAt
-            updatedAt
-          }
-          nextToken
-        }
-        ratings {
-          items {
+          location {
             id
             userID
-            productID
+            apt
+            street
+            city
+            state
+            zipcode
             user {
               id
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -2220,669 +2842,58 @@ export const deleteUser = /* GraphQL */ `
               createdAt
               updatedAt
             }
-            product {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
-                id
-                name
-                createdAt
-                updatedAt
-              }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
-            }
-            rating
-            description
-            createdAt
-            updatedAt
-          }
-          nextToken
-        }
-        deals
-        quantity
-        cartProduct {
-          items {
-            id
-            cartID
-            productID
-            cart {
-              id
-              userID
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              user {
-                id
-                name
-                location {
-                  id
-                  apt
-                  street
-                  city
-                  state
-                  zipcode
-                  createdAt
-                  updatedAt
-                }
-                orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                ratings {
-                  nextToken
-                }
-                cart {
-                  id
-                  userID
-                  createdAt
-                  updatedAt
-                }
-                accountType
-                createdAt
-                updatedAt
-              }
-              createdAt
-              updatedAt
-            }
-            product {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
-                id
-                name
-                createdAt
-                updatedAt
-              }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
-            }
-            createdAt
-            updatedAt
-          }
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      ratings {
-        items {
-          id
-          userID
-          productID
-          user {
-            id
-            name
-            location {
-              id
-              apt
-              street
-              city
-              state
-              zipcode
-              createdAt
-              updatedAt
-            }
-            orders {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
-                id
-                name
-                createdAt
-                updatedAt
-              }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
-            }
-            ratings {
-              items {
-                id
-                userID
-                productID
-                user {
-                  id
-                  name
-                  accountType
-                  createdAt
-                  updatedAt
-                }
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                rating
-                description
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            cart {
-              id
-              userID
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              user {
-                id
-                name
-                location {
-                  id
-                  apt
-                  street
-                  city
-                  state
-                  zipcode
-                  createdAt
-                  updatedAt
-                }
-                orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                ratings {
-                  nextToken
-                }
-                cart {
-                  id
-                  userID
-                  createdAt
-                  updatedAt
-                }
-                accountType
-                createdAt
-                updatedAt
-              }
-              createdAt
-              updatedAt
-            }
-            accountType
-            createdAt
-            updatedAt
-          }
-          product {
-            id
-            name
-            imageUrl
-            description
-            price
-            category {
-              id
-              name
-              createdAt
-              updatedAt
-            }
-            types {
-              items {
-                id
-                productID
-                name
-                imageURL
-                price
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            ratings {
-              items {
-                id
-                userID
-                productID
-                user {
-                  id
-                  name
-                  accountType
-                  createdAt
-                  updatedAt
-                }
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                rating
-                description
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            deals
-            quantity
-            cartProduct {
-              items {
-                id
-                cartID
-                productID
-                cart {
-                  id
-                  userID
-                  createdAt
-                  updatedAt
-                }
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            createdAt
-            updatedAt
-          }
-          rating
-          description
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      cart {
-        id
-        userID
-        cartProduct {
-          items {
-            id
-            cartID
-            productID
-            cart {
-              id
-              userID
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              user {
-                id
-                name
-                location {
-                  id
-                  apt
-                  street
-                  city
-                  state
-                  zipcode
-                  createdAt
-                  updatedAt
-                }
-                orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                ratings {
-                  nextToken
-                }
-                cart {
-                  id
-                  userID
-                  createdAt
-                  updatedAt
-                }
-                accountType
-                createdAt
-                updatedAt
-              }
-              createdAt
-              updatedAt
-            }
-            product {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
-                id
-                name
-                createdAt
-                updatedAt
-              }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
-            }
-            createdAt
-            updatedAt
-          }
-          nextToken
-        }
-        user {
-          id
-          name
-          location {
-            id
-            apt
-            street
-            city
-            state
-            zipcode
             createdAt
             updatedAt
           }
           orders {
-            id
-            name
-            imageUrl
-            description
-            price
-            category {
+            items {
               id
-              name
-              createdAt
-              updatedAt
-            }
-            types {
-              items {
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
                 id
-                productID
                 name
-                imageURL
-                price
-                product {
+                location {
                   id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
                   createdAt
                   updatedAt
                 }
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            ratings {
-              items {
-                id
-                userID
-                productID
-                user {
-                  id
-                  name
-                  accountType
-                  createdAt
-                  updatedAt
+                orders {
+                  nextToken
                 }
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                ratings {
+                  nextToken
                 }
-                rating
-                description
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            deals
-            quantity
-            cartProduct {
-              items {
-                id
-                cartID
-                productID
                 cart {
                   id
                   userID
                   createdAt
                   updatedAt
                 }
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
+                accountType
                 createdAt
                 updatedAt
               }
-              nextToken
+              createdAt
+              updatedAt
             }
-            createdAt
-            updatedAt
+            nextToken
           }
           ratings {
             items {
@@ -2894,6 +2905,7 @@ export const deleteUser = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -2903,15 +2915,7 @@ export const deleteUser = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -2932,9 +2936,18 @@ export const deleteUser = /* GraphQL */ `
                 imageUrl
                 description
                 price
+                categoryID
                 category {
                   id
                   name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
                   createdAt
                   updatedAt
                 }
@@ -2947,6 +2960,9 @@ export const deleteUser = /* GraphQL */ `
                 deals
                 quantity
                 cartProduct {
+                  nextToken
+                }
+                orderProduct {
                   nextToken
                 }
                 createdAt
@@ -2979,11 +2995,14 @@ export const deleteUser = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
                   updatedAt
                 }
+                quantity
                 createdAt
                 updatedAt
               }
@@ -2994,23 +3013,116 @@ export const deleteUser = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          accountType
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      orders {
+        items {
+          id
+          userID
+          orderProduct {
+            items {
+              id
+              orderID
+              productID
+              order {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              product {
                 id
                 name
                 imageUrl
                 description
                 price
+                categoryID
                 category {
                   id
                   name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
                   createdAt
                   updatedAt
                 }
@@ -3025,8 +3137,949 @@ export const deleteUser = /* GraphQL */ `
                 cartProduct {
                   nextToken
                 }
+                orderProduct {
+                  nextToken
+                }
                 createdAt
                 updatedAt
+              }
+              quantity
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      ratings {
+        items {
+          id
+          userID
+          productID
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          product {
+            id
+            name
+            imageUrl
+            description
+            price
+            categoryID
+            category {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            types {
+              items {
+                id
+                productID
+                name
+                imageURL
+                price
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            deals
+            quantity
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          rating
+          description
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      cart {
+        id
+        userID
+        cartProduct {
+          items {
+            id
+            cartID
+            productID
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        user {
+          id
+          name
+          location {
+            id
+            userID
+            apt
+            street
+            city
+            state
+            zipcode
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          ratings {
+            items {
+              id
+              userID
+              productID
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              rating
+              description
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          cart {
+            id
+            userID
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
               }
               ratings {
                 items {
@@ -3083,132 +4136,40 @@ export const createLocation = /* GraphQL */ `
   ) {
     createLocation(input: $input, condition: $condition) {
       id
-      apt
-      street
-      city
-      state
-      zipcode
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateLocation = /* GraphQL */ `
-  mutation UpdateLocation(
-    $input: UpdateLocationInput!
-    $condition: ModelLocationConditionInput
-  ) {
-    updateLocation(input: $input, condition: $condition) {
-      id
-      apt
-      street
-      city
-      state
-      zipcode
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteLocation = /* GraphQL */ `
-  mutation DeleteLocation(
-    $input: DeleteLocationInput!
-    $condition: ModelLocationConditionInput
-  ) {
-    deleteLocation(input: $input, condition: $condition) {
-      id
-      apt
-      street
-      city
-      state
-      zipcode
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createRating = /* GraphQL */ `
-  mutation CreateRating(
-    $input: CreateRatingInput!
-    $condition: ModelRatingConditionInput
-  ) {
-    createRating(input: $input, condition: $condition) {
-      id
       userID
-      productID
+      apt
+      street
+      city
+      state
+      zipcode
       user {
         id
         name
         location {
           id
+          userID
           apt
           street
           city
           state
           zipcode
-          createdAt
-          updatedAt
-        }
-        orders {
-          id
-          name
-          imageUrl
-          description
-          price
-          category {
+          user {
             id
             name
-            createdAt
-            updatedAt
-          }
-          types {
-            items {
-              id
-              productID
-              name
-              imageURL
-              price
-              product {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
-                  id
-                  name
-                  createdAt
-                  updatedAt
-                }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
-              }
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          ratings {
-            items {
+            location {
               id
               userID
-              productID
+              apt
+              street
+              city
+              state
+              zipcode
               user {
                 id
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -3218,15 +4179,7 @@ export const createRating = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -3241,46 +4194,190 @@ export const createRating = /* GraphQL */ `
                 createdAt
                 updatedAt
               }
-              product {
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
                 id
-                name
-                imageUrl
-                description
-                price
-                category {
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
                   id
                   name
+                  accountType
                   createdAt
                   updatedAt
                 }
-                types {
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
                   nextToken
                 }
                 ratings {
                   nextToken
                 }
-                deals
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        orders {
+          items {
+            id
+            userID
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
                 quantity
-                cartProduct {
-                  nextToken
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
                 }
                 createdAt
                 updatedAt
               }
-              rating
-              description
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          deals
-          quantity
-          cartProduct {
-            items {
-              id
-              cartID
-              productID
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
               cart {
                 id
                 userID
@@ -3297,39 +4394,14 @@ export const createRating = /* GraphQL */ `
                 createdAt
                 updatedAt
               }
-              product {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
-                  id
-                  name
-                  createdAt
-                  updatedAt
-                }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
-              }
+              accountType
               createdAt
               updatedAt
             }
-            nextToken
+            createdAt
+            updatedAt
           }
-          createdAt
-          updatedAt
+          nextToken
         }
         ratings {
           items {
@@ -3341,39 +4413,30 @@ export const createRating = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -3413,9 +4476,41 @@ export const createRating = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -3450,6 +4545,18 @@ export const createRating = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -3495,9 +4602,18 @@ export const createRating = /* GraphQL */ `
                 imageUrl
                 description
                 price
+                categoryID
                 category {
                   id
                   name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
                   createdAt
                   updatedAt
                 }
@@ -3512,9 +4628,13 @@ export const createRating = /* GraphQL */ `
                 cartProduct {
                   nextToken
                 }
+                orderProduct {
+                  nextToken
+                }
                 createdAt
                 updatedAt
               }
+              quantity
               createdAt
               updatedAt
             }
@@ -3525,64 +4645,63 @@ export const createRating = /* GraphQL */ `
             name
             location {
               id
+              userID
               apt
               street
               city
               state
               zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
               createdAt
               updatedAt
             }
             orders {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
+              items {
                 id
-                name
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
+              nextToken
             }
             ratings {
               items {
@@ -3602,6 +4721,8 @@ export const createRating = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -3622,6 +4743,7 @@ export const createRating = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -3632,6 +4754,7 @@ export const createRating = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -3641,15 +4764,7 @@ export const createRating = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -3678,44 +4793,243 @@ export const createRating = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      product {
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateLocation = /* GraphQL */ `
+  mutation UpdateLocation(
+    $input: UpdateLocationInput!
+    $condition: ModelLocationConditionInput
+  ) {
+    updateLocation(input: $input, condition: $condition) {
+      id
+      userID
+      apt
+      street
+      city
+      state
+      zipcode
+      user {
         id
         name
-        imageUrl
-        description
-        price
-        category {
+        location {
           id
-          name
-          createdAt
-          updatedAt
-        }
-        types {
-          items {
+          userID
+          apt
+          street
+          city
+          state
+          zipcode
+          user {
             id
-            productID
             name
-            imageURL
-            price
-            product {
+            location {
               id
-              name
-              imageUrl
-              description
-              price
-              category {
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
                 id
                 name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
-              types {
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
                 items {
                   id
+                  cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        orders {
+          items {
+            id
+            userID
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
                   name
-                  imageURL
+                  imageUrl
+                  description
                   price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
                   createdAt
                   updatedAt
                 }
@@ -3733,18 +5047,23 @@ export const createRating = /* GraphQL */ `
                 }
                 nextToken
               }
-              deals
-              quantity
-              cartProduct {
-                items {
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
                   id
-                  cartID
-                  productID
+                  name
+                  accountType
                   createdAt
                   updatedAt
                 }
-                nextToken
+                createdAt
+                updatedAt
               }
+              accountType
               createdAt
               updatedAt
             }
@@ -3763,39 +5082,30 @@ export const createRating = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -3835,9 +5145,41 @@ export const createRating = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -3872,6 +5214,5084 @@ export const createRating = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            rating
+            description
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        cart {
+          id
+          userID
+          cartProduct {
+            items {
+              id
+              cartID
+              productID
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              quantity
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        accountType
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteLocation = /* GraphQL */ `
+  mutation DeleteLocation(
+    $input: DeleteLocationInput!
+    $condition: ModelLocationConditionInput
+  ) {
+    deleteLocation(input: $input, condition: $condition) {
+      id
+      userID
+      apt
+      street
+      city
+      state
+      zipcode
+      user {
+        id
+        name
+        location {
+          id
+          userID
+          apt
+          street
+          city
+          state
+          zipcode
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        orders {
+          items {
+            id
+            userID
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        ratings {
+          items {
+            id
+            userID
+            productID
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            rating
+            description
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        cart {
+          id
+          userID
+          cartProduct {
+            items {
+              id
+              cartID
+              productID
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              quantity
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        accountType
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createOrder = /* GraphQL */ `
+  mutation CreateOrder(
+    $input: CreateOrderInput!
+    $condition: ModelOrderConditionInput
+  ) {
+    createOrder(input: $input, condition: $condition) {
+      id
+      userID
+      orderProduct {
+        items {
+          id
+          orderID
+          productID
+          order {
+            id
+            userID
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          product {
+            id
+            name
+            imageUrl
+            description
+            price
+            categoryID
+            category {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            types {
+              items {
+                id
+                productID
+                name
+                imageURL
+                price
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            deals
+            quantity
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          quantity
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      user {
+        id
+        name
+        location {
+          id
+          userID
+          apt
+          street
+          city
+          state
+          zipcode
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        orders {
+          items {
+            id
+            userID
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        ratings {
+          items {
+            id
+            userID
+            productID
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            rating
+            description
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        cart {
+          id
+          userID
+          cartProduct {
+            items {
+              id
+              cartID
+              productID
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              quantity
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        accountType
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateOrder = /* GraphQL */ `
+  mutation UpdateOrder(
+    $input: UpdateOrderInput!
+    $condition: ModelOrderConditionInput
+  ) {
+    updateOrder(input: $input, condition: $condition) {
+      id
+      userID
+      orderProduct {
+        items {
+          id
+          orderID
+          productID
+          order {
+            id
+            userID
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          product {
+            id
+            name
+            imageUrl
+            description
+            price
+            categoryID
+            category {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            types {
+              items {
+                id
+                productID
+                name
+                imageURL
+                price
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            deals
+            quantity
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          quantity
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      user {
+        id
+        name
+        location {
+          id
+          userID
+          apt
+          street
+          city
+          state
+          zipcode
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        orders {
+          items {
+            id
+            userID
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        ratings {
+          items {
+            id
+            userID
+            productID
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            rating
+            description
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        cart {
+          id
+          userID
+          cartProduct {
+            items {
+              id
+              cartID
+              productID
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              quantity
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        accountType
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteOrder = /* GraphQL */ `
+  mutation DeleteOrder(
+    $input: DeleteOrderInput!
+    $condition: ModelOrderConditionInput
+  ) {
+    deleteOrder(input: $input, condition: $condition) {
+      id
+      userID
+      orderProduct {
+        items {
+          id
+          orderID
+          productID
+          order {
+            id
+            userID
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          product {
+            id
+            name
+            imageUrl
+            description
+            price
+            categoryID
+            category {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            types {
+              items {
+                id
+                productID
+                name
+                imageURL
+                price
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            deals
+            quantity
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          quantity
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      user {
+        id
+        name
+        location {
+          id
+          userID
+          apt
+          street
+          city
+          state
+          zipcode
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        orders {
+          items {
+            id
+            userID
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        ratings {
+          items {
+            id
+            userID
+            productID
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            rating
+            description
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        cart {
+          id
+          userID
+          cartProduct {
+            items {
+              id
+              cartID
+              productID
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              quantity
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        accountType
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createRating = /* GraphQL */ `
+  mutation CreateRating(
+    $input: CreateRatingInput!
+    $condition: ModelRatingConditionInput
+  ) {
+    createRating(input: $input, condition: $condition) {
+      id
+      userID
+      productID
+      user {
+        id
+        name
+        location {
+          id
+          userID
+          apt
+          street
+          city
+          state
+          zipcode
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        orders {
+          items {
+            id
+            userID
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        ratings {
+          items {
+            id
+            userID
+            productID
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            rating
+            description
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        cart {
+          id
+          userID
+          cartProduct {
+            items {
+              id
+              cartID
+              productID
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              quantity
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        accountType
+        createdAt
+        updatedAt
+      }
+      product {
+        id
+        name
+        imageUrl
+        description
+        price
+        categoryID
+        category {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        sellerID
+        seller {
+          id
+          name
+          location {
+            id
+            userID
+            apt
+            street
+            city
+            state
+            zipcode
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          ratings {
+            items {
+              id
+              userID
+              productID
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              rating
+              description
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          cart {
+            id
+            userID
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          accountType
+          createdAt
+          updatedAt
+        }
+        types {
+          items {
+            id
+            productID
+            name
+            imageURL
+            price
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        ratings {
+          items {
+            id
+            userID
+            productID
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -3902,6 +10322,7 @@ export const createRating = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -3912,6 +10333,7 @@ export const createRating = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -3921,15 +10343,7 @@ export const createRating = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -3953,9 +10367,41 @@ export const createRating = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -3990,6 +10436,18 @@ export const createRating = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -3998,6 +10456,160 @@ export const createRating = /* GraphQL */ `
               createdAt
               updatedAt
             }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        orderProduct {
+          items {
+            id
+            orderID
+            productID
+            order {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
             createdAt
             updatedAt
           }
@@ -4027,74 +10639,29 @@ export const updateRating = /* GraphQL */ `
         name
         location {
           id
+          userID
           apt
           street
           city
           state
           zipcode
-          createdAt
-          updatedAt
-        }
-        orders {
-          id
-          name
-          imageUrl
-          description
-          price
-          category {
+          user {
             id
             name
-            createdAt
-            updatedAt
-          }
-          types {
-            items {
-              id
-              productID
-              name
-              imageURL
-              price
-              product {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
-                  id
-                  name
-                  createdAt
-                  updatedAt
-                }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
-              }
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          ratings {
-            items {
+            location {
               id
               userID
-              productID
+              apt
+              street
+              city
+              state
+              zipcode
               user {
                 id
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -4104,15 +10671,7 @@ export const updateRating = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -4127,46 +10686,190 @@ export const updateRating = /* GraphQL */ `
                 createdAt
                 updatedAt
               }
-              product {
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
                 id
-                name
-                imageUrl
-                description
-                price
-                category {
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
                   id
                   name
+                  accountType
                   createdAt
                   updatedAt
                 }
-                types {
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
                   nextToken
                 }
                 ratings {
                   nextToken
                 }
-                deals
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        orders {
+          items {
+            id
+            userID
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
                 quantity
-                cartProduct {
-                  nextToken
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
                 }
                 createdAt
                 updatedAt
               }
-              rating
-              description
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          deals
-          quantity
-          cartProduct {
-            items {
-              id
-              cartID
-              productID
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
               cart {
                 id
                 userID
@@ -4183,39 +10886,14 @@ export const updateRating = /* GraphQL */ `
                 createdAt
                 updatedAt
               }
-              product {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
-                  id
-                  name
-                  createdAt
-                  updatedAt
-                }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
-              }
+              accountType
               createdAt
               updatedAt
             }
-            nextToken
+            createdAt
+            updatedAt
           }
-          createdAt
-          updatedAt
+          nextToken
         }
         ratings {
           items {
@@ -4227,39 +10905,30 @@ export const updateRating = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -4299,9 +10968,41 @@ export const updateRating = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -4336,6 +11037,18 @@ export const updateRating = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -4381,9 +11094,18 @@ export const updateRating = /* GraphQL */ `
                 imageUrl
                 description
                 price
+                categoryID
                 category {
                   id
                   name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
                   createdAt
                   updatedAt
                 }
@@ -4398,9 +11120,13 @@ export const updateRating = /* GraphQL */ `
                 cartProduct {
                   nextToken
                 }
+                orderProduct {
+                  nextToken
+                }
                 createdAt
                 updatedAt
               }
+              quantity
               createdAt
               updatedAt
             }
@@ -4411,64 +11137,63 @@ export const updateRating = /* GraphQL */ `
             name
             location {
               id
+              userID
               apt
               street
               city
               state
               zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
               createdAt
               updatedAt
             }
             orders {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
+              items {
                 id
-                name
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
+              nextToken
             }
             ratings {
               items {
@@ -4488,6 +11213,8 @@ export const updateRating = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -4508,6 +11235,7 @@ export const updateRating = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -4518,6 +11246,7 @@ export const updateRating = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -4527,15 +11256,7 @@ export const updateRating = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -4570,9 +11291,319 @@ export const updateRating = /* GraphQL */ `
         imageUrl
         description
         price
+        categoryID
         category {
           id
           name
+          createdAt
+          updatedAt
+        }
+        sellerID
+        seller {
+          id
+          name
+          location {
+            id
+            userID
+            apt
+            street
+            city
+            state
+            zipcode
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          ratings {
+            items {
+              id
+              userID
+              productID
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              rating
+              description
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          cart {
+            id
+            userID
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          accountType
           createdAt
           updatedAt
         }
@@ -4589,9 +11620,41 @@ export const updateRating = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -4626,6 +11689,18 @@ export const updateRating = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -4649,39 +11724,30 @@ export const updateRating = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -4721,9 +11787,41 @@ export const updateRating = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -4758,6 +11856,18 @@ export const updateRating = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -4788,6 +11898,7 @@ export const updateRating = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -4798,6 +11909,7 @@ export const updateRating = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -4807,15 +11919,7 @@ export const updateRating = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -4839,9 +11943,41 @@ export const updateRating = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -4876,6 +12012,18 @@ export const updateRating = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -4884,6 +12032,160 @@ export const updateRating = /* GraphQL */ `
               createdAt
               updatedAt
             }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        orderProduct {
+          items {
+            id
+            orderID
+            productID
+            order {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
             createdAt
             updatedAt
           }
@@ -4913,74 +12215,29 @@ export const deleteRating = /* GraphQL */ `
         name
         location {
           id
+          userID
           apt
           street
           city
           state
           zipcode
-          createdAt
-          updatedAt
-        }
-        orders {
-          id
-          name
-          imageUrl
-          description
-          price
-          category {
+          user {
             id
             name
-            createdAt
-            updatedAt
-          }
-          types {
-            items {
-              id
-              productID
-              name
-              imageURL
-              price
-              product {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
-                  id
-                  name
-                  createdAt
-                  updatedAt
-                }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
-              }
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          ratings {
-            items {
+            location {
               id
               userID
-              productID
+              apt
+              street
+              city
+              state
+              zipcode
               user {
                 id
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -4990,15 +12247,7 @@ export const deleteRating = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -5013,46 +12262,190 @@ export const deleteRating = /* GraphQL */ `
                 createdAt
                 updatedAt
               }
-              product {
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
                 id
-                name
-                imageUrl
-                description
-                price
-                category {
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
                   id
                   name
+                  accountType
                   createdAt
                   updatedAt
                 }
-                types {
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
                   nextToken
                 }
                 ratings {
                   nextToken
                 }
-                deals
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        orders {
+          items {
+            id
+            userID
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
                 quantity
-                cartProduct {
-                  nextToken
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
                 }
                 createdAt
                 updatedAt
               }
-              rating
-              description
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          deals
-          quantity
-          cartProduct {
-            items {
-              id
-              cartID
-              productID
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
               cart {
                 id
                 userID
@@ -5069,39 +12462,14 @@ export const deleteRating = /* GraphQL */ `
                 createdAt
                 updatedAt
               }
-              product {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
-                  id
-                  name
-                  createdAt
-                  updatedAt
-                }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
-              }
+              accountType
               createdAt
               updatedAt
             }
-            nextToken
+            createdAt
+            updatedAt
           }
-          createdAt
-          updatedAt
+          nextToken
         }
         ratings {
           items {
@@ -5113,39 +12481,30 @@ export const deleteRating = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -5185,9 +12544,41 @@ export const deleteRating = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -5222,6 +12613,18 @@ export const deleteRating = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -5267,9 +12670,18 @@ export const deleteRating = /* GraphQL */ `
                 imageUrl
                 description
                 price
+                categoryID
                 category {
                   id
                   name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
                   createdAt
                   updatedAt
                 }
@@ -5284,9 +12696,13 @@ export const deleteRating = /* GraphQL */ `
                 cartProduct {
                   nextToken
                 }
+                orderProduct {
+                  nextToken
+                }
                 createdAt
                 updatedAt
               }
+              quantity
               createdAt
               updatedAt
             }
@@ -5297,64 +12713,63 @@ export const deleteRating = /* GraphQL */ `
             name
             location {
               id
+              userID
               apt
               street
               city
               state
               zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
               createdAt
               updatedAt
             }
             orders {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
+              items {
                 id
-                name
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
+              nextToken
             }
             ratings {
               items {
@@ -5374,6 +12789,8 @@ export const deleteRating = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -5394,6 +12811,7 @@ export const deleteRating = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -5404,6 +12822,7 @@ export const deleteRating = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -5413,15 +12832,7 @@ export const deleteRating = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -5456,9 +12867,319 @@ export const deleteRating = /* GraphQL */ `
         imageUrl
         description
         price
+        categoryID
         category {
           id
           name
+          createdAt
+          updatedAt
+        }
+        sellerID
+        seller {
+          id
+          name
+          location {
+            id
+            userID
+            apt
+            street
+            city
+            state
+            zipcode
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          ratings {
+            items {
+              id
+              userID
+              productID
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              rating
+              description
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          cart {
+            id
+            userID
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          accountType
           createdAt
           updatedAt
         }
@@ -5475,9 +13196,41 @@ export const deleteRating = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -5512,6 +13265,18 @@ export const deleteRating = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -5535,39 +13300,30 @@ export const deleteRating = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -5607,9 +13363,41 @@ export const deleteRating = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -5644,6 +13432,18 @@ export const deleteRating = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -5674,6 +13474,7 @@ export const deleteRating = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -5684,6 +13485,7 @@ export const deleteRating = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -5693,15 +13495,7 @@ export const deleteRating = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -5725,9 +13519,41 @@ export const deleteRating = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -5762,6 +13588,18 @@ export const deleteRating = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -5770,6 +13608,160 @@ export const deleteRating = /* GraphQL */ `
               createdAt
               updatedAt
             }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        orderProduct {
+          items {
+            id
+            orderID
+            productID
+            order {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
             createdAt
             updatedAt
           }
@@ -5796,46 +13788,80 @@ export const createProduct = /* GraphQL */ `
       imageUrl
       description
       price
+      categoryID
       category {
         id
         name
         createdAt
         updatedAt
       }
-      types {
-        items {
+      sellerID
+      seller {
+        id
+        name
+        location {
           id
-          productID
-          name
-          imageURL
-          price
-          product {
+          userID
+          apt
+          street
+          city
+          state
+          zipcode
+          user {
             id
             name
-            imageUrl
-            description
-            price
-            category {
+            location {
               id
-              name
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
               createdAt
               updatedAt
             }
-            types {
+            orders {
               items {
                 id
-                productID
-                name
-                imageURL
-                price
-                product {
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
                   id
                   name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
+                  accountType
                   createdAt
                   updatedAt
                 }
@@ -5862,6 +13888,8 @@ export const createProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -5874,14 +13902,70 @@ export const createProduct = /* GraphQL */ `
               }
               nextToken
             }
-            deals
-            quantity
-            cartProduct {
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        orders {
+          items {
+            id
+            userID
+            orderProduct {
               items {
                 id
-                cartID
+                orderID
                 productID
-                cart {
+                order {
                   id
                   userID
                   createdAt
@@ -5893,51 +13977,194 @@ export const createProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
                   createdAt
                   updatedAt
                 }
                 createdAt
                 updatedAt
               }
-              nextToken
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
             }
             createdAt
             updatedAt
           }
-          createdAt
-          updatedAt
+          nextToken
         }
-        nextToken
-      }
-      ratings {
-        items {
-          id
-          userID
-          productID
-          user {
+        ratings {
+          items {
             id
-            name
-            location {
+            userID
+            productID
+            user {
               id
-              apt
-              street
-              city
-              state
-              zipcode
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
               createdAt
               updatedAt
             }
-            orders {
+            product {
               id
               name
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -5972,6 +14199,18 @@ export const createProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -5979,6 +14218,144 @@ export const createProduct = /* GraphQL */ `
               }
               createdAt
               updatedAt
+            }
+            rating
+            description
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        cart {
+          id
+          userID
+          cartProduct {
+            items {
+              id
+              cartID
+              productID
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              quantity
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
             }
             ratings {
               items {
@@ -5998,6 +14375,8 @@ export const createProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -6018,6 +14397,7 @@ export const createProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -6028,6 +14408,7 @@ export const createProduct = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -6037,15 +14418,7 @@ export const createProduct = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -6067,15 +14440,93 @@ export const createProduct = /* GraphQL */ `
             createdAt
             updatedAt
           }
+          createdAt
+          updatedAt
+        }
+        accountType
+        createdAt
+        updatedAt
+      }
+      types {
+        items {
+          id
+          productID
+          name
+          imageURL
+          price
           product {
             id
             name
             imageUrl
             description
             price
+            categoryID
             category {
               id
               name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
               createdAt
               updatedAt
             }
@@ -6092,6 +14543,8 @@ export const createProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -6120,6 +14573,8 @@ export const createProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -6151,11 +14606,398 @@ export const createProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
                   updatedAt
                 }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      ratings {
+        items {
+          id
+          userID
+          productID
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          product {
+            id
+            name
+            imageUrl
+            description
+            price
+            categoryID
+            category {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            types {
+              items {
+                id
+                productID
+                name
+                imageURL
+                price
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            deals
+            quantity
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
                 createdAt
                 updatedAt
               }
@@ -6198,11 +15040,14 @@ export const createProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
                   updatedAt
                 }
+                quantity
                 createdAt
                 updatedAt
               }
@@ -6213,39 +15058,30 @@ export const createProduct = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -6288,9 +15124,73 @@ export const createProduct = /* GraphQL */ `
             imageUrl
             description
             price
+            categoryID
             category {
               id
               name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
               createdAt
               updatedAt
             }
@@ -6307,6 +15207,8 @@ export const createProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -6335,6 +15237,8 @@ export const createProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -6366,6 +15270,252 @@ export const createProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          quantity
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      orderProduct {
+        items {
+          id
+          orderID
+          productID
+          order {
+            id
+            userID
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          product {
+            id
+            name
+            imageUrl
+            description
+            price
+            categoryID
+            category {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            types {
+              items {
+                id
+                productID
+                name
+                imageURL
+                price
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -6376,9 +15526,104 @@ export const createProduct = /* GraphQL */ `
               }
               nextToken
             }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            deals
+            quantity
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
             createdAt
             updatedAt
           }
+          quantity
           createdAt
           updatedAt
         }
@@ -6400,46 +15645,80 @@ export const updateProduct = /* GraphQL */ `
       imageUrl
       description
       price
+      categoryID
       category {
         id
         name
         createdAt
         updatedAt
       }
-      types {
-        items {
+      sellerID
+      seller {
+        id
+        name
+        location {
           id
-          productID
-          name
-          imageURL
-          price
-          product {
+          userID
+          apt
+          street
+          city
+          state
+          zipcode
+          user {
             id
             name
-            imageUrl
-            description
-            price
-            category {
+            location {
               id
-              name
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
               createdAt
               updatedAt
             }
-            types {
+            orders {
               items {
                 id
-                productID
-                name
-                imageURL
-                price
-                product {
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
                   id
                   name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
+                  accountType
                   createdAt
                   updatedAt
                 }
@@ -6466,6 +15745,8 @@ export const updateProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -6478,14 +15759,70 @@ export const updateProduct = /* GraphQL */ `
               }
               nextToken
             }
-            deals
-            quantity
-            cartProduct {
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        orders {
+          items {
+            id
+            userID
+            orderProduct {
               items {
                 id
-                cartID
+                orderID
                 productID
-                cart {
+                order {
                   id
                   userID
                   createdAt
@@ -6497,51 +15834,194 @@ export const updateProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
                   createdAt
                   updatedAt
                 }
                 createdAt
                 updatedAt
               }
-              nextToken
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
             }
             createdAt
             updatedAt
           }
-          createdAt
-          updatedAt
+          nextToken
         }
-        nextToken
-      }
-      ratings {
-        items {
-          id
-          userID
-          productID
-          user {
+        ratings {
+          items {
             id
-            name
-            location {
+            userID
+            productID
+            user {
               id
-              apt
-              street
-              city
-              state
-              zipcode
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
               createdAt
               updatedAt
             }
-            orders {
+            product {
               id
               name
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -6576,6 +16056,18 @@ export const updateProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -6583,6 +16075,144 @@ export const updateProduct = /* GraphQL */ `
               }
               createdAt
               updatedAt
+            }
+            rating
+            description
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        cart {
+          id
+          userID
+          cartProduct {
+            items {
+              id
+              cartID
+              productID
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              quantity
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
             }
             ratings {
               items {
@@ -6602,6 +16232,8 @@ export const updateProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -6622,6 +16254,7 @@ export const updateProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -6632,6 +16265,7 @@ export const updateProduct = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -6641,15 +16275,7 @@ export const updateProduct = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -6671,15 +16297,93 @@ export const updateProduct = /* GraphQL */ `
             createdAt
             updatedAt
           }
+          createdAt
+          updatedAt
+        }
+        accountType
+        createdAt
+        updatedAt
+      }
+      types {
+        items {
+          id
+          productID
+          name
+          imageURL
+          price
           product {
             id
             name
             imageUrl
             description
             price
+            categoryID
             category {
               id
               name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
               createdAt
               updatedAt
             }
@@ -6696,6 +16400,8 @@ export const updateProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -6724,6 +16430,8 @@ export const updateProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -6755,11 +16463,398 @@ export const updateProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
                   updatedAt
                 }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      ratings {
+        items {
+          id
+          userID
+          productID
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          product {
+            id
+            name
+            imageUrl
+            description
+            price
+            categoryID
+            category {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            types {
+              items {
+                id
+                productID
+                name
+                imageURL
+                price
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            deals
+            quantity
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
                 createdAt
                 updatedAt
               }
@@ -6802,11 +16897,14 @@ export const updateProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
                   updatedAt
                 }
+                quantity
                 createdAt
                 updatedAt
               }
@@ -6817,39 +16915,30 @@ export const updateProduct = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -6892,9 +16981,73 @@ export const updateProduct = /* GraphQL */ `
             imageUrl
             description
             price
+            categoryID
             category {
               id
               name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
               createdAt
               updatedAt
             }
@@ -6911,6 +17064,8 @@ export const updateProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -6939,6 +17094,8 @@ export const updateProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -6970,6 +17127,252 @@ export const updateProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          quantity
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      orderProduct {
+        items {
+          id
+          orderID
+          productID
+          order {
+            id
+            userID
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          product {
+            id
+            name
+            imageUrl
+            description
+            price
+            categoryID
+            category {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            types {
+              items {
+                id
+                productID
+                name
+                imageURL
+                price
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -6980,9 +17383,104 @@ export const updateProduct = /* GraphQL */ `
               }
               nextToken
             }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            deals
+            quantity
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
             createdAt
             updatedAt
           }
+          quantity
           createdAt
           updatedAt
         }
@@ -7004,46 +17502,80 @@ export const deleteProduct = /* GraphQL */ `
       imageUrl
       description
       price
+      categoryID
       category {
         id
         name
         createdAt
         updatedAt
       }
-      types {
-        items {
+      sellerID
+      seller {
+        id
+        name
+        location {
           id
-          productID
-          name
-          imageURL
-          price
-          product {
+          userID
+          apt
+          street
+          city
+          state
+          zipcode
+          user {
             id
             name
-            imageUrl
-            description
-            price
-            category {
+            location {
               id
-              name
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
               createdAt
               updatedAt
             }
-            types {
+            orders {
               items {
                 id
-                productID
-                name
-                imageURL
-                price
-                product {
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
                   id
                   name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
+                  accountType
                   createdAt
                   updatedAt
                 }
@@ -7070,6 +17602,8 @@ export const deleteProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -7082,14 +17616,70 @@ export const deleteProduct = /* GraphQL */ `
               }
               nextToken
             }
-            deals
-            quantity
-            cartProduct {
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        orders {
+          items {
+            id
+            userID
+            orderProduct {
               items {
                 id
-                cartID
+                orderID
                 productID
-                cart {
+                order {
                   id
                   userID
                   createdAt
@@ -7101,51 +17691,194 @@ export const deleteProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
                   createdAt
                   updatedAt
                 }
                 createdAt
                 updatedAt
               }
-              nextToken
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
             }
             createdAt
             updatedAt
           }
-          createdAt
-          updatedAt
+          nextToken
         }
-        nextToken
-      }
-      ratings {
-        items {
-          id
-          userID
-          productID
-          user {
+        ratings {
+          items {
             id
-            name
-            location {
+            userID
+            productID
+            user {
               id
-              apt
-              street
-              city
-              state
-              zipcode
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
               createdAt
               updatedAt
             }
-            orders {
+            product {
               id
               name
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -7180,6 +17913,18 @@ export const deleteProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -7187,6 +17932,144 @@ export const deleteProduct = /* GraphQL */ `
               }
               createdAt
               updatedAt
+            }
+            rating
+            description
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        cart {
+          id
+          userID
+          cartProduct {
+            items {
+              id
+              cartID
+              productID
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              quantity
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
             }
             ratings {
               items {
@@ -7206,6 +18089,8 @@ export const deleteProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -7226,6 +18111,7 @@ export const deleteProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -7236,6 +18122,7 @@ export const deleteProduct = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -7245,15 +18132,7 @@ export const deleteProduct = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -7275,15 +18154,93 @@ export const deleteProduct = /* GraphQL */ `
             createdAt
             updatedAt
           }
+          createdAt
+          updatedAt
+        }
+        accountType
+        createdAt
+        updatedAt
+      }
+      types {
+        items {
+          id
+          productID
+          name
+          imageURL
+          price
           product {
             id
             name
             imageUrl
             description
             price
+            categoryID
             category {
               id
               name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
               createdAt
               updatedAt
             }
@@ -7300,6 +18257,8 @@ export const deleteProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -7328,6 +18287,8 @@ export const deleteProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -7359,11 +18320,398 @@ export const deleteProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
                   updatedAt
                 }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      ratings {
+        items {
+          id
+          userID
+          productID
+          user {
+            id
+            name
+            location {
+              id
+              userID
+              apt
+              street
+              city
+              state
+              zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
+                id
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          product {
+            id
+            name
+            imageUrl
+            description
+            price
+            categoryID
+            category {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            types {
+              items {
+                id
+                productID
+                name
+                imageURL
+                price
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            deals
+            quantity
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
                 createdAt
                 updatedAt
               }
@@ -7406,11 +18754,14 @@ export const deleteProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
                   updatedAt
                 }
+                quantity
                 createdAt
                 updatedAt
               }
@@ -7421,39 +18772,30 @@ export const deleteProduct = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -7496,9 +18838,73 @@ export const deleteProduct = /* GraphQL */ `
             imageUrl
             description
             price
+            categoryID
             category {
               id
               name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
               createdAt
               updatedAt
             }
@@ -7515,6 +18921,8 @@ export const deleteProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -7543,6 +18951,8 @@ export const deleteProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -7574,6 +18984,252 @@ export const deleteProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          quantity
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      orderProduct {
+        items {
+          id
+          orderID
+          productID
+          order {
+            id
+            userID
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          product {
+            id
+            name
+            imageUrl
+            description
+            price
+            categoryID
+            category {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            types {
+              items {
+                id
+                productID
+                name
+                imageURL
+                price
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -7584,9 +19240,104 @@ export const deleteProduct = /* GraphQL */ `
               }
               nextToken
             }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            deals
+            quantity
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
             createdAt
             updatedAt
           }
+          quantity
           createdAt
           updatedAt
         }
@@ -7614,9 +19365,319 @@ export const createType = /* GraphQL */ `
         imageUrl
         description
         price
+        categoryID
         category {
           id
           name
+          createdAt
+          updatedAt
+        }
+        sellerID
+        seller {
+          id
+          name
+          location {
+            id
+            userID
+            apt
+            street
+            city
+            state
+            zipcode
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          ratings {
+            items {
+              id
+              userID
+              productID
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              rating
+              description
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          cart {
+            id
+            userID
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          accountType
           createdAt
           updatedAt
         }
@@ -7633,9 +19694,41 @@ export const createType = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -7670,6 +19763,18 @@ export const createType = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -7693,39 +19798,30 @@ export const createType = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -7765,9 +19861,41 @@ export const createType = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -7802,6 +19930,18 @@ export const createType = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -7832,6 +19972,7 @@ export const createType = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -7842,6 +19983,7 @@ export const createType = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -7851,15 +19993,7 @@ export const createType = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -7883,9 +20017,41 @@ export const createType = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -7920,6 +20086,18 @@ export const createType = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -7928,6 +20106,160 @@ export const createType = /* GraphQL */ `
               createdAt
               updatedAt
             }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        orderProduct {
+          items {
+            id
+            orderID
+            productID
+            order {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
             createdAt
             updatedAt
           }
@@ -7958,9 +20290,319 @@ export const updateType = /* GraphQL */ `
         imageUrl
         description
         price
+        categoryID
         category {
           id
           name
+          createdAt
+          updatedAt
+        }
+        sellerID
+        seller {
+          id
+          name
+          location {
+            id
+            userID
+            apt
+            street
+            city
+            state
+            zipcode
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          ratings {
+            items {
+              id
+              userID
+              productID
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              rating
+              description
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          cart {
+            id
+            userID
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          accountType
           createdAt
           updatedAt
         }
@@ -7977,9 +20619,41 @@ export const updateType = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -8014,6 +20688,18 @@ export const updateType = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -8037,39 +20723,30 @@ export const updateType = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -8109,9 +20786,41 @@ export const updateType = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -8146,6 +20855,18 @@ export const updateType = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -8176,6 +20897,7 @@ export const updateType = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -8186,6 +20908,7 @@ export const updateType = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -8195,15 +20918,7 @@ export const updateType = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -8227,9 +20942,41 @@ export const updateType = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -8264,6 +21011,18 @@ export const updateType = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -8272,6 +21031,160 @@ export const updateType = /* GraphQL */ `
               createdAt
               updatedAt
             }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        orderProduct {
+          items {
+            id
+            orderID
+            productID
+            order {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
             createdAt
             updatedAt
           }
@@ -8302,9 +21215,319 @@ export const deleteType = /* GraphQL */ `
         imageUrl
         description
         price
+        categoryID
         category {
           id
           name
+          createdAt
+          updatedAt
+        }
+        sellerID
+        seller {
+          id
+          name
+          location {
+            id
+            userID
+            apt
+            street
+            city
+            state
+            zipcode
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          ratings {
+            items {
+              id
+              userID
+              productID
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              rating
+              description
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          cart {
+            id
+            userID
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          accountType
           createdAt
           updatedAt
         }
@@ -8321,9 +21544,41 @@ export const deleteType = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -8358,6 +21613,18 @@ export const deleteType = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -8381,39 +21648,30 @@ export const deleteType = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -8453,9 +21711,41 @@ export const deleteType = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -8490,6 +21780,18 @@ export const deleteType = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -8520,6 +21822,7 @@ export const deleteType = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -8530,6 +21833,7 @@ export const deleteType = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -8539,15 +21843,7 @@ export const deleteType = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -8571,9 +21867,41 @@ export const deleteType = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -8608,6 +21936,18 @@ export const deleteType = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -8616,6 +21956,160 @@ export const deleteType = /* GraphQL */ `
               createdAt
               updatedAt
             }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        orderProduct {
+          items {
+            id
+            orderID
+            productID
+            order {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
             createdAt
             updatedAt
           }
@@ -8693,6 +22187,7 @@ export const createCartProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -8703,6 +22198,7 @@ export const createCartProduct = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -8712,15 +22208,7 @@ export const createCartProduct = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -8744,9 +22232,41 @@ export const createCartProduct = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -8781,6 +22301,18 @@ export const createCartProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -8789,6 +22321,7 @@ export const createCartProduct = /* GraphQL */ `
               createdAt
               updatedAt
             }
+            quantity
             createdAt
             updatedAt
           }
@@ -8799,54 +22332,23 @@ export const createCartProduct = /* GraphQL */ `
           name
           location {
             id
+            userID
             apt
             street
             city
             state
             zipcode
-            createdAt
-            updatedAt
-          }
-          orders {
-            id
-            name
-            imageUrl
-            description
-            price
-            category {
+            user {
               id
               name
-              createdAt
-              updatedAt
-            }
-            types {
-              items {
-                id
-                productID
-                name
-                imageURL
-                price
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            ratings {
-              items {
+              location {
                 id
                 userID
-                productID
+                apt
+                street
+                city
+                state
+                zipcode
                 user {
                   id
                   name
@@ -8854,55 +22356,102 @@ export const createCartProduct = /* GraphQL */ `
                   createdAt
                   updatedAt
                 }
-                product {
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
                   id
                   name
-                  imageUrl
-                  description
-                  price
-                  deals
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
                   quantity
                   createdAt
                   updatedAt
                 }
-                rating
-                description
-                createdAt
-                updatedAt
+                nextToken
               }
-              nextToken
-            }
-            deals
-            quantity
-            cartProduct {
-              items {
+              user {
                 id
-                cartID
-                productID
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
                 cart {
                   id
                   userID
                   createdAt
                   updatedAt
                 }
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
+                accountType
                 createdAt
                 updatedAt
               }
-              nextToken
+              createdAt
+              updatedAt
             }
-            createdAt
-            updatedAt
+            nextToken
           }
           ratings {
             items {
@@ -8914,6 +22463,7 @@ export const createCartProduct = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -8923,15 +22473,7 @@ export const createCartProduct = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -8952,9 +22494,18 @@ export const createCartProduct = /* GraphQL */ `
                 imageUrl
                 description
                 price
+                categoryID
                 category {
                   id
                   name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
                   createdAt
                   updatedAt
                 }
@@ -8967,6 +22518,9 @@ export const createCartProduct = /* GraphQL */ `
                 deals
                 quantity
                 cartProduct {
+                  nextToken
+                }
+                orderProduct {
                   nextToken
                 }
                 createdAt
@@ -8999,11 +22553,14 @@ export const createCartProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
                   updatedAt
                 }
+                quantity
                 createdAt
                 updatedAt
               }
@@ -9014,39 +22571,30 @@ export const createCartProduct = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -9096,9 +22644,319 @@ export const createCartProduct = /* GraphQL */ `
         imageUrl
         description
         price
+        categoryID
         category {
           id
           name
+          createdAt
+          updatedAt
+        }
+        sellerID
+        seller {
+          id
+          name
+          location {
+            id
+            userID
+            apt
+            street
+            city
+            state
+            zipcode
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          ratings {
+            items {
+              id
+              userID
+              productID
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              rating
+              description
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          cart {
+            id
+            userID
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          accountType
           createdAt
           updatedAt
         }
@@ -9115,9 +22973,41 @@ export const createCartProduct = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -9152,6 +23042,18 @@ export const createCartProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -9175,39 +23077,30 @@ export const createCartProduct = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -9247,9 +23140,41 @@ export const createCartProduct = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -9284,6 +23209,18 @@ export const createCartProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -9314,6 +23251,7 @@ export const createCartProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -9324,6 +23262,7 @@ export const createCartProduct = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -9333,15 +23272,7 @@ export const createCartProduct = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -9365,9 +23296,41 @@ export const createCartProduct = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -9402,6 +23365,18 @@ export const createCartProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -9410,6 +23385,160 @@ export const createCartProduct = /* GraphQL */ `
               createdAt
               updatedAt
             }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        orderProduct {
+          items {
+            id
+            orderID
+            productID
+            order {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
             createdAt
             updatedAt
           }
@@ -9418,6 +23547,7 @@ export const createCartProduct = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      quantity
       createdAt
       updatedAt
     }
@@ -9448,6 +23578,7 @@ export const updateCartProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -9458,6 +23589,7 @@ export const updateCartProduct = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -9467,15 +23599,7 @@ export const updateCartProduct = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -9499,9 +23623,41 @@ export const updateCartProduct = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -9536,6 +23692,18 @@ export const updateCartProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -9544,6 +23712,7 @@ export const updateCartProduct = /* GraphQL */ `
               createdAt
               updatedAt
             }
+            quantity
             createdAt
             updatedAt
           }
@@ -9554,54 +23723,23 @@ export const updateCartProduct = /* GraphQL */ `
           name
           location {
             id
+            userID
             apt
             street
             city
             state
             zipcode
-            createdAt
-            updatedAt
-          }
-          orders {
-            id
-            name
-            imageUrl
-            description
-            price
-            category {
+            user {
               id
               name
-              createdAt
-              updatedAt
-            }
-            types {
-              items {
-                id
-                productID
-                name
-                imageURL
-                price
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            ratings {
-              items {
+              location {
                 id
                 userID
-                productID
+                apt
+                street
+                city
+                state
+                zipcode
                 user {
                   id
                   name
@@ -9609,55 +23747,102 @@ export const updateCartProduct = /* GraphQL */ `
                   createdAt
                   updatedAt
                 }
-                product {
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
                   id
                   name
-                  imageUrl
-                  description
-                  price
-                  deals
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
                   quantity
                   createdAt
                   updatedAt
                 }
-                rating
-                description
-                createdAt
-                updatedAt
+                nextToken
               }
-              nextToken
-            }
-            deals
-            quantity
-            cartProduct {
-              items {
+              user {
                 id
-                cartID
-                productID
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
                 cart {
                   id
                   userID
                   createdAt
                   updatedAt
                 }
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
+                accountType
                 createdAt
                 updatedAt
               }
-              nextToken
+              createdAt
+              updatedAt
             }
-            createdAt
-            updatedAt
+            nextToken
           }
           ratings {
             items {
@@ -9669,6 +23854,7 @@ export const updateCartProduct = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -9678,15 +23864,7 @@ export const updateCartProduct = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -9707,9 +23885,18 @@ export const updateCartProduct = /* GraphQL */ `
                 imageUrl
                 description
                 price
+                categoryID
                 category {
                   id
                   name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
                   createdAt
                   updatedAt
                 }
@@ -9722,6 +23909,9 @@ export const updateCartProduct = /* GraphQL */ `
                 deals
                 quantity
                 cartProduct {
+                  nextToken
+                }
+                orderProduct {
                   nextToken
                 }
                 createdAt
@@ -9754,11 +23944,14 @@ export const updateCartProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
                   updatedAt
                 }
+                quantity
                 createdAt
                 updatedAt
               }
@@ -9769,39 +23962,30 @@ export const updateCartProduct = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -9851,9 +24035,319 @@ export const updateCartProduct = /* GraphQL */ `
         imageUrl
         description
         price
+        categoryID
         category {
           id
           name
+          createdAt
+          updatedAt
+        }
+        sellerID
+        seller {
+          id
+          name
+          location {
+            id
+            userID
+            apt
+            street
+            city
+            state
+            zipcode
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          ratings {
+            items {
+              id
+              userID
+              productID
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              rating
+              description
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          cart {
+            id
+            userID
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          accountType
           createdAt
           updatedAt
         }
@@ -9870,9 +24364,41 @@ export const updateCartProduct = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -9907,6 +24433,18 @@ export const updateCartProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -9930,39 +24468,30 @@ export const updateCartProduct = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -10002,9 +24531,41 @@ export const updateCartProduct = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -10039,6 +24600,18 @@ export const updateCartProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -10069,6 +24642,7 @@ export const updateCartProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -10079,6 +24653,7 @@ export const updateCartProduct = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -10088,15 +24663,7 @@ export const updateCartProduct = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -10120,9 +24687,41 @@ export const updateCartProduct = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -10157,6 +24756,18 @@ export const updateCartProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -10165,6 +24776,160 @@ export const updateCartProduct = /* GraphQL */ `
               createdAt
               updatedAt
             }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        orderProduct {
+          items {
+            id
+            orderID
+            productID
+            order {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
             createdAt
             updatedAt
           }
@@ -10173,6 +24938,7 @@ export const updateCartProduct = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      quantity
       createdAt
       updatedAt
     }
@@ -10203,6 +24969,7 @@ export const deleteCartProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -10213,6 +24980,7 @@ export const deleteCartProduct = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -10222,15 +24990,7 @@ export const deleteCartProduct = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -10254,9 +25014,41 @@ export const deleteCartProduct = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -10291,6 +25083,18 @@ export const deleteCartProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -10299,6 +25103,7 @@ export const deleteCartProduct = /* GraphQL */ `
               createdAt
               updatedAt
             }
+            quantity
             createdAt
             updatedAt
           }
@@ -10309,54 +25114,23 @@ export const deleteCartProduct = /* GraphQL */ `
           name
           location {
             id
+            userID
             apt
             street
             city
             state
             zipcode
-            createdAt
-            updatedAt
-          }
-          orders {
-            id
-            name
-            imageUrl
-            description
-            price
-            category {
+            user {
               id
               name
-              createdAt
-              updatedAt
-            }
-            types {
-              items {
-                id
-                productID
-                name
-                imageURL
-                price
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
-                createdAt
-                updatedAt
-              }
-              nextToken
-            }
-            ratings {
-              items {
+              location {
                 id
                 userID
-                productID
+                apt
+                street
+                city
+                state
+                zipcode
                 user {
                   id
                   name
@@ -10364,55 +25138,102 @@ export const deleteCartProduct = /* GraphQL */ `
                   createdAt
                   updatedAt
                 }
-                product {
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
                   id
                   name
-                  imageUrl
-                  description
-                  price
-                  deals
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
                   quantity
                   createdAt
                   updatedAt
                 }
-                rating
-                description
-                createdAt
-                updatedAt
+                nextToken
               }
-              nextToken
-            }
-            deals
-            quantity
-            cartProduct {
-              items {
+              user {
                 id
-                cartID
-                productID
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
                 cart {
                   id
                   userID
                   createdAt
                   updatedAt
                 }
-                product {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
-                }
+                accountType
                 createdAt
                 updatedAt
               }
-              nextToken
+              createdAt
+              updatedAt
             }
-            createdAt
-            updatedAt
+            nextToken
           }
           ratings {
             items {
@@ -10424,6 +25245,7 @@ export const deleteCartProduct = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -10433,15 +25255,7 @@ export const deleteCartProduct = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -10462,9 +25276,18 @@ export const deleteCartProduct = /* GraphQL */ `
                 imageUrl
                 description
                 price
+                categoryID
                 category {
                   id
                   name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
                   createdAt
                   updatedAt
                 }
@@ -10477,6 +25300,9 @@ export const deleteCartProduct = /* GraphQL */ `
                 deals
                 quantity
                 cartProduct {
+                  nextToken
+                }
+                orderProduct {
                   nextToken
                 }
                 createdAt
@@ -10509,11 +25335,14 @@ export const deleteCartProduct = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
                   updatedAt
                 }
+                quantity
                 createdAt
                 updatedAt
               }
@@ -10524,39 +25353,30 @@ export const deleteCartProduct = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -10606,9 +25426,319 @@ export const deleteCartProduct = /* GraphQL */ `
         imageUrl
         description
         price
+        categoryID
         category {
           id
           name
+          createdAt
+          updatedAt
+        }
+        sellerID
+        seller {
+          id
+          name
+          location {
+            id
+            userID
+            apt
+            street
+            city
+            state
+            zipcode
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          ratings {
+            items {
+              id
+              userID
+              productID
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              rating
+              description
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          cart {
+            id
+            userID
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          accountType
           createdAt
           updatedAt
         }
@@ -10625,9 +25755,41 @@ export const deleteCartProduct = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -10662,6 +25824,18 @@ export const deleteCartProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -10685,39 +25859,30 @@ export const deleteCartProduct = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -10757,9 +25922,41 @@ export const deleteCartProduct = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -10794,6 +25991,18 @@ export const deleteCartProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -10824,6 +26033,7 @@ export const deleteCartProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -10834,6 +26044,7 @@ export const deleteCartProduct = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -10843,15 +26054,7 @@ export const deleteCartProduct = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -10875,9 +26078,41 @@ export const deleteCartProduct = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -10912,6 +26147,1086 @@ export const deleteCartProduct = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        orderProduct {
+          items {
+            id
+            orderID
+            productID
+            order {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      quantity
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createOrderProduct = /* GraphQL */ `
+  mutation CreateOrderProduct(
+    $input: CreateOrderProductInput!
+    $condition: ModelOrderProductConditionInput
+  ) {
+    createOrderProduct(input: $input, condition: $condition) {
+      id
+      orderID
+      productID
+      order {
+        id
+        userID
+        orderProduct {
+          items {
+            id
+            orderID
+            productID
+            order {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        user {
+          id
+          name
+          location {
+            id
+            userID
+            apt
+            street
+            city
+            state
+            zipcode
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          ratings {
+            items {
+              id
+              userID
+              productID
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              rating
+              description
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          cart {
+            id
+            userID
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          accountType
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      product {
+        id
+        name
+        imageUrl
+        description
+        price
+        categoryID
+        category {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        sellerID
+        seller {
+          id
+          name
+          location {
+            id
+            userID
+            apt
+            street
+            city
+            state
+            zipcode
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          ratings {
+            items {
+              id
+              userID
+              productID
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              rating
+              description
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          cart {
+            id
+            userID
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          accountType
+          createdAt
+          updatedAt
+        }
+        types {
+          items {
+            id
+            productID
+            name
+            imageURL
+            price
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -10925,9 +27240,3269 @@ export const deleteCartProduct = /* GraphQL */ `
           }
           nextToken
         }
+        ratings {
+          items {
+            id
+            userID
+            productID
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            rating
+            description
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        deals
+        quantity
+        cartProduct {
+          items {
+            id
+            cartID
+            productID
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        orderProduct {
+          items {
+            id
+            orderID
+            productID
+            order {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
         createdAt
         updatedAt
       }
+      quantity
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateOrderProduct = /* GraphQL */ `
+  mutation UpdateOrderProduct(
+    $input: UpdateOrderProductInput!
+    $condition: ModelOrderProductConditionInput
+  ) {
+    updateOrderProduct(input: $input, condition: $condition) {
+      id
+      orderID
+      productID
+      order {
+        id
+        userID
+        orderProduct {
+          items {
+            id
+            orderID
+            productID
+            order {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        user {
+          id
+          name
+          location {
+            id
+            userID
+            apt
+            street
+            city
+            state
+            zipcode
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          ratings {
+            items {
+              id
+              userID
+              productID
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              rating
+              description
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          cart {
+            id
+            userID
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          accountType
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      product {
+        id
+        name
+        imageUrl
+        description
+        price
+        categoryID
+        category {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        sellerID
+        seller {
+          id
+          name
+          location {
+            id
+            userID
+            apt
+            street
+            city
+            state
+            zipcode
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          ratings {
+            items {
+              id
+              userID
+              productID
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              rating
+              description
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          cart {
+            id
+            userID
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          accountType
+          createdAt
+          updatedAt
+        }
+        types {
+          items {
+            id
+            productID
+            name
+            imageURL
+            price
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        ratings {
+          items {
+            id
+            userID
+            productID
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            rating
+            description
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        deals
+        quantity
+        cartProduct {
+          items {
+            id
+            cartID
+            productID
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        orderProduct {
+          items {
+            id
+            orderID
+            productID
+            order {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      quantity
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteOrderProduct = /* GraphQL */ `
+  mutation DeleteOrderProduct(
+    $input: DeleteOrderProductInput!
+    $condition: ModelOrderProductConditionInput
+  ) {
+    deleteOrderProduct(input: $input, condition: $condition) {
+      id
+      orderID
+      productID
+      order {
+        id
+        userID
+        orderProduct {
+          items {
+            id
+            orderID
+            productID
+            order {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        user {
+          id
+          name
+          location {
+            id
+            userID
+            apt
+            street
+            city
+            state
+            zipcode
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          ratings {
+            items {
+              id
+              userID
+              productID
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              rating
+              description
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          cart {
+            id
+            userID
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          accountType
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      product {
+        id
+        name
+        imageUrl
+        description
+        price
+        categoryID
+        category {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        sellerID
+        seller {
+          id
+          name
+          location {
+            id
+            userID
+            apt
+            street
+            city
+            state
+            zipcode
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          orders {
+            items {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          ratings {
+            items {
+              id
+              userID
+              productID
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              product {
+                id
+                name
+                imageUrl
+                description
+                price
+                categoryID
+                category {
+                  id
+                  name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                types {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                deals
+                quantity
+                cartProduct {
+                  nextToken
+                }
+                orderProduct {
+                  nextToken
+                }
+                createdAt
+                updatedAt
+              }
+              rating
+              description
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          cart {
+            id
+            userID
+            cartProduct {
+              items {
+                id
+                cartID
+                productID
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          accountType
+          createdAt
+          updatedAt
+        }
+        types {
+          items {
+            id
+            productID
+            name
+            imageURL
+            price
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        ratings {
+          items {
+            id
+            userID
+            productID
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            rating
+            description
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        deals
+        quantity
+        cartProduct {
+          items {
+            id
+            cartID
+            productID
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        orderProduct {
+          items {
+            id
+            orderID
+            productID
+            order {
+              id
+              userID
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            product {
+              id
+              name
+              imageUrl
+              description
+              price
+              categoryID
+              category {
+                id
+                name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              types {
+                items {
+                  id
+                  productID
+                  name
+                  imageURL
+                  price
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              deals
+              quantity
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              createdAt
+              updatedAt
+            }
+            quantity
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      quantity
       createdAt
       updatedAt
     }
@@ -10966,11 +30541,14 @@ export const createCart = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
                   updatedAt
                 }
+                quantity
                 createdAt
                 updatedAt
               }
@@ -10981,39 +30559,30 @@ export const createCart = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -11056,9 +30625,73 @@ export const createCart = /* GraphQL */ `
             imageUrl
             description
             price
+            categoryID
             category {
               id
               name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
               createdAt
               updatedAt
             }
@@ -11075,6 +30708,8 @@ export const createCart = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -11103,6 +30738,8 @@ export const createCart = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -11134,11 +30771,44 @@ export const createCart = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
                   updatedAt
                 }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
                 createdAt
                 updatedAt
               }
@@ -11147,6 +30817,7 @@ export const createCart = /* GraphQL */ `
             createdAt
             updatedAt
           }
+          quantity
           createdAt
           updatedAt
         }
@@ -11157,74 +30828,29 @@ export const createCart = /* GraphQL */ `
         name
         location {
           id
+          userID
           apt
           street
           city
           state
           zipcode
-          createdAt
-          updatedAt
-        }
-        orders {
-          id
-          name
-          imageUrl
-          description
-          price
-          category {
+          user {
             id
             name
-            createdAt
-            updatedAt
-          }
-          types {
-            items {
-              id
-              productID
-              name
-              imageURL
-              price
-              product {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
-                  id
-                  name
-                  createdAt
-                  updatedAt
-                }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
-              }
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          ratings {
-            items {
+            location {
               id
               userID
-              productID
+              apt
+              street
+              city
+              state
+              zipcode
               user {
                 id
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -11234,15 +30860,7 @@ export const createCart = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -11257,46 +30875,190 @@ export const createCart = /* GraphQL */ `
                 createdAt
                 updatedAt
               }
-              product {
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
                 id
-                name
-                imageUrl
-                description
-                price
-                category {
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
                   id
                   name
+                  accountType
                   createdAt
                   updatedAt
                 }
-                types {
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
                   nextToken
                 }
                 ratings {
                   nextToken
                 }
-                deals
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        orders {
+          items {
+            id
+            userID
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
                 quantity
-                cartProduct {
-                  nextToken
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
                 }
                 createdAt
                 updatedAt
               }
-              rating
-              description
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          deals
-          quantity
-          cartProduct {
-            items {
-              id
-              cartID
-              productID
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
               cart {
                 id
                 userID
@@ -11313,39 +31075,14 @@ export const createCart = /* GraphQL */ `
                 createdAt
                 updatedAt
               }
-              product {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
-                  id
-                  name
-                  createdAt
-                  updatedAt
-                }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
-              }
+              accountType
               createdAt
               updatedAt
             }
-            nextToken
+            createdAt
+            updatedAt
           }
-          createdAt
-          updatedAt
+          nextToken
         }
         ratings {
           items {
@@ -11357,39 +31094,30 @@ export const createCart = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -11429,9 +31157,41 @@ export const createCart = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -11466,6 +31226,18 @@ export const createCart = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -11511,9 +31283,18 @@ export const createCart = /* GraphQL */ `
                 imageUrl
                 description
                 price
+                categoryID
                 category {
                   id
                   name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
                   createdAt
                   updatedAt
                 }
@@ -11528,9 +31309,13 @@ export const createCart = /* GraphQL */ `
                 cartProduct {
                   nextToken
                 }
+                orderProduct {
+                  nextToken
+                }
                 createdAt
                 updatedAt
               }
+              quantity
               createdAt
               updatedAt
             }
@@ -11541,64 +31326,63 @@ export const createCart = /* GraphQL */ `
             name
             location {
               id
+              userID
               apt
               street
               city
               state
               zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
               createdAt
               updatedAt
             }
             orders {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
+              items {
                 id
-                name
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
+              nextToken
             }
             ratings {
               items {
@@ -11618,6 +31402,8 @@ export const createCart = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -11638,6 +31424,7 @@ export const createCart = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -11648,6 +31435,7 @@ export const createCart = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -11657,15 +31445,7 @@ export const createCart = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -11732,11 +31512,14 @@ export const updateCart = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
                   updatedAt
                 }
+                quantity
                 createdAt
                 updatedAt
               }
@@ -11747,39 +31530,30 @@ export const updateCart = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -11822,9 +31596,73 @@ export const updateCart = /* GraphQL */ `
             imageUrl
             description
             price
+            categoryID
             category {
               id
               name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
               createdAt
               updatedAt
             }
@@ -11841,6 +31679,8 @@ export const updateCart = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -11869,6 +31709,8 @@ export const updateCart = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -11900,11 +31742,44 @@ export const updateCart = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
                   updatedAt
                 }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
                 createdAt
                 updatedAt
               }
@@ -11913,6 +31788,7 @@ export const updateCart = /* GraphQL */ `
             createdAt
             updatedAt
           }
+          quantity
           createdAt
           updatedAt
         }
@@ -11923,74 +31799,29 @@ export const updateCart = /* GraphQL */ `
         name
         location {
           id
+          userID
           apt
           street
           city
           state
           zipcode
-          createdAt
-          updatedAt
-        }
-        orders {
-          id
-          name
-          imageUrl
-          description
-          price
-          category {
+          user {
             id
             name
-            createdAt
-            updatedAt
-          }
-          types {
-            items {
-              id
-              productID
-              name
-              imageURL
-              price
-              product {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
-                  id
-                  name
-                  createdAt
-                  updatedAt
-                }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
-              }
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          ratings {
-            items {
+            location {
               id
               userID
-              productID
+              apt
+              street
+              city
+              state
+              zipcode
               user {
                 id
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -12000,15 +31831,7 @@ export const updateCart = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -12023,46 +31846,190 @@ export const updateCart = /* GraphQL */ `
                 createdAt
                 updatedAt
               }
-              product {
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
                 id
-                name
-                imageUrl
-                description
-                price
-                category {
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
                   id
                   name
+                  accountType
                   createdAt
                   updatedAt
                 }
-                types {
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
                   nextToken
                 }
                 ratings {
                   nextToken
                 }
-                deals
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        orders {
+          items {
+            id
+            userID
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
                 quantity
-                cartProduct {
-                  nextToken
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
                 }
                 createdAt
                 updatedAt
               }
-              rating
-              description
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          deals
-          quantity
-          cartProduct {
-            items {
-              id
-              cartID
-              productID
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
               cart {
                 id
                 userID
@@ -12079,39 +32046,14 @@ export const updateCart = /* GraphQL */ `
                 createdAt
                 updatedAt
               }
-              product {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
-                  id
-                  name
-                  createdAt
-                  updatedAt
-                }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
-              }
+              accountType
               createdAt
               updatedAt
             }
-            nextToken
+            createdAt
+            updatedAt
           }
-          createdAt
-          updatedAt
+          nextToken
         }
         ratings {
           items {
@@ -12123,39 +32065,30 @@ export const updateCart = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -12195,9 +32128,41 @@ export const updateCart = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -12232,6 +32197,18 @@ export const updateCart = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -12277,9 +32254,18 @@ export const updateCart = /* GraphQL */ `
                 imageUrl
                 description
                 price
+                categoryID
                 category {
                   id
                   name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
                   createdAt
                   updatedAt
                 }
@@ -12294,9 +32280,13 @@ export const updateCart = /* GraphQL */ `
                 cartProduct {
                   nextToken
                 }
+                orderProduct {
+                  nextToken
+                }
                 createdAt
                 updatedAt
               }
+              quantity
               createdAt
               updatedAt
             }
@@ -12307,64 +32297,63 @@ export const updateCart = /* GraphQL */ `
             name
             location {
               id
+              userID
               apt
               street
               city
               state
               zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
               createdAt
               updatedAt
             }
             orders {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
+              items {
                 id
-                name
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
+              nextToken
             }
             ratings {
               items {
@@ -12384,6 +32373,8 @@ export const updateCart = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -12404,6 +32395,7 @@ export const updateCart = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -12414,6 +32406,7 @@ export const updateCart = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -12423,15 +32416,7 @@ export const updateCart = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -12498,11 +32483,14 @@ export const deleteCart = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
                   updatedAt
                 }
+                quantity
                 createdAt
                 updatedAt
               }
@@ -12513,39 +32501,30 @@ export const deleteCart = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -12588,9 +32567,73 @@ export const deleteCart = /* GraphQL */ `
             imageUrl
             description
             price
+            categoryID
             category {
               id
               name
+              createdAt
+              updatedAt
+            }
+            sellerID
+            seller {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              cart {
+                id
+                userID
+                cartProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                createdAt
+                updatedAt
+              }
+              accountType
               createdAt
               updatedAt
             }
@@ -12607,6 +32650,8 @@ export const deleteCart = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -12635,6 +32680,8 @@ export const deleteCart = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -12666,11 +32713,44 @@ export const deleteCart = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
                   updatedAt
                 }
+                quantity
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                quantity
                 createdAt
                 updatedAt
               }
@@ -12679,6 +32759,7 @@ export const deleteCart = /* GraphQL */ `
             createdAt
             updatedAt
           }
+          quantity
           createdAt
           updatedAt
         }
@@ -12689,74 +32770,29 @@ export const deleteCart = /* GraphQL */ `
         name
         location {
           id
+          userID
           apt
           street
           city
           state
           zipcode
-          createdAt
-          updatedAt
-        }
-        orders {
-          id
-          name
-          imageUrl
-          description
-          price
-          category {
+          user {
             id
             name
-            createdAt
-            updatedAt
-          }
-          types {
-            items {
-              id
-              productID
-              name
-              imageURL
-              price
-              product {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
-                  id
-                  name
-                  createdAt
-                  updatedAt
-                }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
-              }
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          ratings {
-            items {
+            location {
               id
               userID
-              productID
+              apt
+              street
+              city
+              state
+              zipcode
               user {
                 id
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -12766,15 +32802,7 @@ export const deleteCart = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
@@ -12789,46 +32817,190 @@ export const deleteCart = /* GraphQL */ `
                 createdAt
                 updatedAt
               }
-              product {
+              createdAt
+              updatedAt
+            }
+            orders {
+              items {
                 id
-                name
-                imageUrl
-                description
-                price
-                category {
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
                   id
                   name
+                  accountType
                   createdAt
                   updatedAt
                 }
-                types {
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            ratings {
+              items {
+                id
+                userID
+                productID
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                rating
+                description
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            cart {
+              id
+              userID
+              cartProduct {
+                items {
+                  id
+                  cartID
+                  productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
                   nextToken
                 }
                 ratings {
                   nextToken
                 }
-                deals
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
+              createdAt
+              updatedAt
+            }
+            accountType
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        orders {
+          items {
+            id
+            userID
+            orderProduct {
+              items {
+                id
+                orderID
+                productID
+                order {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                product {
+                  id
+                  name
+                  imageUrl
+                  description
+                  price
+                  categoryID
+                  sellerID
+                  deals
+                  quantity
+                  createdAt
+                  updatedAt
+                }
                 quantity
-                cartProduct {
-                  nextToken
+                createdAt
+                updatedAt
+              }
+              nextToken
+            }
+            user {
+              id
+              name
+              location {
+                id
+                userID
+                apt
+                street
+                city
+                state
+                zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
                 }
                 createdAt
                 updatedAt
               }
-              rating
-              description
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          deals
-          quantity
-          cartProduct {
-            items {
-              id
-              cartID
-              productID
+              orders {
+                items {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              ratings {
+                items {
+                  id
+                  userID
+                  productID
+                  rating
+                  description
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
               cart {
                 id
                 userID
@@ -12845,39 +33017,14 @@ export const deleteCart = /* GraphQL */ `
                 createdAt
                 updatedAt
               }
-              product {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
-                  id
-                  name
-                  createdAt
-                  updatedAt
-                }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
-              }
+              accountType
               createdAt
               updatedAt
             }
-            nextToken
+            createdAt
+            updatedAt
           }
-          createdAt
-          updatedAt
+          nextToken
         }
         ratings {
           items {
@@ -12889,39 +33036,30 @@ export const deleteCart = /* GraphQL */ `
               name
               location {
                 id
+                userID
                 apt
                 street
                 city
                 state
                 zipcode
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
               orders {
-                id
-                name
-                imageUrl
-                description
-                price
-                category {
+                items {
                   id
-                  name
+                  userID
                   createdAt
                   updatedAt
                 }
-                types {
-                  nextToken
-                }
-                ratings {
-                  nextToken
-                }
-                deals
-                quantity
-                cartProduct {
-                  nextToken
-                }
-                createdAt
-                updatedAt
+                nextToken
               }
               ratings {
                 items {
@@ -12961,9 +33099,41 @@ export const deleteCart = /* GraphQL */ `
               imageUrl
               description
               price
+              categoryID
               category {
                 id
                 name
+                createdAt
+                updatedAt
+              }
+              sellerID
+              seller {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
                 createdAt
                 updatedAt
               }
@@ -12998,6 +33168,18 @@ export const deleteCart = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
+                  createdAt
+                  updatedAt
+                }
+                nextToken
+              }
+              orderProduct {
+                items {
+                  id
+                  orderID
+                  productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -13043,9 +33225,18 @@ export const deleteCart = /* GraphQL */ `
                 imageUrl
                 description
                 price
+                categoryID
                 category {
                   id
                   name
+                  createdAt
+                  updatedAt
+                }
+                sellerID
+                seller {
+                  id
+                  name
+                  accountType
                   createdAt
                   updatedAt
                 }
@@ -13060,9 +33251,13 @@ export const deleteCart = /* GraphQL */ `
                 cartProduct {
                   nextToken
                 }
+                orderProduct {
+                  nextToken
+                }
                 createdAt
                 updatedAt
               }
+              quantity
               createdAt
               updatedAt
             }
@@ -13073,64 +33268,63 @@ export const deleteCart = /* GraphQL */ `
             name
             location {
               id
+              userID
               apt
               street
               city
               state
               zipcode
+              user {
+                id
+                name
+                location {
+                  id
+                  userID
+                  apt
+                  street
+                  city
+                  state
+                  zipcode
+                  createdAt
+                  updatedAt
+                }
+                orders {
+                  nextToken
+                }
+                ratings {
+                  nextToken
+                }
+                cart {
+                  id
+                  userID
+                  createdAt
+                  updatedAt
+                }
+                accountType
+                createdAt
+                updatedAt
+              }
               createdAt
               updatedAt
             }
             orders {
-              id
-              name
-              imageUrl
-              description
-              price
-              category {
+              items {
                 id
-                name
+                userID
+                orderProduct {
+                  nextToken
+                }
+                user {
+                  id
+                  name
+                  accountType
+                  createdAt
+                  updatedAt
+                }
                 createdAt
                 updatedAt
               }
-              types {
-                items {
-                  id
-                  productID
-                  name
-                  imageURL
-                  price
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              ratings {
-                items {
-                  id
-                  userID
-                  productID
-                  rating
-                  description
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              deals
-              quantity
-              cartProduct {
-                items {
-                  id
-                  cartID
-                  productID
-                  createdAt
-                  updatedAt
-                }
-                nextToken
-              }
-              createdAt
-              updatedAt
+              nextToken
             }
             ratings {
               items {
@@ -13150,6 +33344,8 @@ export const deleteCart = /* GraphQL */ `
                   imageUrl
                   description
                   price
+                  categoryID
+                  sellerID
                   deals
                   quantity
                   createdAt
@@ -13170,6 +33366,7 @@ export const deleteCart = /* GraphQL */ `
                   id
                   cartID
                   productID
+                  quantity
                   createdAt
                   updatedAt
                 }
@@ -13180,6 +33377,7 @@ export const deleteCart = /* GraphQL */ `
                 name
                 location {
                   id
+                  userID
                   apt
                   street
                   city
@@ -13189,15 +33387,7 @@ export const deleteCart = /* GraphQL */ `
                   updatedAt
                 }
                 orders {
-                  id
-                  name
-                  imageUrl
-                  description
-                  price
-                  deals
-                  quantity
-                  createdAt
-                  updatedAt
+                  nextToken
                 }
                 ratings {
                   nextToken
