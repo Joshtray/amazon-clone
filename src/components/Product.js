@@ -18,8 +18,13 @@ const Product = (props) => {
     }
   }
   const fetchImage = async () => {
+    try {
       const signedUrl = await Storage.get(product.id + '.jpeg')
       await API.graphql(graphqlOperation(updateProduct, {input: {id: product.id, imageUrl: signedUrl}}))
+    }
+    catch (e) {
+      console.log(e)
+    }
   }
   const getUserInfo = async () => {
       const userInfo = await Auth.currentAuthenticatedUser();

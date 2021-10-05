@@ -35,15 +35,10 @@ const Account = () => {
             if (userData) {
                 const usrData = await API.graphql(graphqlOperation(getUser, { id: userData.attributes.sub }))
                 setUserInfo(usrData.data.getUser)
-                console.log(userData)
-                console.log(usrData)
                 const usrLocation = await API.graphql(graphqlOperation(getLocation, {id: userData.attributes.sub }))
-                console.log(usrLocation)
                 if (usrLocation.data.getLocation) {
-                  console.log(usrLocation.data.getLocation.zipcode)
                   const loc = usrLocation.data.getLocation.apt + ", " + usrLocation.data.getLocation.street + ", " + usrLocation.data.getLocation.city + ", " + usrLocation.data.getLocation.state + ", " + usrLocation.data.getLocation.zipcode
                   setLocation(loc)
-                  console.log(loc)
                 }
                 else {
                   setLocation("Add a location")
@@ -54,8 +49,6 @@ const Account = () => {
         }
         catch (e) {
             console.log(e)
-            // history.push('/login')
-            // history.go(0)
         }
     }
     const changePass = async () => {
@@ -97,12 +90,10 @@ const Account = () => {
       else {
         try {
             const checkLoc = await API.graphql(graphqlOperation(getLocation, {id: user.attributes.sub}))
-            console.log(checkLoc)
             if (checkLoc.data.getLocation) {
               await API.graphql(graphqlOperation(deleteLocation, {input: {id: user.attributes.sub}}))
             }
             const location = await API.graphql(graphqlOperation(createLocation, {input: {id: user.attributes.sub, userID: user.attributes.sub, apt: apt, street: street, city: city, state: state, zipcode: zip}}))
-            console.log(location)
             const loc = (location.data.createLocation.apt && location.data.createLocation.apt + ", ") + (location.data.createLocation.street && location.data.createLocation.street + ", ") + (location.data.createLocation.city && location.data.createLocation.city + ", ") + (location.data.createLocation.state && location.data.createLocation.state + ", ") + (location.data.createLocation.zipcode && location.data.createLocation.zipcode)
             setLocation(loc)
             setApt('')

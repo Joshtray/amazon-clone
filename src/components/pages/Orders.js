@@ -17,7 +17,6 @@ const Orders = () => {
           const userData = await Auth.currentAuthenticatedUser()
           if (userData) {
               const usrData = await API.graphql(graphqlOperation(getUser, {id: userData.attributes.sub}))
-              console.log(usrData)
               setOrders(usrData.data.getUser.orders.items.reverse())
           }
       }
