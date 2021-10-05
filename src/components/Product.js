@@ -13,6 +13,9 @@ const Product = (props) => {
   var quantities = []
   const updateQuantity = async (event) => {
     await API.graphql(graphqlOperation(updateCartProduct, {input: {id: cartProduct.id, quantity: event.target.value}}))
+    if (event.target.value == 0) {
+      delProduct()
+    }
   }
   const fetchImage = async () => {
       const signedUrl = await Storage.get(product.id + '.jpeg')
@@ -65,7 +68,7 @@ const Product = (props) => {
             </div>
           </div>
           <div className="price_sec">
-            <p>${product.price*cartProduct.quantity}</p>
+            <p>${cartProduct ? product.price*cartProduct.quantity : product.price}</p>
           </div>
       </Product_block>
   )
