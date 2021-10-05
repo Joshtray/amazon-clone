@@ -122,7 +122,7 @@ const Account = () => {
               <p>Hey, {name} ;)</p>
               <Top1>
                 <p>Email: {email}</p>
-                <button onClick={() => (setChangeEmail(true))}>{changeEmail?"v":">"}</button>
+                <button onClick={() => {setChangeEmail(!changeEmail);setChangePassword(false);setChangeLocation(false)}}>{changeEmail?"v":">"}</button>
               </Top1>
               <Hide1>
                 {changeEmail && <section>
@@ -138,7 +138,7 @@ const Account = () => {
               </Hide1>
               <Top2>
                 <p>Pasword: ********</p>
-                <button onClick={() => (setChangePassword(true))}>{changePassword?"v":">"}</button>
+                <button onClick={() => {setChangePassword(!changePassword);setChangeEmail(false);setChangeLocation(false)}}>{changePassword?"v":">"}</button>
               </Top2>
               <Hide2>
                 {changePassword &&
@@ -151,7 +151,7 @@ const Account = () => {
                </Hide2>
                <Top3>
                  <p>Location: {location}</p>
-                 <button onClick={() => (setChangeLocation(true))}>{changeLocation?"v":">"}</button>
+                 <button onClick={() => {setChangeLocation(!changeLocation);setChangePassword(false);setChangeEmail(false)}}>{changeLocation?"v":">"}</button>
                </Top3>
                <Hide3>
                  {changeLocation && <section>
