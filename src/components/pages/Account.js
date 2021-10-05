@@ -141,12 +141,14 @@ const Account = () => {
             </section>
             <section>
               <p>Hey, {name} ;)</p>
-              <Top1>
-                <p>Email: {email}</p>
-                <button onClick={() => {setChangeEmail(!changeEmail);setChangePassword(false);setChangeLocation(false)}}>{changeEmail?"v":">"}</button>
+              <Top1 onClick={() => {setChangeEmail(!changeEmail);setChangePassword(false);setChangeLocation(false)}}>
+                <p>Email: <span>{email}</span></p>
+                <button onClick={() => {setChangeEmail(!changeEmail);setChangePassword(false);setChangeLocation(false)}}>
+                  <div className = {changeEmail?"tilt":""}>+</div>
+                </button>
               </Top1>
               <Hide1>
-                {changeEmail && <section>
+                <section className = {changeEmail? "hide": ""} >
                   {!confirmEmail && <section>
                     <input value={email} onChange={(e) => (setEmail(e.target.value))} />
                     <button onClick={newEmail}>Change Email</button>
@@ -155,34 +157,37 @@ const Account = () => {
                     <input placeholder="Enter the confirmation code sent to the new email address" onChange={(e) => (setEmailConfirm(e.target.value))} />
                     <button onClick={checkEmail}>Confirm email</button>
                   </section>}
-                </section>}
+                </section>
               </Hide1>
-              <Top2>
+              <Top2 onClick={() => {setChangePassword(!changePassword);setChangeEmail(false);setChangeLocation(false)}}>
                 <p>Pasword: ********</p>
-                <button onClick={() => {setChangePassword(!changePassword);setChangeEmail(false);setChangeLocation(false)}}>{changePassword?"v":">"}</button>
+                <button onClick={() => {setChangePassword(!changePassword);setChangeEmail(false);setChangeLocation(false)}}>
+                  <div className = {changePassword?"tilt":""}>+</div>
+                </button>
               </Top2>
               <Hide2>
-                {changePassword &&
-                  <section>
+                  <section className = {changePassword ? "hide": ""} >
                     <input type='password' placeholder="Enter current password" onChange={(e) => (setCurrentPassword(e.target.value))} />
                     <input type='password' placeholder="Enter new password" onChange={(e) => (setNewPassword(e.target.value))} />
                     <input type='password' placeholder="Confirm new password" onChange={(e) => (setNewPasswordConfirm(e.target.value))} />
                     <button onClick={changePass}>Change Password</button>
-                  </section>}
+                  </section>
                </Hide2>
-               <Top3>
-                 Location: <p> {location} </p>
-                 <button onClick={() => {setChangeLocation(!changeLocation);setChangePassword(false);setChangeEmail(false)}}>{changeLocation?"v":">"}</button>
+               <Top3 onClick={() => {setChangeLocation(!changeLocation);setChangePassword(false);setChangeEmail(false)}}>
+                 <p>Location: {location}</p>
+                 <button onClick={() => {setChangeLocation(!changeLocation);setChangePassword(false);setChangeEmail(false)}}>
+                   <div className = {changeLocation?"tilt":""}>+</div>
+                 </button>
                </Top3>
                <Hide3>
-                 {changeLocation && <section>
+                  <section className = {changeLocation? "hide": ""}>
                    <input placeholder="Apt, Room No., Building, etc" onChange={(e) => (setApt(e.target.value))} />
                    <input placeholder="Street" onChange={(e) => (setStreet(e.target.value))} />
                    <input placeholder="City" onChange={(e) => (setCity(e.target.value))} />
                    <input placeholder="State" onChange={(e) => (setState(e.target.value))} />
                    <input placeholder="Zip Code" type="number" onChange={(e) => (setZip(e.target.value))} />
                    <button onClick={newLocation}>Change Location</button>
-                 </section>}
+                 </section>
                </Hide3>
           </section>
         </div>
@@ -202,6 +207,7 @@ const Top1 = styled.div`
   outline: 0;
   margin-top: 5px;
   background-color: #fffbf4;
+  cursor: pointer;
   button{
     height: inherit;
     background-color: inherit;
@@ -209,6 +215,15 @@ const Top1 = styled.div`
     cursor: pointer;
     width: 40px;
     padding: 0px;
+    transition: all 0.5s 0s ease;
+    div{
+      transition: all 0.25s 0s ease;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .tilt{
+      transform: rotate(45deg);
+    }
   }
   p{
     text-transform: none;
@@ -221,19 +236,16 @@ const Hide1 = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  section{
-    display: flex;
-    flex-direction: column;
+  box-sizing: border-box;
+  height: max-content;
+  .hide{
+    height: max-content;
     input{
-      font-size: 14px;
-      min-height: 25px;
+      height 25px;
       padding: 10px;
-      width: 96%;
       border: 1px solid transparent;
       border-color: #dbdbdb;
       border-radius: 3px;
-      line-height: 1.5;
-      color: #363636;
       box-shadow: inset 0 1px 2px rgb(10 10 10 / 10%);
       margin-top: 5px;
       margin-bottom: 5px;
@@ -241,16 +253,36 @@ const Hide1 = styled.div`
       margin-right: auto;
     }
     button{
+      height: 32px;
+      margin-bottom: 10px;
+      font-size: 12px;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+  section{
+    display: flex;
+    flex-direction: column;
+    input{
+      font-size: 14px;
+      height: 0px;
+      padding: 0px;
+      width: 96%;
+      border: 0;
+      line-height: 1.5;
+      color: #363636;
+      margin: 0px;
+    }
+    button{
+      font-size: 0px;
       width: max-content;
       border: 0;
       cursor: pointer;
       padding: 0px;
       background-color: #ffdfa8;
-      height: 32px;
-      padding-left: 5px;
-      padding-right: 5px;
+      height: 0px;
       margin-left: calc(2% - 10px);
-      margin-bottom: 10px;
+      margin-bottom: 0px;
       :hover{
         box-shadow: inset 0px 8px 20px 3px rgb(10 10 10 / 10%);
       }
