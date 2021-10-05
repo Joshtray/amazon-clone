@@ -24,6 +24,7 @@ const Product = (props) => {
     }
     catch (e) {
       console.log(e)
+      history.go(0)
     }
   }
   const getUserInfo = async () => {
