@@ -52,16 +52,15 @@ const Orders = () => {
     return (
         <Orderscontainer>
             <div className="cart_sec">
-
-            {orders.map((item) => 
-                <section key={item.id}>
-                    <p>Delivered on {item.createdAt}</p>
+            {orders.map((item) =>
+                <section key={item.id}> 
+                    <p id = "date"><span>{item.createdAt.slice(0, 10)+ "  " + item.createdAt.slice(12, 16)+" GMT"}</span></p>
                     <ul className = "product_list">
                         {item.orderProduct.items.map((prod) => (<Product key={prod.id} product={prod.product} cartProduct={prod} />))}
                     </ul>
                 </section>
-            )}    
-            
+            )}
+
             </div>
         </Orderscontainer>
     )
@@ -76,4 +75,53 @@ const Orderscontainer = styled.div`
   background-color: #eaeded;
   min-height: calc(100vh - 60px);
   padding-left: 20px;
+  p{
+    margin: 0;
+  }
+  .cart_sec{
+    section{
+      margin-bottom: 60px;
+      #date{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        margin: 15px 0px 15px 0px; 
+        span{
+          width: 350px;
+        }
+        :before{
+          content: "";
+          display: block;
+          border-top-width: 1px;
+          border-top-style: solid;
+          border-color: black;
+          width: 100%;
+        }
+        :after{
+          content: "";
+          display: block;
+          border-top-width: 1px;
+          border-top-style: solid;
+          border-color: black;
+          width: 100%;
+        }
+      }
+    }
+    .product_list{
+      .product_block{
+        .content_block{
+          #hide{
+            display: block;
+          }
+          :hover{
+            .hide{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
 `

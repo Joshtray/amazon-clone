@@ -62,12 +62,37 @@ const Product = (props) => {
               <i></i>
               <a>Compare with similar products</a>
             </div>
-          </div>
-          <div className="price_sec">
-            <p>${product.price}</p>
-          </div>
-      </Product_block>
-  )
+            <div className="content_block">
+              <p>{product.name}</p>
+              <p className="price">${product.price}</p>
+              <button onClick={onClick}>Add to Cart</button>
+              <p id="hide1">Quantity: {cartProduct.quantity}</p>
+              <div className = "hide">
+                <select defaultValue={cartProduct ? cartProduct.quantity : "0"} id="searchDropdownBox" className="dropdown_class" onChange={updateQuantity}>
+                  <option value="1">Qty: 1</option>
+                  <option value="2">Qty: 2</option>
+                  <option value="3">Qty: 3</option>
+                  <option value="4">Qty: 4</option>
+                  <option value="5">Qty: 5</option>
+                  <option value="6">Qty: 6</option>
+                  <option value="7">Qty: 7</option>
+                  <option value="8">Qty: 8</option>
+                  <option value="9">Qty: 9</option>
+                  <option value="10">Qty: 10+</option>
+                </select>
+                <i></i>
+                <a onClick={delProduct}>Delete</a>
+                <i></i>
+                <a>Save for later</a>
+                <i></i>
+                <a>Compare with similar products</a>
+              </div>
+            </div>
+            <div className="price_sec">
+              <p>${product.price}</p>
+            </div>
+        </Product_block>
+    )
 }
 
 export default Product
