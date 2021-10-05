@@ -41,7 +41,7 @@ const Account = () => {
                 console.log(usrLocation)
                 if (usrLocation.data.getLocation) {
                   console.log(usrLocation.data.getLocation.zipcode)
-                  const loc = usrLocation.data.getLocation.apt + ", " + usrLocation.data.getLocation.street + ", " + usrLocation.data.getLocation.city + ", " + usrLocation.data.getLocation.state + ", " + usrLocation.data.getLocation.zipcode 
+                  const loc = usrLocation.data.getLocation.apt + ", " + usrLocation.data.getLocation.street + ", " + usrLocation.data.getLocation.city + ", " + usrLocation.data.getLocation.state + ", " + usrLocation.data.getLocation.zipcode
                   setLocation(loc)
                   console.log(loc)
                 }
@@ -92,7 +92,7 @@ const Account = () => {
     }
     const newLocation = async () => {
       if (zip==0) {
-        setError('Please enter a zipcode') 
+        setError('Please enter a zipcode')
       }
       else {
         try {
@@ -174,7 +174,7 @@ const Account = () => {
                   </section>
                </Hide2>
                <Top3 onClick={() => {setChangeLocation(!changeLocation);setChangePassword(false);setChangeEmail(false)}}>
-                 <p>Location: {location}</p>
+                 <p>Location: <span>{location}</span></p>
                  <button onClick={() => {setChangeLocation(!changeLocation);setChangePassword(false);setChangeEmail(false)}}>
                    <div className = {changeLocation?"tilt":""}>+</div>
                  </button>
