@@ -5,7 +5,7 @@ import axios from '../../axios';
 import { useHistory } from 'react-router';
 import { API, Auth, graphqlOperation } from 'aws-amplify'
 import { getUser, getCart } from '../../graphql/queries';
-import { createOrder, createOrderProduct, deleteCart, deleteCartProduct, updateUser } from '../../graphql/mutations';
+import { createOrder, createOrderProduct, deleteCart, deleteCartProduct, updateUser, updateProduct } from '../../graphql/mutations';
 
 const Checkout = () => {
   const stripe = useStripe();
@@ -40,6 +40,8 @@ const Checkout = () => {
     } */
     const order = await API.graphql(graphqlOperation(createOrder, {input: {userID: userInfo.id}}))
     for (let i=0; i<cart.length; i++) {
+      let prodQuantity = cart[i].product.quantity - cart[i].quantity
+      await API.graphql(graphqlOperation(updateProduct, {input: {id: cart[i].product.id, quantity: prodQuantity}}))
       await API.graphql(graphqlOperation(createOrderProduct, {input: {orderID: order.data.createOrder.id, productID: cart[i].product.id, quantity: cart[i].quantity}}))
       await API.graphql(graphqlOperation(deleteCartProduct, {input: {id: cart[i].id}}))
     }
