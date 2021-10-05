@@ -7,6 +7,9 @@
     "start": "node server/server.js",
     "build": "cd client && npm install && npm run build"
   },
+  "engines": {
+    "node": "16.8.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Tayomide/amazon-clone.git"
