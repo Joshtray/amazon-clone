@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Tayomide/amazon-clone/issues"
   },
-  "homepage": "https://github.com/Tayomide/amazon-clone#readme"
+  "homepage": "https://github.com/Tayomide/amazon-clone#readme",
+  "dependencies": {
+    "stripe": "^8.178.0"
+  }
 }

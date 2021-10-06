@@ -1,4 +1,5 @@
 const port = process.env.PORT || 9000
+const path = require("path")
 
 const stripe = require('stripe')('sk_test_51JeGHzGKYva4OAEfeDUvZFAJ3N0LxtwqDgmaYxUWH7w6gixfW2HEh4HgQ2r3SzCUBtgu3T2kVymZI0ujrLU36SEs00a2Qu5T3z');
 
