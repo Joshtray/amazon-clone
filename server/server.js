@@ -28,20 +28,20 @@ app.post('/checkout', async (req, res) => {
    // ... Fetch or create the PaymentIntent
   res.json({ client_secret: paymentIntent.client_secret });
 });
-app.use(express.static(path.resolve(__dirname, '../client/build')));
+// app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-app.get('/', (req, res) => {
-  const path = resolve(process.env.STATIC_DIR + "/index.html")
-  res.sendFile(path)
-})
+// app.get('/', (req, res) => {
+//   const path = resolve(process.env.STATIC_DIR + "/index.html")
+//   res.sendFile(path)
+// })
 
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+// });
 
-app.get('/config', async (req, res) => {
-  res.json({publishableKey: process.env.STRIPE_PUBLISHABLE_KEY})
-})
+// app.get('/config', async (req, res) => {
+//   res.json({publishableKey: process.env.STRIPE_PUBLISHABLE_KEY})
+// })
 
 app.listen(port, () => {
   console.log('Running on port ' + port);
