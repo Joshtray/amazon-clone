@@ -17,7 +17,8 @@ const Home = () => {
         }
         catch (e) {
             console.log(e)
-            // history.push('/login')
+            history.push("/login")
+            history.go(0)
         }
     }
     useEffect(() => {

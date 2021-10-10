@@ -45,6 +45,12 @@ type Rating
 }
 
 type Product @model 
+@auth(
+	rules: [
+		{ allow: private }
+		{ allow: public, provider: apiKey }
+	]
+)
 @key (name: "byCategory", fields: ["categoryID"], queryField: "productByCategory") {
 	id: ID!
 	name: String

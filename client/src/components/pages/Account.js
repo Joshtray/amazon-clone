@@ -49,6 +49,8 @@ const Account = () => {
         }
         catch (e) {
             console.log(e)
+            history.push("/login")
+            history.go(0)
         }
     }
     const changePass = async () => {

@@ -74,6 +74,26 @@ const Checkout = () => {
       alert(backendError.message)
       return
     }
+    // API
+    // .post('checkout', '/checkout', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify({
+    //     items: cart,
+    //     paymentMethodType: 'card',
+    //     currency: 'usd'
+    //   })
+    // }).then(r => {
+    //   cpnsole.log(r)
+    //   r.json()}
+    // ).catch(error => {
+    //   console.log(error)
+    //   setError(error)
+    //   alert(error)
+    //   return
+    // });
     console.log('Payment Intent Created')
 
     const result = await stripe.confirmCardPayment(client_secret, {
