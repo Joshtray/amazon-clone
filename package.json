@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"node server/server.js\" \"cd client && yarn start\""
+    "start": "cd client && yarn start"
   },
   "engines": {
     "node": "16.8.0"
