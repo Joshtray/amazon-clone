@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd client && yarn start"
+    "start": "cd client && yarn start",
+    "build": "cd client && npm install && react-scripts build"
   },
   "engines": {
     "node": "16.8.0"
