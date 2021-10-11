@@ -1,0 +1,750 @@
+type User {
+  id: ID!
+  name: String!
+  location: Location
+  orders(createdAt: ModelStringKeyConditionInput, filter: ModelOrderFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelOrderConnection
+  ratings(productID: ModelIDKeyConditionInput, filter: ModelRatingFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelRatingConnection
+  cart: Cart
+  accountType: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Location {
+  id: ID!
+  userID: ID!
+  apt: String
+  street: String
+  city: String
+  state: String
+  zipcode: Int!
+  user: User
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Order {
+  id: ID!
+  userID: ID!
+  orderProduct(productID: ModelIDKeyConditionInput, filter: ModelOrderProductFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelOrderProductConnection
+  user: User
+  createdAt: String!
+  updatedAt: AWSDateTime!
+}
+
+type Rating {
+  id: ID!
+  userID: ID!
+  productID: ID!
+  user: User
+  rating: Float
+  description: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  product: Product @aws_iam @aws_cognito_user_pools
+}
+
+type Product @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  name: String
+  imageUrl: String
+  description: String
+  price: Float
+  categoryID: ID!
+  category: Category
+  sellerID: ID
+  seller: User
+  types(filter: ModelTypeFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelTypeConnection
+  ratings(userID: ModelIDKeyConditionInput, filter: ModelRatingFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelRatingConnection
+  deals: [String]
+  quantity: Int
+  cartProduct(cartID: ModelIDKeyConditionInput, filter: ModelCartProductFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelCartProductConnection
+  orderProduct(orderID: ModelIDKeyConditionInput, filter: ModelOrderProductFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelOrderProductConnection
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Type {
+  id: ID!
+  productID: ID!
+  name: String
+  imageURL: String
+  price: Float
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  product: Product @aws_iam @aws_cognito_user_pools
+}
+
+type Category {
+  id: ID!
+  name: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type CartProduct {
+  id: ID!
+  cartID: ID!
+  productID: ID!
+  cart: Cart
+  quantity: Int
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  product: Product @aws_iam @aws_cognito_user_pools
+}
+
+type OrderProduct {
+  id: ID!
+  orderID: ID!
+  productID: ID!
+  order: Order
+  quantity: Int
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  product: Product @aws_iam @aws_cognito_user_pools
+}
+
+type Cart {
+  id: ID!
+  userID: ID!
+  cartProduct(productID: ModelIDKeyConditionInput, filter: ModelCartProductFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelCartProductConnection
+  user: User
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelUserConnection {
+  items: [User]
+  nextToken: String
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+input ModelUserFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  accountType: ModelStringInput
+  and: [ModelUserFilterInput]
+  or: [ModelUserFilterInput]
+  not: ModelUserFilterInput
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+type Query {
+  getUser(id: ID!): User
+  listUsers(filter: ModelUserFilterInput, limit: Int, nextToken: String): ModelUserConnection
+  getLocation(id: ID!): Location
+  listLocations(filter: ModelLocationFilterInput, limit: Int, nextToken: String): ModelLocationConnection
+  getOrder(id: ID!): Order
+  listOrders(filter: ModelOrderFilterInput, limit: Int, nextToken: String): ModelOrderConnection
+  getRating(id: ID!): Rating
+  listRatings(filter: ModelRatingFilterInput, limit: Int, nextToken: String): ModelRatingConnection
+  getType(id: ID!): Type
+  listTypes(filter: ModelTypeFilterInput, limit: Int, nextToken: String): ModelTypeConnection
+  getCategory(id: ID!): Category
+  listCategories(filter: ModelCategoryFilterInput, limit: Int, nextToken: String): ModelCategoryConnection
+  getCartProduct(id: ID!): CartProduct
+  listCartProducts(filter: ModelCartProductFilterInput, limit: Int, nextToken: String): ModelCartProductConnection
+  getOrderProduct(id: ID!): OrderProduct
+  listOrderProducts(filter: ModelOrderProductFilterInput, limit: Int, nextToken: String): ModelOrderProductConnection
+  getCart(userID: ID!): Cart
+  listCarts(userID: ID, filter: ModelCartFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelCartConnection
+  getProduct(id: ID!): Product @aws_iam @aws_cognito_user_pools
+  listProducts(filter: ModelProductFilterInput, limit: Int, nextToken: String): ModelProductConnection @aws_iam @aws_cognito_user_pools
+  productByCategory(categoryID: ID, sortDirection: ModelSortDirection, filter: ModelProductFilterInput, limit: Int, nextToken: String): ModelProductConnection @aws_iam @aws_cognito_user_pools
+}
+
+input CreateUserInput {
+  id: ID
+  name: String!
+  accountType: String
+}
+
+input UpdateUserInput {
+  id: ID!
+  name: String
+  accountType: String
+}
+
+input DeleteUserInput {
+  id: ID!
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!, condition: ModelUserConditionInput): User
+  updateUser(input: UpdateUserInput!, condition: ModelUserConditionInput): User
+  deleteUser(input: DeleteUserInput!, condition: ModelUserConditionInput): User
+  createLocation(input: CreateLocationInput!, condition: ModelLocationConditionInput): Location
+  updateLocation(input: UpdateLocationInput!, condition: ModelLocationConditionInput): Location
+  deleteLocation(input: DeleteLocationInput!, condition: ModelLocationConditionInput): Location
+  createOrder(input: CreateOrderInput!, condition: ModelOrderConditionInput): Order
+  updateOrder(input: UpdateOrderInput!, condition: ModelOrderConditionInput): Order
+  deleteOrder(input: DeleteOrderInput!, condition: ModelOrderConditionInput): Order
+  createRating(input: CreateRatingInput!, condition: ModelRatingConditionInput): Rating
+  updateRating(input: UpdateRatingInput!, condition: ModelRatingConditionInput): Rating
+  deleteRating(input: DeleteRatingInput!, condition: ModelRatingConditionInput): Rating
+  createType(input: CreateTypeInput!, condition: ModelTypeConditionInput): Type
+  updateType(input: UpdateTypeInput!, condition: ModelTypeConditionInput): Type
+  deleteType(input: DeleteTypeInput!, condition: ModelTypeConditionInput): Type
+  createCategory(input: CreateCategoryInput!, condition: ModelCategoryConditionInput): Category
+  updateCategory(input: UpdateCategoryInput!, condition: ModelCategoryConditionInput): Category
+  deleteCategory(input: DeleteCategoryInput!, condition: ModelCategoryConditionInput): Category
+  createCartProduct(input: CreateCartProductInput!, condition: ModelCartProductConditionInput): CartProduct
+  updateCartProduct(input: UpdateCartProductInput!, condition: ModelCartProductConditionInput): CartProduct
+  deleteCartProduct(input: DeleteCartProductInput!, condition: ModelCartProductConditionInput): CartProduct
+  createOrderProduct(input: CreateOrderProductInput!, condition: ModelOrderProductConditionInput): OrderProduct
+  updateOrderProduct(input: UpdateOrderProductInput!, condition: ModelOrderProductConditionInput): OrderProduct
+  deleteOrderProduct(input: DeleteOrderProductInput!, condition: ModelOrderProductConditionInput): OrderProduct
+  createCart(input: CreateCartInput!, condition: ModelCartConditionInput): Cart
+  updateCart(input: UpdateCartInput!, condition: ModelCartConditionInput): Cart
+  deleteCart(input: DeleteCartInput!, condition: ModelCartConditionInput): Cart
+  createProduct(input: CreateProductInput!, condition: ModelProductConditionInput): Product @aws_iam @aws_cognito_user_pools
+  updateProduct(input: UpdateProductInput!, condition: ModelProductConditionInput): Product @aws_iam @aws_cognito_user_pools
+  deleteProduct(input: DeleteProductInput!, condition: ModelProductConditionInput): Product @aws_iam @aws_cognito_user_pools
+}
+
+input ModelUserConditionInput {
+  name: ModelStringInput
+  accountType: ModelStringInput
+  and: [ModelUserConditionInput]
+  or: [ModelUserConditionInput]
+  not: ModelUserConditionInput
+}
+
+type Subscription {
+  onCreateUser: User @aws_subscribe(mutations: ["createUser"])
+  onUpdateUser: User @aws_subscribe(mutations: ["updateUser"])
+  onDeleteUser: User @aws_subscribe(mutations: ["deleteUser"])
+  onCreateLocation: Location @aws_subscribe(mutations: ["createLocation"])
+  onUpdateLocation: Location @aws_subscribe(mutations: ["updateLocation"])
+  onDeleteLocation: Location @aws_subscribe(mutations: ["deleteLocation"])
+  onCreateOrder: Order @aws_subscribe(mutations: ["createOrder"])
+  onUpdateOrder: Order @aws_subscribe(mutations: ["updateOrder"])
+  onDeleteOrder: Order @aws_subscribe(mutations: ["deleteOrder"])
+  onCreateRating: Rating @aws_subscribe(mutations: ["createRating"])
+  onUpdateRating: Rating @aws_subscribe(mutations: ["updateRating"])
+  onDeleteRating: Rating @aws_subscribe(mutations: ["deleteRating"])
+  onCreateType: Type @aws_subscribe(mutations: ["createType"])
+  onUpdateType: Type @aws_subscribe(mutations: ["updateType"])
+  onDeleteType: Type @aws_subscribe(mutations: ["deleteType"])
+  onCreateCategory: Category @aws_subscribe(mutations: ["createCategory"])
+  onUpdateCategory: Category @aws_subscribe(mutations: ["updateCategory"])
+  onDeleteCategory: Category @aws_subscribe(mutations: ["deleteCategory"])
+  onCreateCartProduct: CartProduct @aws_subscribe(mutations: ["createCartProduct"])
+  onUpdateCartProduct: CartProduct @aws_subscribe(mutations: ["updateCartProduct"])
+  onDeleteCartProduct: CartProduct @aws_subscribe(mutations: ["deleteCartProduct"])
+  onCreateOrderProduct: OrderProduct @aws_subscribe(mutations: ["createOrderProduct"])
+  onUpdateOrderProduct: OrderProduct @aws_subscribe(mutations: ["updateOrderProduct"])
+  onDeleteOrderProduct: OrderProduct @aws_subscribe(mutations: ["deleteOrderProduct"])
+  onCreateCart: Cart @aws_subscribe(mutations: ["createCart"])
+  onUpdateCart: Cart @aws_subscribe(mutations: ["updateCart"])
+  onDeleteCart: Cart @aws_subscribe(mutations: ["deleteCart"])
+  onCreateProduct: Product @aws_subscribe(mutations: ["createProduct"]) @aws_iam @aws_cognito_user_pools
+  onUpdateProduct: Product @aws_subscribe(mutations: ["updateProduct"]) @aws_iam @aws_cognito_user_pools
+  onDeleteProduct: Product @aws_subscribe(mutations: ["deleteProduct"]) @aws_iam @aws_cognito_user_pools
+}
+
+type ModelLocationConnection {
+  items: [Location]
+  nextToken: String
+}
+
+input ModelLocationFilterInput {
+  id: ModelIDInput
+  userID: ModelIDInput
+  apt: ModelStringInput
+  street: ModelStringInput
+  city: ModelStringInput
+  state: ModelStringInput
+  zipcode: ModelIntInput
+  and: [ModelLocationFilterInput]
+  or: [ModelLocationFilterInput]
+  not: ModelLocationFilterInput
+}
+
+input CreateLocationInput {
+  id: ID
+  userID: ID!
+  apt: String
+  street: String
+  city: String
+  state: String
+  zipcode: Int!
+}
+
+input UpdateLocationInput {
+  id: ID!
+  userID: ID
+  apt: String
+  street: String
+  city: String
+  state: String
+  zipcode: Int
+}
+
+input DeleteLocationInput {
+  id: ID!
+}
+
+input ModelLocationConditionInput {
+  userID: ModelIDInput
+  apt: ModelStringInput
+  street: ModelStringInput
+  city: ModelStringInput
+  state: ModelStringInput
+  zipcode: ModelIntInput
+  and: [ModelLocationConditionInput]
+  or: [ModelLocationConditionInput]
+  not: ModelLocationConditionInput
+}
+
+type ModelOrderConnection {
+  items: [Order]
+  nextToken: String
+}
+
+input ModelOrderFilterInput {
+  id: ModelIDInput
+  userID: ModelIDInput
+  createdAt: ModelStringInput
+  and: [ModelOrderFilterInput]
+  or: [ModelOrderFilterInput]
+  not: ModelOrderFilterInput
+}
+
+input CreateOrderInput {
+  id: ID
+  userID: ID!
+  createdAt: String
+}
+
+input UpdateOrderInput {
+  id: ID!
+  userID: ID
+  createdAt: String
+}
+
+input DeleteOrderInput {
+  id: ID!
+}
+
+input ModelOrderConditionInput {
+  userID: ModelIDInput
+  createdAt: ModelStringInput
+  and: [ModelOrderConditionInput]
+  or: [ModelOrderConditionInput]
+  not: ModelOrderConditionInput
+}
+
+type ModelRatingConnection {
+  items: [Rating]
+  nextToken: String
+}
+
+input ModelRatingFilterInput {
+  id: ModelIDInput
+  userID: ModelIDInput
+  productID: ModelIDInput
+  rating: ModelFloatInput
+  description: ModelStringInput
+  and: [ModelRatingFilterInput]
+  or: [ModelRatingFilterInput]
+  not: ModelRatingFilterInput
+}
+
+input CreateRatingInput {
+  id: ID
+  userID: ID!
+  productID: ID!
+  rating: Float
+  description: String
+}
+
+input UpdateRatingInput {
+  id: ID!
+  userID: ID
+  productID: ID
+  rating: Float
+  description: String
+}
+
+input DeleteRatingInput {
+  id: ID!
+}
+
+input ModelRatingConditionInput {
+  userID: ModelIDInput
+  productID: ModelIDInput
+  rating: ModelFloatInput
+  description: ModelStringInput
+  and: [ModelRatingConditionInput]
+  or: [ModelRatingConditionInput]
+  not: ModelRatingConditionInput
+}
+
+type ModelProductConnection @aws_iam @aws_cognito_user_pools {
+  items: [Product]
+  nextToken: String
+}
+
+input ModelProductFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  imageUrl: ModelStringInput
+  description: ModelStringInput
+  price: ModelFloatInput
+  categoryID: ModelIDInput
+  sellerID: ModelIDInput
+  deals: ModelStringInput
+  quantity: ModelIntInput
+  and: [ModelProductFilterInput]
+  or: [ModelProductFilterInput]
+  not: ModelProductFilterInput
+}
+
+input CreateProductInput {
+  id: ID
+  name: String
+  imageUrl: String
+  description: String
+  price: Float
+  categoryID: ID!
+  sellerID: ID
+  deals: [String]
+  quantity: Int
+}
+
+input UpdateProductInput {
+  id: ID!
+  name: String
+  imageUrl: String
+  description: String
+  price: Float
+  categoryID: ID
+  sellerID: ID
+  deals: [String]
+  quantity: Int
+}
+
+input DeleteProductInput {
+  id: ID!
+}
+
+input ModelProductConditionInput {
+  name: ModelStringInput
+  imageUrl: ModelStringInput
+  description: ModelStringInput
+  price: ModelFloatInput
+  categoryID: ModelIDInput
+  sellerID: ModelIDInput
+  deals: ModelStringInput
+  quantity: ModelIntInput
+  and: [ModelProductConditionInput]
+  or: [ModelProductConditionInput]
+  not: ModelProductConditionInput
+}
+
+type ModelTypeConnection {
+  items: [Type]
+  nextToken: String
+}
+
+input ModelTypeFilterInput {
+  id: ModelIDInput
+  productID: ModelIDInput
+  name: ModelStringInput
+  imageURL: ModelStringInput
+  price: ModelFloatInput
+  and: [ModelTypeFilterInput]
+  or: [ModelTypeFilterInput]
+  not: ModelTypeFilterInput
+}
+
+input CreateTypeInput {
+  id: ID
+  productID: ID!
+  name: String
+  imageURL: String
+  price: Float
+}
+
+input UpdateTypeInput {
+  id: ID!
+  productID: ID
+  name: String
+  imageURL: String
+  price: Float
+}
+
+input DeleteTypeInput {
+  id: ID!
+}
+
+input ModelTypeConditionInput {
+  productID: ModelIDInput
+  name: ModelStringInput
+  imageURL: ModelStringInput
+  price: ModelFloatInput
+  and: [ModelTypeConditionInput]
+  or: [ModelTypeConditionInput]
+  not: ModelTypeConditionInput
+}
+
+type ModelCategoryConnection {
+  items: [Category]
+  nextToken: String
+}
+
+input ModelCategoryFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  and: [ModelCategoryFilterInput]
+  or: [ModelCategoryFilterInput]
+  not: ModelCategoryFilterInput
+}
+
+input CreateCategoryInput {
+  id: ID
+  name: String
+}
+
+input UpdateCategoryInput {
+  id: ID!
+  name: String
+}
+
+input DeleteCategoryInput {
+  id: ID!
+}
+
+input ModelCategoryConditionInput {
+  name: ModelStringInput
+  and: [ModelCategoryConditionInput]
+  or: [ModelCategoryConditionInput]
+  not: ModelCategoryConditionInput
+}
+
+type ModelCartProductConnection {
+  items: [CartProduct]
+  nextToken: String
+}
+
+input ModelCartProductFilterInput {
+  id: ModelIDInput
+  cartID: ModelIDInput
+  productID: ModelIDInput
+  quantity: ModelIntInput
+  and: [ModelCartProductFilterInput]
+  or: [ModelCartProductFilterInput]
+  not: ModelCartProductFilterInput
+}
+
+input CreateCartProductInput {
+  id: ID
+  cartID: ID!
+  productID: ID!
+  quantity: Int
+}
+
+input UpdateCartProductInput {
+  id: ID!
+  cartID: ID
+  productID: ID
+  quantity: Int
+}
+
+input DeleteCartProductInput {
+  id: ID!
+}
+
+input ModelCartProductConditionInput {
+  cartID: ModelIDInput
+  productID: ModelIDInput
+  quantity: ModelIntInput
+  and: [ModelCartProductConditionInput]
+  or: [ModelCartProductConditionInput]
+  not: ModelCartProductConditionInput
+}
+
+type ModelOrderProductConnection {
+  items: [OrderProduct]
+  nextToken: String
+}
+
+input ModelOrderProductFilterInput {
+  id: ModelIDInput
+  orderID: ModelIDInput
+  productID: ModelIDInput
+  quantity: ModelIntInput
+  and: [ModelOrderProductFilterInput]
+  or: [ModelOrderProductFilterInput]
+  not: ModelOrderProductFilterInput
+}
+
+input CreateOrderProductInput {
+  id: ID
+  orderID: ID!
+  productID: ID!
+  quantity: Int
+}
+
+input UpdateOrderProductInput {
+  id: ID!
+  orderID: ID
+  productID: ID
+  quantity: Int
+}
+
+input DeleteOrderProductInput {
+  id: ID!
+}
+
+input ModelOrderProductConditionInput {
+  orderID: ModelIDInput
+  productID: ModelIDInput
+  quantity: ModelIntInput
+  and: [ModelOrderProductConditionInput]
+  or: [ModelOrderProductConditionInput]
+  not: ModelOrderProductConditionInput
+}
+
+type ModelCartConnection {
+  items: [Cart]
+  nextToken: String
+}
+
+input ModelCartFilterInput {
+  id: ModelIDInput
+  userID: ModelIDInput
+  and: [ModelCartFilterInput]
+  or: [ModelCartFilterInput]
+  not: ModelCartFilterInput
+}
+
+input CreateCartInput {
+  id: ID
+  userID: ID!
+}
+
+input UpdateCartInput {
+  id: ID
+  userID: ID!
+}
+
+input DeleteCartInput {
+  userID: ID!
+}
+
+input ModelCartConditionInput {
+  and: [ModelCartConditionInput]
+  or: [ModelCartConditionInput]
+  not: ModelCartConditionInput
+}
+
+input ModelStringKeyConditionInput {
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  between: [String]
+  beginsWith: String
+}
+
+input ModelIDKeyConditionInput {
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  between: [ID]
+  beginsWith: ID
+}

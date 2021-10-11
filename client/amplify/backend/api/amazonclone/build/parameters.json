@@ -1,0 +1,20 @@
+{
+    "CreateAPIKey": 1,
+    "AppSyncApiName": "amazonclone",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authamazoncloneee9e7a14",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "S3DeploymentBucket": "amplify-amazonclone-dev-201300-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/290d63b43e912d903faceab20fbe98c8a3bfd5f1"
+}

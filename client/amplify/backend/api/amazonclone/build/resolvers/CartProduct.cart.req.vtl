@@ -1,0 +1,11 @@
+#if( $util.isNull($ctx.source.cartID) )
+  #return
+#else
+{
+      "version": "2018-05-29",
+      "operation": "GetItem",
+      "key": {
+          "userID": $util.dynamodb.toDynamoDBJson($util.defaultIfNullOrBlank($ctx.source.cartID, "___xamznone____"))
+    }
+  }
+#end
