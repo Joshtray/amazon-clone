@@ -6,7 +6,7 @@ const stripe = require('stripe')('sk_test_51JeGHzGKYva4OAEfeDUvZFAJ3N0LxtwqDgmaY
 const express = require('express');
 const app = express();
 
-// app.use(express.static("public"));
+app.use(express.static("public"));
 // app.use(express.json());
 
 const getCartTotal = cart => {
@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
   console.log(process.cwd())
   console.log(process.env.STATIC_DIR)
   console.log(__dirname)
-  res.sendFile(express.static(path.resolve("../client/build/index.html")))
+  res.sendFile("../client/build/index.html")
 })
 
 // app.get('*', (req, res) => {
