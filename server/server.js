@@ -18,7 +18,6 @@ const getCartTotal = cart => {
 }
 
 app.post('/checkout', async (req, res) => {
-  console.log(req)
   const { items } = req.body
   const paymentIntent = await stripe.paymentIntents.create({
     amount: getCartTotal(items),
@@ -32,9 +31,6 @@ app.post('/checkout', async (req, res) => {
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 app.get('/', (req, res) => {
-  console.log(process.cwd())
-  console.log(process.env.STATIC_DIR)
-  console.log(__dirname)
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 })
 

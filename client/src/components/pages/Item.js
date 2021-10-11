@@ -25,21 +25,24 @@ const Item = ({ product }) => {
       history.push('/login')
     }
   }
-    return (
-        <Productd>
-         <Picture>
-           <img src={product.imageUrl} />
-         </Picture>
-         <Details>
-           <p>{product.name}</p>
-           <Link to={"/categories/" + product.category.name}>{product.category.name}</Link>
-           <p>{product.description? product.description: "You're in for a suprise! ;)"}</p>
-           <p>${product.price}</p>
-           <p>{product.quantity}</p>
-           <button onClick={onClick}>Add to Cart</button>
-         </Details>
-        </Productd>
-    )
+  useEffect(() => {
+    getUserInfo();
+  }, [])
+  return (
+      <Productd>
+        <Picture>
+          <img src={product.imageUrl} />
+        </Picture>
+        <Details>
+          <p>{product.name}</p>
+          <Link to={"/categories/" + product.category.name}>{product.category.name}</Link>
+          <p>{product.description? product.description: "You're in for a suprise! ;)"}</p>
+          <p>${product.price}</p>
+          <p>{product.quantity}</p>
+          <button onClick={onClick}>Add to Cart</button>
+        </Details>
+      </Productd>
+  )
 }
 
 export default Item
