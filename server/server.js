@@ -34,9 +34,9 @@ app.use(express.static(path.resolve(__dirname, '../client/build')));
 //   res.sendFile(path.resolve(process.env.STATIC_DIR + "/index.html"))
 // })
 
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+// });
 
 app.get('/config', async (req, res) => {
   res.json({publishableKey: process.env.STRIPE_PUBLISHABLE_KEY})
