@@ -35,7 +35,10 @@ app.use(express.static(path.resolve(__dirname, '../client/build')));
 // })
 
 app.get('/', (req, res) => {
-  res.sendFile(path.resolve(process.cwd(), "../client/build/index.html"))
+  console.log(process.cwd())
+  console.log(process.env.STATIC_DIR)
+  console.log(__dirname)
+  res.sendFile(path.resolve(process.cwd(), "/client/build/index.html"))
 })
 
 // app.get('*', (req, res) => {
