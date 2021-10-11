@@ -7,7 +7,7 @@ const express = require('express');
 const app = express();
 
 app.use(express.static("public"));
-// app.use(express.json());
+app.use(express.json());
 
 const getCartTotal = cart => {
   var sum = 0
@@ -18,6 +18,7 @@ const getCartTotal = cart => {
 }
 
 app.post('/checkout', async (req, res) => {
+  console.log(req)
   const { items } = req.body
   const paymentIntent = await stripe.paymentIntents.create({
     amount: getCartTotal(items),
@@ -29,10 +30,6 @@ app.post('/checkout', async (req, res) => {
   res.json({ client_secret: paymentIntent.client_secret });
 });
 app.use(express.static(path.resolve(__dirname, '../client/build')));
-
-// app.get('/', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, '../client/build'))
-// })
 
 app.get('/', (req, res) => {
   console.log(process.cwd())
