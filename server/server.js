@@ -31,7 +31,7 @@ app.post('/checkout', async (req, res) => {
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 app.get('/', (req, res) => {
-  const path = resolve(process.env.STATIC_DIR + "/index.html")
+  const path = path.resolve(process.env.STATIC_DIR + "/index.html")
   res.sendFile(path)
 })
 
