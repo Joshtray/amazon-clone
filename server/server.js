@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
   console.log(process.cwd())
   console.log(process.env.STATIC_DIR)
   console.log(__dirname)
-  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+  res.sendFile(path.resolve(__dirname, '../client/build', 'index'));
 })
 
 // app.get('*', (req, res) => {
