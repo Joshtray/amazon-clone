@@ -41,7 +41,7 @@ const AddProduct = () => {
                 <input placeholder="Product Name" onChange={(e) => (setName(e.target.value))} />
                 <textarea placeholder="Product Description" onChange={(e) => (setDescription(e.target.value))} ></textarea>
                 <input type='file' onChange={onChange} />
-                <select defaultValue={dropdown} value={dropdown} onChange={updateCat}>
+                <select value={dropdown} onChange={updateCat}>
                     <option value="">Select a category...</option>
                     {categories.map((category)=>(<option value={category.id}>{category.name}</option>))}
                     <option value="new-cat">Create a new category</option>
@@ -57,7 +57,6 @@ const AddProduct = () => {
 
     const createNewCategory = async () => {
         const newCatInfo = await API.graphql(graphqlOperation(createCategory, {input: {name: newCat}}))
-        console.log(newCatInfo)
         setDropdown(newCatInfo.data.createCategory.id)
         setPage(
             <div className="addproduct">
@@ -65,7 +64,7 @@ const AddProduct = () => {
                 <input placeholder="Product Name" onChange={(e) => (setName(e.target.value))} />
                 <textarea placeholder="Product Description" onChange={(e) => (setDescription(e.target.value))} ></textarea>
                 <input type='file' onChange={onChange} />
-                <select defaultValue={newCatInfo.data.createCategory.id} value={dropdown} onChange={updateCat}>
+                <select value={dropdown} onChange={updateCat}>
                     <option value="">Select a category...</option>
                     {categories.map((category)=>(<option value={category.id}>{category.name}</option>))}
                     <option value="new-cat">Create a new category</option>
@@ -84,7 +83,6 @@ const AddProduct = () => {
             const userInfo = await Auth.currentAuthenticatedUser();
             const userData = await API.graphql(graphqlOperation(getUser, { id: userInfo.attributes.sub }))
             setUser(userData)
-            console.log(userInfo)
             if (userData.data.getUser.accountType == "Basic") {
                 history.push('/')
             }

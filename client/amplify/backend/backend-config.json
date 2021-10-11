@@ -46,20 +46,6 @@
           ]
         }
       }
-    },
-    "checkout": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "checkout",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        }
-      ]
     }
   },
   "storage": {
@@ -75,12 +61,5 @@
       "type": "manual"
     }
   },
-  "function": {
-    "checkout": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": []
-    }
-  }
+  "function": {}
 }
