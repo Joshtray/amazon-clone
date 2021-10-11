@@ -30,13 +30,13 @@ app.post('/checkout', async (req, res) => {
 });
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/build'))
-})
-
 // app.get('/', (req, res) => {
-//   res.sendFile(path.resolve(process.env.STATIC_DIR + "/index.html"))
+//   res.sendFile(path.resolve(__dirname, '../client/build'))
 // })
+
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve(process.env.STATIC_DIR + "../client/build/index.html"))
+})
 
 // app.get('*', (req, res) => {
 //   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
