@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Joshtray/amazon-clone.git"
+    "url": "git+https://github.com/Tayomide/amazon-clone.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Joshtray/amazon-clone/issues"
+    "url": "https://github.com/Tayomide/amazon-clone/issues"
   },
-  "homepage": "https://github.com/Joshtray/amazon-clone#readme",
+  "homepage": "https://github.com/Tayomide/amazon-clone#readme",
   "dependencies": {
     "stripe": "^8.178.0",
     "yarn": "^1.22.15"
