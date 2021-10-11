@@ -18,23 +18,35 @@
   font-size: 13px;
   padding: 6.5px 14px 6.5px 10px;
   background: linear-gradient(110deg, #E67A00 88%, #ffffff 20%);
+  text-decoration: none;
+}
+.product_block .badges:visited {
+  text-decoration: none;
 }
 
 .product_block .img_block{
   overflow: hidden;
   cursor: pointer;
+  height: 220px;
 }
 
 .product_block img{
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: scale-down;
 }
 
 .product_block p{
   margin-top: 0px;
   margin-bottom: 0px;
   text-transform: capitalize;
+  font-weight: 700;
+  width: max-content;
+}
+
+.product_block .price{
+  font-size: 15px;
+  color: #c1570c;
 }
 
 .product_block button {
@@ -43,6 +55,7 @@
     border-width: 1px;
     background: linear-gradient(white, 10%, #f0c14b);
     width: 95%;
+    font-weight: 700;
     border-radius: 3px;
     height: 30px;
     margin: 15px auto 15px auto;

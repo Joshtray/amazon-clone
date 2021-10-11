@@ -47,8 +47,8 @@ type Rating
 type Product @model 
 @auth(
 	rules: [
-		{ allow: private }
-		{ allow: public, provider: apiKey }
+		{ allow: private, provider: userPools }
+		{ allow: public, provider: iam }
 	]
 )
 @key (name: "byCategory", fields: ["categoryID"], queryField: "productByCategory") {

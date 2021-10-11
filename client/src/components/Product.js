@@ -5,6 +5,7 @@ import { createCartProduct, deleteCartProduct, updateCartProduct, updateProduct 
 import { getUser } from '../graphql/queries'
 import './Product.css'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Product = (props) => {
   const { product, cartProduct } = props
@@ -52,7 +53,7 @@ const Product = (props) => {
   }
   return (
       <Product_block className ="product_block">
-          <a className="badges">{product.category.name}</a>
+          <Link to={"/categories/" + product.category.name} className="badges">{product.category.name}</Link>
           <div className="img_block"  onClick={goToItem}>
             <img src={product.imageUrl} />
           </div>

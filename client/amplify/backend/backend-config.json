@@ -40,8 +40,11 @@
               "authenticationType": "API_KEY",
               "apiKeyConfig": {
                 "apiKeyExpirationDays": 365,
-                "description": "checkout"
+                "description": "public access"
               }
+            },
+            {
+              "authenticationType": "AWS_IAM"
             }
           ]
         }

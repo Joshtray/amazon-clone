@@ -3,6 +3,17 @@
 }
 
 .category h1{
-  font-weight: 500;
-  color: #d28d16;
+  font-weight: 300;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+  margin-left: 10px;
+  width: 95%;
+  border-bottom: solid #f5b341 1px;
+}
+.category h1 span{
+  font-weight: 700;
+  color: #f5b341;
+}
+.category .product_block{
+  box-shadow: 7px 8px 9px 5px rgb(10 10 10 / 10%);
 }
