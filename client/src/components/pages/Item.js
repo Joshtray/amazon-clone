@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Item.css'
 import { useHistory, Link } from 'react-router-dom'
 import styled from 'styled-components'
