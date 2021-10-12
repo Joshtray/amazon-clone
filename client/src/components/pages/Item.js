@@ -3,7 +3,7 @@ import './Item.css'
 import { useHistory, Link } from 'react-router-dom'
 import styled from 'styled-components'
 import Product from '../Product'
-import { API, graphqlOperation } from 'aws-amplify'
+import { API, graphqlOperation, Auth } from 'aws-amplify'
 import { createCartProduct } from '../../graphql/mutations'
 
 
