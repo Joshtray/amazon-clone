@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Product from '../Product'
 import { API, graphqlOperation, Auth } from 'aws-amplify'
 import { createCartProduct } from '../../graphql/mutations'
+import { getUser } from '../../graphql/queries'
 
 
 const Item = ({ product }) => {
