@@ -1,9 +1,13 @@
 # amazon-clone
 
 __Username:__ test
+
 __Password:__ amazonclone
+
 __Accepted Credit Card:__ 4242 4242 4242 4242 (Any CVC, Any future expiry date, Any zip code)
+
 __Declined Credit Card:__ 4000 0000 0000 9995 (Any CVC, Any future expiry date, Any zip code)
+
 __Credit Card (Authentication Required):__ 4000 0025 0000 3155 (Any CVC, Any future expiry date, Any zip code)
 
 This is a basic clone of the Amazon Official Website! Feel free to use the login details provided above to access and preview the website. Alternatively, you can also make your own account for the website by clicking on "Create Account"!
@@ -17,6 +21,7 @@ __Features__:
 4. Checkout: Pay for the total amount of products in your cart with a debit/credit card (implemented with a Stripe API). Test card numbers for this feature are provided above, and depending on what card is used, the payment for the order will either be accepted, declined, or open a third-party authentication window. 
 5. Order history: View all of the orders you have made and the dates and times in which they were made. 
 6. 404 page for false rounting
+
 __For Seller Accounts__
 7. Add a product: Add a product that can be bought by others. Provide the name, description of the product, acceptable image, product category (add a category if you dont find a suitable category for your product), price and quantity availabe. Effective error handling for unsupported inputs and formats. 
 
