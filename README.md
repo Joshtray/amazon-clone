@@ -21,9 +21,7 @@ __Features__:
 4. Checkout: Pay for the total amount of products in your cart with a debit/credit card (implemented with a Stripe API). Test card numbers for this feature are provided above, and depending on what card is used, the payment for the order will either be accepted, declined, or open a third-party authentication window. 
 5. Order history: View all of the orders you have made and the dates and times in which they were made. 
 6. 404 page for false rounting
-
-__For Seller Accounts__
-7. Add a product: Add a product that can be bought by others. Provide the name, description of the product, acceptable image, product category (add a category if you dont find a suitable category for your product), price and quantity availabe. Effective error handling for unsupported inputs and formats. 
+7. (*__For Seller Accounts__*) Add a product: Add a product that can be bought by others. Provide the name, description of the product, acceptable image, product category (add a category if you dont find a suitable category for your product), price and quantity availabe. Effective error handling for unsupported inputs and formats. 
 
 __Improvements__
 1. Adding an algorithm that recommends products based on your cart and order history. 
