@@ -1,9 +1,9 @@
 # amazon-clone
 
-##URL
+## URL
 http://amazon-clone-joshtray.herokuapp.com/
 
-##Description
+## Description
 
 __Username:__ test
 
