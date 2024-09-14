@@ -92,7 +92,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {location.pathname !== "/login" && <Header />}
+        {currentUser && <Header />}
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/cart" exact component={Cart} />
